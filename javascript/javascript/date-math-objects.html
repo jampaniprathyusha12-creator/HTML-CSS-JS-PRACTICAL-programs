@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Date and Math Objects</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #output {
+            font-size: 20px;
+            line-height: 2;
+            margin: 30px;
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 15px;
+            text-decoration: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Program 20</h1>
+
+    <div id="output"></div>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        // Date Object
+        let today = new Date();
+
+        // Math Object
+        let number = 25.67;
+        let squareRoot = Math.sqrt(number);
+        let rounded = Math.round(number);
+        let power = Math.pow(2, 3);
+        let randomNumber = Math.random();
+
+        document.getElementById("output").innerHTML =
+            "Current Date and Time: " + today + "<br><br>" +
+            "Number: " + number + "<br>" +
+            "Square Root: " + squareRoot.toFixed(2) + "<br>" +
+            "Rounded Number: " + rounded + "<br>" +
+            "2 Power 3: " + power + "<br>" +
+            "Random Number: " + randomNumber.toFixed(2);
+    </script>
+
+</body>
+
+</html>

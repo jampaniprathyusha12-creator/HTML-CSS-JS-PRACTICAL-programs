@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Theme Switcher</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: white;
+            color: black;
+            transition: 0.3s;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .dark {
+            background-color: #222;
+            color: white;
+        }
+
+        .dark .container {
+            border-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Light / Dark Theme Switcher</h2>
+
+        <p>Click the button to change the webpage theme.</p>
+
+        <button onclick="toggleTheme()">
+            Toggle Theme
+        </button>
+
+        <p id="themeText"></p>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        function applyTheme() {
+
+            let theme = localStorage.getItem("theme");
+
+            if (theme === "dark") {
+                document.body.classList.add("dark");
+                document.getElementById("themeText").textContent =
+                    "Dark Mode is ON";
+            } else {
+                document.body.classList.remove("dark");
+                document.getElementById("themeText").textContent =
+                    "Light Mode is ON";
+            }
+        }
+
+        function toggleTheme() {
+
+            let currentTheme = localStorage.getItem("theme");
+
+            if (currentTheme === "dark") {
+                localStorage.setItem("theme", "light");
+            } else {
+                localStorage.setItem("theme", "dark");
+            }
+
+            applyTheme();
+        }
+
+        applyTheme();
+    </script>
+
+</body>
+
+</html>

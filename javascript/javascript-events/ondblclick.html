@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Double Click Event</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Double Click Event Demonstration</h1>
+
+    <button ondblclick="showMessage()">Double Click Me</button>
+
+    <p id="message">Double-click the button.</p>
+
+    <br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+
+        function showMessage() {
+            document.getElementById("message").textContent =
+                "Button was double-clicked!";
+        }
+
+    </script>
+
+</body>
+
+</html>

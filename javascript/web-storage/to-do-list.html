@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Using localStorage</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input {
+            width: 70%;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #eeeeee;
+            list-style: none;
+        }
+
+        li button {
+            float: right;
+            font-size: 13px;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>To-Do List</h1>
+
+        <input type="text" id="task" placeholder="Enter a task">
+
+        <button onclick="addTask()">Add</button>
+
+        <ul id="taskList"></ul>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+        function saveTasks() {
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+        }
+
+        function displayTasks() {
+
+            let taskList = document.getElementById("taskList");
+
+            taskList.innerHTML = "";
+
+            tasks.forEach(function (task, index) {
+
+                let li = document.createElement("li");
+
+                li.textContent = task;
+
+                let deleteButton = document.createElement("button");
+
+                deleteButton.textContent = "Delete";
+
+                deleteButton.onclick = function () {
+                    deleteTask(index);
+                };
+
+                li.appendChild(deleteButton);
+
+                taskList.appendChild(li);
+            });
+        }
+
+        function addTask() {
+
+            let taskInput = document.getElementById("task");
+            let task = taskInput.value.trim();
+
+            if (task === "") {
+                alert("Please enter a task.");
+                return;
+            }
+
+            tasks.push(task);
+
+            saveTasks();
+            displayTasks();
+
+            taskInput.value = "";
+        }
+
+        function deleteTask(index) {
+
+            tasks.splice(index, 1);
+
+            saveTasks();
+            displayTasks();
+        }
+
+        // Display saved tasks when the page loads
+        displayTasks();
+
+    </script>
+
+</body>
+
+</html>

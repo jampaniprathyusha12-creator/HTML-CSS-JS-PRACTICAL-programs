@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Styled Registration Form</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 700px;
+            margin: 40px auto;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #2563eb;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border: 2px solid #2563eb;
+        }
+
+        .gender {
+            display: flex;
+            gap: 20px;
+        }
+
+        .gender label {
+            font-weight: normal;
+        }
+
+        .gender input {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        button {
+            flex: 1;
+            padding: 13px;
+            border: none;
+            border-radius: 7px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .register {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        .register:hover {
+            background-color: #1e40af;
+        }
+
+        .reset {
+            background-color: #e5e7eb;
+            color: #1f2937;
+        }
+
+        .reset:hover {
+            background-color: #cbd5e1;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 600px) {
+
+            main {
+                width: 94%;
+            }
+
+            .form-container {
+                padding: 25px 20px;
+            }
+
+            .gender {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>
+            Student Registration
+        </h1>
+
+        <p>
+            Styled Registration Form Using CSS
+        </p>
+
+    </header>
+
+
+    <main>
+
+        <section class="form-container">
+
+            <h2>
+                Registration Form
+            </h2>
+
+            <form>
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input type="text" id="name" placeholder="Enter your full name" required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input type="email" id="email" placeholder="Enter your email" required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input type="password" id="password" placeholder="Enter your password" required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Gender
+                    </label>
+
+                    <div class="gender">
+
+                        <label>
+                            <input type="radio" name="gender">
+                            Male
+                        </label>
+
+                        <label>
+                            <input type="radio" name="gender">
+                            Female
+                        </label>
+
+                        <label>
+                            <input type="radio" name="gender">
+                            Other
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="course">
+                        Course
+                    </label>
+
+                    <select id="course">
+
+                        <option>
+                            Select Course
+                        </option>
+
+                        <option>
+                            B.Tech
+                        </option>
+
+                        <option>
+                            B.Sc
+                        </option>
+
+                        <option>
+                            BCA
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="address">
+                        Address
+                    </label>
+
+                    <textarea id="address" rows="4" placeholder="Enter your address"></textarea>
+
+                </div>
+
+
+                <div class="buttons">
+
+                    <button type="submit" class="register">
+                        Register
+                    </button>
+
+                    <button type="reset" class="reset">
+                        Reset
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <div class="navigation">
+
+            <a href="index.html">
+                ← Back to CSS Programs
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            HTML, CSS & JavaScript Practical Programs
+        </p>
+
+        <p>
+            CSS Program 13
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+</body>
+
+</html>

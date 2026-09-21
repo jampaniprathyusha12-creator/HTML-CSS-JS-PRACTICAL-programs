@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Typing Test</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        #sentence {
+            background-color: #f2f2f2;
+            padding: 20px;
+            font-size: 20px;
+            border-radius: 8px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 18px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #result {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Simple Keyboard Typing Test</h1>
+
+        <p id="sentence">
+            JavaScript makes webpages interactive and dynamic.
+        </p>
+
+        <textarea id="typingArea" placeholder="Type the sentence above here..." oninput="checkTyping()"></textarea>
+
+        <button onclick="resetTest()">Reset Test</button>
+
+        <p id="result">Start typing to see the result.</p>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        const originalText =
+            "JavaScript makes webpages interactive and dynamic.";
+
+        function checkTyping() {
+            const typedText =
+                document.getElementById("typingArea").value;
+
+            const result =
+                document.getElementById("result");
+
+            if (typedText === originalText) {
+                result.textContent = "Typing completed successfully!";
+            } else {
+                result.textContent =
+                    "Characters typed: " + typedText.length;
+            }
+        }
+
+        function resetTest() {
+            document.getElementById("typingArea").value = "";
+            document.getElementById("result").textContent =
+                "Start typing to see the result.";
+        }
+    </script>
+
+</body>
+
+</html>

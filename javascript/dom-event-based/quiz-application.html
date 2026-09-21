@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Simple Quiz Application</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .quiz {
+            width: 400px;
+            margin: auto;
+            padding: 25px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        a {
+            display: inline-block;
+            margin: 20px 10px;
+            padding: 10px 15px;
+            text-decoration: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>DOM & Event-Based Experiment 12</h1>
+
+    <div class="quiz">
+
+        <h2>Simple Quiz</h2>
+
+        <p id="question"></p>
+
+        <div id="options"></div>
+
+        <div id="result"></div>
+
+    </div>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        let questions = [
+            {
+                question: "Which language is used to create web pages?",
+                options: ["Python", "HTML", "Java", "C++"],
+                answer: "HTML"
+            },
+            {
+                question: "Which language is used for webpage styling?",
+                options: ["CSS", "Python", "SQL", "C"],
+                answer: "CSS"
+            },
+            {
+                question: "Which language is used to make webpages interactive?",
+                options: ["HTML", "CSS", "JavaScript", "SQL"],
+                answer: "JavaScript"
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function loadQuestion() {
+
+            let q = questions[currentQuestion];
+
+            document.getElementById("question").innerHTML = q.question;
+
+            let options = document.getElementById("options");
+            options.innerHTML = "";
+
+            q.options.forEach(function (option) {
+
+                let button = document.createElement("button");
+
+                button.innerHTML = option;
+
+                button.onclick = function () {
+                    checkAnswer(option);
+                };
+
+                options.appendChild(button);
+            });
+        }
+
+        function checkAnswer(selectedAnswer) {
+
+            if (selectedAnswer === questions[currentQuestion].answer) {
+                score++;
+            }
+
+            currentQuestion++;
+
+            if (currentQuestion < questions.length) {
+                loadQuestion();
+            } else {
+                document.getElementById("question").innerHTML =
+                    "Quiz Completed!";
+
+                document.getElementById("options").innerHTML = "";
+
+                document.getElementById("result").innerHTML =
+                    "Your Score: " + score + " / " + questions.length;
+            }
+        }
+
+        loadQuestion();
+    </script>
+
+</body>
+
+</html>

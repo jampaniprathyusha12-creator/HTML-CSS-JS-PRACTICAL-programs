@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Edit Delete To-Do</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+
+        input {
+            padding: 10px;
+            width: 250px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        li {
+            margin: 10px;
+            font-size: 18px;
+        }
+
+        .edit {
+            background-color: lightblue;
+        }
+
+        .delete {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>To-Do List</h1>
+
+    <input type="text" id="taskInput" placeholder="Enter a task">
+
+    <button onclick="addTask()">Add Task</button>
+
+    <ul id="taskList"></ul>
+
+    <br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+
+        function addTask() {
+
+            const input = document.getElementById("taskInput");
+            const task = input.value.trim();
+
+            if (task === "") {
+                alert("Please enter a task!");
+                return;
+            }
+
+            // Create list item
+            const listItem = document.createElement("li");
+
+            // Create task text
+            const taskText = document.createElement("span");
+            taskText.textContent = task;
+
+            // Create Edit button
+            const editButton = document.createElement("button");
+            editButton.textContent = "Edit";
+            editButton.className = "edit";
+
+            editButton.onclick = function () {
+                const newTask = prompt("Edit task:", taskText.textContent);
+
+                if (newTask !== null && newTask.trim() !== "") {
+                    taskText.textContent = newTask.trim();
+                }
+            };
+
+            // Create Delete button
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.className = "delete";
+
+            deleteButton.onclick = function () {
+                listItem.remove();
+            };
+
+            // Add elements to list item
+            listItem.appendChild(taskText);
+            listItem.appendChild(editButton);
+            listItem.appendChild(deleteButton);
+
+            // Add list item to the webpage
+            document.getElementById("taskList").appendChild(listItem);
+
+            // Clear input
+            input.value = "";
+        }
+
+    </script>
+
+</body>
+
+</html>

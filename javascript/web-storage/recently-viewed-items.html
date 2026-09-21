@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recently Viewed Items</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .items {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .item {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 150px;
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        #recent {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Recently Viewed Items</h1>
+
+        <div class="items">
+
+            <div class="item">
+                <h3>Laptop</h3>
+                <button onclick="viewItem('Laptop')">
+                    View
+                </button>
+            </div>
+
+            <div class="item">
+                <h3>Headphones</h3>
+                <button onclick="viewItem('Headphones')">
+                    View
+                </button>
+            </div>
+
+            <div class="item">
+                <h3>Keyboard</h3>
+                <button onclick="viewItem('Keyboard')">
+                    View
+                </button>
+            </div>
+
+            <div class="item">
+                <h3>Mouse</h3>
+                <button onclick="viewItem('Mouse')">
+                    View
+                </button>
+            </div>
+
+        </div>
+
+        <div id="recent"></div>
+
+        <br>
+
+        <button onclick="clearItems()">
+            Clear Recently Viewed
+        </button>
+
+        <br><br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        function viewItem(item) {
+
+            let recentItems =
+                JSON.parse(localStorage.getItem("recentItems")) || [];
+
+            // Remove the item if it already exists
+            recentItems = recentItems.filter(function (existingItem) {
+                return existingItem !== item;
+            });
+
+            // Add the latest item at the beginning
+            recentItems.unshift(item);
+
+            // Keep only the latest 5 items
+            recentItems = recentItems.slice(0, 5);
+
+            localStorage.setItem(
+                "recentItems",
+                JSON.stringify(recentItems)
+            );
+
+            displayRecentItems();
+        }
+
+        function displayRecentItems() {
+
+            let recentItems =
+                JSON.parse(localStorage.getItem("recentItems")) || [];
+
+            let output = "<h2>Recently Viewed</h2>";
+
+            if (recentItems.length === 0) {
+                output += "<p>No items viewed yet.</p>";
+            } else {
+
+                output += "<ol>";
+
+                recentItems.forEach(function (item) {
+                    output += "<li>" + item + "</li>";
+                });
+
+                output += "</ol>";
+            }
+
+            document.getElementById("recent").innerHTML =
+                output;
+        }
+
+        function clearItems() {
+
+            localStorage.removeItem("recentItems");
+
+            displayRecentItems();
+        }
+
+        window.onload = function () {
+            displayRecentItems();
+        };
+
+    </script>
+
+</body>
+
+</html>

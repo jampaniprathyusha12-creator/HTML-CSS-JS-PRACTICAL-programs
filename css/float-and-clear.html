@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Float and Clear Properties</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background-color: #2563eb;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+
+        /* Float Left */
+
+        .float-left {
+            float: left;
+            width: 180px;
+            height: 120px;
+            background-color: #dbeafe;
+            border: 3px solid #2563eb;
+            padding: 20px;
+            margin: 0 20px 10px 0;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        /* Float Right */
+
+        .float-right {
+            float: right;
+            width: 180px;
+            height: 120px;
+            background-color: #dcfce7;
+            border: 3px solid #16a34a;
+            padding: 20px;
+            margin: 0 0 10px 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        /* Clear */
+
+        .clear-box {
+            clear: both;
+            background-color: #fef3c7;
+            border: 3px solid #d97706;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .navigation {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .navigation a {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+        }
+
+        .navigation a:hover {
+            background-color: #1e40af;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 600px) {
+
+            main {
+                width: 94%;
+            }
+
+            .float-left,
+            .float-right {
+                float: none;
+                width: 100%;
+                margin: 10px 0;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>
+            Float and Clear Properties
+        </h1>
+
+        <p>
+            Demonstration of CSS Float and Clear
+        </p>
+
+    </header>
+
+
+    <main>
+
+        <!-- Float Left -->
+
+        <section class="card clearfix">
+
+            <h2>
+                1. Float Left
+            </h2>
+
+            <div class="float-left">
+
+                Float Left
+
+            </div>
+
+            <p>
+                This box is floated to the left using
+                the CSS float property. The text flows
+                around the floated element.
+            </p>
+
+            <p>
+                Float can be used to position an element
+                to the left or right of its container.
+            </p>
+
+        </section>
+
+
+        <!-- Float Right -->
+
+        <section class="card clearfix">
+
+            <h2>
+                2. Float Right
+            </h2>
+
+            <div class="float-right">
+
+                Float Right
+
+            </div>
+
+            <p>
+                This box is floated to the right using
+                the CSS float property. The surrounding
+                text flows around the element.
+            </p>
+
+            <p>
+                The float property can be used with
+                values such as left and right.
+            </p>
+
+        </section>
+
+
+        <!-- Clear -->
+
+        <section class="card">
+
+            <h2>
+                3. Clear Property
+            </h2>
+
+            <div class="float-left">
+
+                Floated Box
+
+            </div>
+
+            <p>
+                This paragraph appears beside the
+                floated element.
+            </p>
+
+            <div class="clear-box">
+
+                <strong>Clear Property:</strong>
+
+                <p>
+                    This element uses
+                    <strong>clear: both</strong>.
+                    Therefore, it appears below both
+                    left and right floated elements.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Explanation -->
+
+        <section class="card">
+
+            <h2>
+                Properties Used
+            </h2>
+
+            <p>
+                <strong>float: left;</strong>
+                moves an element to the left.
+            </p>
+
+            <p>
+                <strong>float: right;</strong>
+                moves an element to the right.
+            </p>
+
+            <p>
+                <strong>clear: both;</strong>
+                prevents an element from appearing
+                beside floated elements.
+            </p>
+
+        </section>
+
+
+        <!-- Navigation -->
+
+        <div class="navigation">
+
+            <a href="index.html">
+                ← Back to CSS Programs
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            HTML, CSS & JavaScript Practical Programs
+        </p>
+
+        <p>
+            CSS Program 8
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+</body>
+
+</html>

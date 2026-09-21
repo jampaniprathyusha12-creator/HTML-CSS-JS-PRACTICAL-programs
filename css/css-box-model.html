@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Box Model</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background-color: #2563eb;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+
+        /* Box Model */
+
+        .box {
+            width: 300px;
+
+            /* Content */
+            height: 120px;
+
+            /* Padding */
+            padding: 25px;
+
+            /* Border */
+            border: 8px solid #2563eb;
+
+            /* Margin */
+            margin: 30px auto;
+
+            background-color: #dbeafe;
+
+            text-align: center;
+        }
+
+        .content {
+            background-color: #bfdbfe;
+            padding: 15px;
+        }
+
+        .box-part {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+
+        .margin {
+            background-color: #fef3c7;
+            border: 2px dashed #d97706;
+        }
+
+        .border {
+            background-color: #fee2e2;
+            border: 4px solid #dc2626;
+        }
+
+        .padding {
+            background-color: #dcfce7;
+            border: 4px solid #16a34a;
+        }
+
+        .content-area {
+            background-color: #dbeafe;
+            border: 4px solid #2563eb;
+        }
+
+        .navigation {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .navigation a {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+        }
+
+        .navigation a:hover {
+            background-color: #1e40af;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+
+            main {
+                width: 94%;
+            }
+
+            .box {
+                width: 90%;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>
+            CSS Box Model
+        </h1>
+
+        <p>
+            Margin, Border, Padding and Content
+        </p>
+
+    </header>
+
+
+    <main>
+
+        <!-- Explanation -->
+
+        <section class="card">
+
+            <h2>
+                Box Model Demonstration
+            </h2>
+
+            <p>
+                Every HTML element is treated as a rectangular
+                box. The CSS box model consists of content,
+                padding, border and margin.
+            </p>
+
+            <div class="box">
+
+                <div class="content">
+                    Content Area
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Box Model Parts -->
+
+        <section class="card">
+
+            <h2>
+                Parts of the CSS Box Model
+            </h2>
+
+            <div class="box-part margin">
+
+                <strong>Margin</strong>
+
+                <p>
+                    Margin creates space outside the border
+                    of an element.
+                </p>
+
+            </div>
+
+
+            <div class="box-part border">
+
+                <strong>Border</strong>
+
+                <p>
+                    Border surrounds the padding and content.
+                </p>
+
+            </div>
+
+
+            <div class="box-part padding">
+
+                <strong>Padding</strong>
+
+                <p>
+                    Padding creates space between the content
+                    and the border.
+                </p>
+
+            </div>
+
+
+            <div class="box-part content-area">
+
+                <strong>Content</strong>
+
+                <p>
+                    Content is the actual text or information
+                    inside the element.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Navigation -->
+
+        <div class="navigation">
+
+            <a href="index.html">
+                ← Back to CSS Programs
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            HTML, CSS & JavaScript Practical Programs
+        </p>
+
+        <p>
+            CSS Program 5
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+</body>
+
+</html>

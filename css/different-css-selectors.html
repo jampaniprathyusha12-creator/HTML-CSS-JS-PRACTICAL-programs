@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Different CSS Selectors</title>
+
+    <style>
+        /* Element Selector */
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Class Selector */
+
+        .highlight {
+            background-color: #fef3c7;
+            color: #92400e;
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        /* ID Selector */
+
+        #special {
+            background-color: #dbeafe;
+            color: #1e40af;
+            padding: 15px;
+            border-left: 5px solid #2563eb;
+        }
+
+        /* Grouping Selector */
+
+        h2,
+        h3 {
+            color: #2563eb;
+        }
+
+        /* Attribute Selector */
+
+        input[type="text"] {
+            border: 2px solid #22c55e;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        /* Universal Selector */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: #2563eb;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .selector-box {
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 8px;
+        }
+
+        button {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1e40af;
+        }
+
+        .navigation {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .navigation a {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>
+            Different CSS Selectors
+        </h1>
+
+        <p>
+            Demonstration of CSS Selector Types
+        </p>
+
+    </header>
+
+
+    <main>
+
+        <!-- Element Selector -->
+
+        <section class="card">
+
+            <h2>
+                1. Element Selector
+            </h2>
+
+            <p>
+                This paragraph is styled using the
+                element selector.
+            </p>
+
+        </section>
+
+
+        <!-- Class Selector -->
+
+        <section class="card">
+
+            <h2>
+                2. Class Selector
+            </h2>
+
+            <p class="highlight">
+                This paragraph uses a class selector.
+            </p>
+
+        </section>
+
+
+        <!-- ID Selector -->
+
+        <section class="card">
+
+            <h2>
+                3. ID Selector
+            </h2>
+
+            <p id="special">
+                This paragraph uses an ID selector.
+            </p>
+
+        </section>
+
+
+        <!-- Grouping Selector -->
+
+        <section class="card">
+
+            <h2>
+                4. Grouping Selector
+            </h2>
+
+            <h3>
+                This heading is also styled.
+            </h3>
+
+            <p>
+                The h2 and h3 elements use the same
+                CSS rule through grouping.
+            </p>
+
+        </section>
+
+
+        <!-- Attribute Selector -->
+
+        <section class="card">
+
+            <h2>
+                5. Attribute Selector
+            </h2>
+
+            <input type="text" placeholder="Enter your name">
+
+            <br><br>
+
+            <button>
+                Submit
+            </button>
+
+        </section>
+
+
+        <!-- Universal Selector -->
+
+        <section class="card">
+
+            <h2>
+                6. Universal Selector
+            </h2>
+
+            <p>
+                The universal selector (*) applies
+                a CSS rule to all elements.
+            </p>
+
+        </section>
+
+
+        <!-- Navigation -->
+
+        <div class="navigation">
+
+            <a href="index.html">
+                ← Back to CSS Programs
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            HTML, CSS & JavaScript Practical Programs
+        </p>
+
+        <p>
+            CSS Program 2
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+</body>
+
+</html>

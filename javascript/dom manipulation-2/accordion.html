@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Accordion using JavaScript</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+
+        .accordion {
+            width: 70%;
+            margin: 20px auto;
+            text-align: left;
+        }
+
+        .question {
+            background-color: #eeeeee;
+            padding: 15px;
+            margin-top: 5px;
+            cursor: pointer;
+            border: 1px solid #333;
+            font-weight: bold;
+        }
+
+        .answer {
+            display: none;
+            padding: 15px;
+            border: 1px solid #333;
+            border-top: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Accordion</h1>
+
+    <div class="accordion">
+
+        <div class="question" onclick="toggleAnswer(0)">
+            What is HTML?
+        </div>
+
+        <div class="answer">
+            HTML is used to create the structure of a webpage.
+        </div>
+
+
+        <div class="question" onclick="toggleAnswer(1)">
+            What is CSS?
+        </div>
+
+        <div class="answer">
+            CSS is used to style and design a webpage.
+        </div>
+
+
+        <div class="question" onclick="toggleAnswer(2)">
+            What is JavaScript?
+        </div>
+
+        <div class="answer">
+            JavaScript is used to add interactivity to webpages.
+        </div>
+
+    </div>
+
+    <br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+
+        function toggleAnswer(index) {
+
+            const answers =
+                document.querySelectorAll(".answer");
+
+            if (answers[index].style.display === "block") {
+
+                answers[index].style.display = "none";
+
+            } else {
+
+                answers.forEach(function (answer) {
+                    answer.style.display = "none";
+                });
+
+                answers[index].style.display = "block";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

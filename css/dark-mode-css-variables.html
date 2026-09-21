@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dark Mode using CSS Variables</title>
+
+    <style>
+        /* CSS Variables */
+
+        :root {
+            --background: #f4f7fb;
+            --text: #1f2937;
+            --card: white;
+            --primary: #2563eb;
+            --border: #dddddd;
+        }
+
+        /* Dark Mode Variables */
+
+        .dark {
+            --background: #111827;
+            --text: #f9fafb;
+            --card: #1f2937;
+            --primary: #60a5fa;
+            --border: #374151;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+
+            background-color: var(--background);
+            color: var(--text);
+
+            transition: background-color 0.4s,
+                color 0.4s;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+
+            padding: 25px;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .card {
+            background-color: var(--card);
+
+            padding: 30px;
+            margin-bottom: 25px;
+
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            transition: background-color 0.4s;
+        }
+
+        .card h2 {
+            color: var(--primary);
+        }
+
+        .card p {
+            line-height: 1.7;
+        }
+
+        /* Dark mode checkbox */
+
+        #dark-mode {
+            display: none;
+        }
+
+        /* Apply dark mode */
+
+        #dark-mode:checked~.page {
+            --background: #111827;
+            --text: #f9fafb;
+            --card: #1f2937;
+            --primary: #60a5fa;
+            --border: #374151;
+        }
+
+        .toggle {
+            display: inline-block;
+
+            margin-top: 15px;
+            padding: 10px 20px;
+
+            background-color: white;
+            color: #2563eb;
+
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: var(--card);
+            border-top: 1px solid var(--border);
+
+            text-align: center;
+            padding: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="checkbox" id="dark-mode">
+
+
+    <div class="page">
+
+        <header>
+
+            <h1>My Webpage</h1>
+
+            <p>Dark Mode using CSS Variables</p>
+
+            <label for="dark-mode" class="toggle">
+                Toggle Dark Mode
+            </label>
+
+        </header>
+
+
+        <main class="container">
+
+            <div class="card">
+
+                <h2>About CSS Variables</h2>
+
+                <p>
+                    CSS variables allow us to store values
+                    such as colors and reuse them throughout
+                    a webpage.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>Dark Mode</h2>
+
+                <p>
+                    The checkbox changes the CSS variable
+                    values to create a dark-themed webpage.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>Responsive Design</h2>
+
+                <p>
+                    CSS variables make it easier to maintain
+                    and modify the design of a website.
+                </p>
+
+            </div>
+
+        </main>
+
+
+        <footer>
+
+            <p>© 2026 My Webpage</p>
+
+        </footer>
+
+    </div>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+</body>
+
+</html>

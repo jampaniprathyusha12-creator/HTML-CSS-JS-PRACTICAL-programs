@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Local Storage</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .container {
+            width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Local Storage Example</h2>
+
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <br>
+
+        <button onclick="saveData()">Save Name</button>
+        <button onclick="displayData()">Display Name</button>
+        <button onclick="removeData()">Remove Name</button>
+
+        <div id="output"></div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        function saveData() {
+
+            let name = document.getElementById("name").value;
+
+            if (name === "") {
+                document.getElementById("output").innerHTML =
+                    "Please enter your name.";
+                return;
+            }
+
+            localStorage.setItem("username", name);
+
+            document.getElementById("output").innerHTML =
+                "Name saved successfully!";
+        }
+
+        function displayData() {
+
+            let name = localStorage.getItem("username");
+
+            if (name) {
+                document.getElementById("output").innerHTML =
+                    "Stored Name: " + name;
+            } else {
+                document.getElementById("output").innerHTML =
+                    "No name found in localStorage.";
+            }
+        }
+
+        function removeData() {
+
+            localStorage.removeItem("username");
+
+            document.getElementById("output").innerHTML =
+                "Name removed from localStorage.";
+        }
+    </script>
+
+</body>
+
+</html>

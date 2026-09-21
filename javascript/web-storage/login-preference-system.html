@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Preference System</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            font-size: 16px;
+            margin: 8px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 8px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eeeeee;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Login Preference</h1>
+
+        <input type="text" id="username" placeholder="Enter username">
+
+        <br>
+
+        <label>
+            <input type="checkbox" id="remember">
+            Remember my username
+        </label>
+
+        <br>
+
+        <button onclick="login()">Login</button>
+
+        <button onclick="clearPreference()">Clear Preference</button>
+
+        <div id="output"></div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        window.onload = function () {
+
+            let savedUsername = localStorage.getItem("savedUsername");
+
+            if (savedUsername !== null) {
+                document.getElementById("username").value =
+                    savedUsername;
+
+                document.getElementById("remember").checked = true;
+
+                document.getElementById("output").innerHTML =
+                    "Saved username loaded automatically.";
+            }
+        };
+
+        function login() {
+
+            let username =
+                document.getElementById("username").value.trim();
+
+            let remember =
+                document.getElementById("remember").checked;
+
+            if (username === "") {
+                document.getElementById("output").innerHTML =
+                    "Please enter a username.";
+                return;
+            }
+
+            if (remember) {
+
+                localStorage.setItem(
+                    "savedUsername",
+                    username
+                );
+
+                document.getElementById("output").innerHTML =
+                    "Login preference saved for " + username + ".";
+
+            } else {
+
+                localStorage.removeItem("savedUsername");
+
+                document.getElementById("output").innerHTML =
+                    "Login successful. Preference was not saved.";
+            }
+        }
+
+        function clearPreference() {
+
+            localStorage.removeItem("savedUsername");
+
+            document.getElementById("username").value = "";
+            document.getElementById("remember").checked = false;
+
+            document.getElementById("output").innerHTML =
+                "Login preference cleared.";
+        }
+
+    </script>
+
+</body>
+
+</html>

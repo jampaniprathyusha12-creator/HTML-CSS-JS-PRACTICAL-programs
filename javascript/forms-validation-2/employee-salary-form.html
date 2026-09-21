@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Salary Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eeeeee;
+            line-height: 1.8;
+        }
+
+        .error {
+            color: red;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Employee Salary Calculator</h1>
+
+        <form id="salaryForm">
+
+            <label for="employeeName">Employee Name:</label>
+            <input type="text" id="employeeName" placeholder="Enter employee name">
+
+            <label for="basicSalary">Basic Salary:</label>
+            <input type="number" id="basicSalary" placeholder="Enter basic salary">
+
+            <p class="error" id="errorMessage"></p>
+
+            <button type="submit">Calculate Salary</button>
+
+        </form>
+
+        <div class="result" id="result">
+            Salary details will be displayed here.
+        </div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        document.getElementById("salaryForm").addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            let employeeName =
+                document.getElementById("employeeName").value.trim();
+
+            let basicSalary =
+                document.getElementById("basicSalary").value;
+
+            let errorMessage =
+                document.getElementById("errorMessage");
+
+            let result =
+                document.getElementById("result");
+
+            errorMessage.textContent = "";
+
+            if (employeeName === "") {
+                errorMessage.textContent =
+                    "Please enter employee name.";
+                return;
+            }
+
+            if (basicSalary === "" || Number(basicSalary) <= 0) {
+                errorMessage.textContent =
+                    "Please enter a valid basic salary.";
+                return;
+            }
+
+            basicSalary = Number(basicSalary);
+
+            // Salary calculations
+            let hra = basicSalary * 0.20;
+            let da = basicSalary * 0.10;
+            let grossSalary = basicSalary + hra + da;
+
+            let pf = basicSalary * 0.12;
+            let netSalary = grossSalary - pf;
+
+            result.innerHTML =
+                "<strong>Employee Name:</strong> " + employeeName + "<br>" +
+                "<strong>Basic Salary:</strong> ₹" + basicSalary.toFixed(2) + "<br>" +
+                "<strong>HRA (20%):</strong> ₹" + hra.toFixed(2) + "<br>" +
+                "<strong>DA (10%):</strong> ₹" + da.toFixed(2) + "<br>" +
+                "<strong>Gross Salary:</strong> ₹" + grossSalary.toFixed(2) + "<br>" +
+                "<strong>PF (12%):</strong> ₹" + pf.toFixed(2) + "<br>" +
+                "<strong>Net Salary:</strong> ₹" + netSalary.toFixed(2);
+        });
+    </script>
+
+</body>
+
+</html>

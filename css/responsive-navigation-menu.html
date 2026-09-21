@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Responsive Navigation Menu</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        /* Navigation Bar */
+
+        nav {
+            background-color: #0f172a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 10px;
+        }
+
+        .menu li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+        }
+
+        .menu li a:hover {
+            background-color: #2563eb;
+        }
+
+        /* Header */
+
+        header {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        /* Main */
+
+        main {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            color: #2563eb;
+        }
+
+        /* Responsive Menu */
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .menu {
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+
+            .menu li a {
+                background-color: #1e293b;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+        }
+
+        /* Footer */
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <div class="logo">
+            My Website
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="#">Home</a>
+            </li>
+
+            <li>
+                <a href="#">About</a>
+            </li>
+
+            <li>
+                <a href="#">Services</a>
+            </li>
+
+            <li>
+                <a href="#">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>
+            Responsive Navigation Menu
+        </h1>
+
+        <p>
+            HTML and CSS Responsive Design
+        </p>
+
+    </header>
+
+
+    <!-- Main Content -->
+
+    <main>
+
+        <section class="card">
+
+            <h2>
+                Responsive Navigation
+            </h2>
+
+            <p>
+                A responsive navigation menu adjusts its
+                layout according to the screen size.
+            </p>
+
+            <p>
+                On larger screens, the navigation links
+                are displayed horizontally. On smaller
+                screens, the links are displayed vertically.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            HTML, CSS & JavaScript Practical Programs
+        </p>
+
+        <p>
+            CSS Program 19
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+
+</body>
+
+</html>

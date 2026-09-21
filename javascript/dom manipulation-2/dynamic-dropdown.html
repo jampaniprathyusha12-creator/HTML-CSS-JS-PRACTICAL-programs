@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dynamic Dropdown Menu</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+
+        select {
+            padding: 10px;
+            width: 250px;
+            font-size: 16px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Dynamic Dropdown Menu</h1>
+
+    <select id="courseDropdown" onchange="showCourse()">
+        <option value="">Select a Course</option>
+    </select>
+
+    <p id="result"></p>
+
+    <br><br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        const courses = [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Python",
+            "Java",
+            "Data Science"
+        ];
+
+        const dropdown = document.getElementById("courseDropdown");
+
+        courses.forEach(function (course) {
+
+            const option = document.createElement("option");
+
+            option.value = course;
+            option.textContent = course;
+
+            dropdown.appendChild(option);
+        });
+
+        function showCourse() {
+
+            const selectedCourse = dropdown.value;
+
+            if (selectedCourse === "") {
+                document.getElementById("result").textContent = "";
+            } else {
+                document.getElementById("result").textContent =
+                    "You selected: " + selectedCourse;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

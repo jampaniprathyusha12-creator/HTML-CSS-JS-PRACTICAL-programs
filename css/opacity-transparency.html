@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Opacity and Transparency</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background-color: #2563eb;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        section {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #2563eb;
+        }
+
+        .box {
+            width: 200px;
+            height: 150px;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+
+        /* Full opacity */
+
+        .full {
+            background-color: #2563eb;
+            opacity: 1;
+        }
+
+        /* 50% opacity */
+
+        .half {
+            background-color: #2563eb;
+            opacity: 0.5;
+        }
+
+        /* Low opacity */
+
+        .low {
+            background-color: #2563eb;
+            opacity: 0.2;
+        }
+
+        /* Transparent background using rgba */
+
+        .transparent {
+            background-color: rgba(37, 99, 235, 0.4);
+            border: 3px solid #2563eb;
+            color: #1e3a8a;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <h1>
+            Opacity and Transparency
+        </h1>
+
+        <p>
+            Demonstration using CSS
+        </p>
+
+    </header>
+
+
+    <main>
+
+
+        <section>
+
+            <h2>
+                Opacity Examples
+            </h2>
+
+            <div class="box full">
+                Opacity: 1
+            </div>
+
+            <div class="box half">
+                Opacity: 0.5
+            </div>
+
+            <div class="box low">
+                Opacity: 0.2
+            </div>
+
+        </section>
+
+
+        <section>
+
+            <h2>
+                Transparency using RGBA
+            </h2>
+
+            <div class="box transparent">
+                40% Background Opacity
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            HTML and CSS Practical Programs
+        </p>
+
+        <p>
+            CSS Program 34
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Location Object</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            padding: 40px;
+        }
+
+        .container {
+            width: 550px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 8px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eee;
+            text-align: left;
+            word-break: break-all;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>JavaScript Location Object</h2>
+
+        <button onclick="showLocationInfo()">
+            Show Location Information
+        </button>
+
+        <button onclick="reloadPage()">
+            Reload Page
+        </button>
+
+        <div id="output"></div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        function showLocationInfo() {
+
+            let information =
+                "<b>Complete URL:</b> " + location.href + "<br><br>" +
+                "<b>Protocol:</b> " + location.protocol + "<br>" +
+                "<b>Hostname:</b> " + location.hostname + "<br>" +
+                "<b>Port:</b> " + location.port + "<br>" +
+                "<b>Pathname:</b> " + location.pathname;
+
+            document.getElementById("output").innerHTML = information;
+        }
+
+        function reloadPage() {
+            location.reload();
+        }
+    </script>
+
+</body>
+
+</html>

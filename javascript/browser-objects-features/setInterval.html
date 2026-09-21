@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval Demo</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #counter {
+            font-size: 40px;
+            font-weight: bold;
+            margin: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>setInterval() Demo</h1>
+
+        <p>The counter increases every second.</p>
+
+        <div id="counter">0</div>
+
+        <button onclick="startCounter()">Start</button>
+        <button onclick="stopCounter()">Stop</button>
+
+        <br><br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        let count = 0;
+        let interval;
+
+        function startCounter() {
+
+            if (interval) {
+                return;
+            }
+
+            interval = setInterval(function () {
+
+                count++;
+
+                document.getElementById("counter").textContent = count;
+
+            }, 1000);
+        }
+
+        function stopCounter() {
+
+            clearInterval(interval);
+
+            interval = null;
+        }
+
+    </script>
+
+</body>
+
+</html>

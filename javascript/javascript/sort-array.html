@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sort an Array - JavaScript</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #output {
+            font-size: 22px;
+            font-weight: bold;
+            line-height: 2;
+            margin: 30px;
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 15px;
+            text-decoration: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Program 13</h1>
+
+    <div id="output"></div>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        let numbers = [45, 12, 78, 5, 32, 20, 90];
+
+        let originalArray = [...numbers];
+
+        numbers.sort(function (a, b) {
+            return a - b;
+        });
+
+        document.getElementById("output").innerHTML =
+            "Original Array: " + originalArray.join(", ") + "<br><br>" +
+            "Sorted Array: " + numbers.join(", ");
+    </script>
+
+</body>
+
+</html>

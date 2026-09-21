@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Live Word Counter</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+
+        textarea {
+            width: 400px;
+            height: 150px;
+            padding: 10px;
+            font-size: 16px;
+            resize: none;
+        }
+
+        #counter {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Live Word Counter</h1>
+
+    <textarea id="textInput" placeholder="Type your text..." oninput="countWords()"></textarea>
+
+    <p id="counter">Words: 0</p>
+
+    <br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+
+        function countWords() {
+
+            const text =
+                document.getElementById("textInput").value.trim();
+
+            let wordCount = 0;
+
+            if (text !== "") {
+                wordCount = text.split(/\s+/).length;
+            }
+
+            document.getElementById("counter").textContent =
+                "Words: " + wordCount;
+        }
+
+    </script>
+
+</body>
+
+</html>

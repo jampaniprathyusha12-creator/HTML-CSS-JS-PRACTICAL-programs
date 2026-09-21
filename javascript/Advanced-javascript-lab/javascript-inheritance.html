@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Inheritance</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .output {
+            width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: left;
+            line-height: 1.8;
+        }
+
+        a {
+            display: inline-block;
+            margin: 20px 10px;
+            padding: 10px 15px;
+            text-decoration: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Advanced JavaScript Lab - Experiment 39</h1>
+
+    <h2>Inheritance in JavaScript</h2>
+
+    <div class="output" id="output"></div>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        // Parent class
+        class Person {
+
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            displayPerson() {
+                return `
+                    Name: ${this.name}<br>
+                    Age: ${this.age}
+                `;
+            }
+        }
+
+        // Child class inherits from Person
+        class Student extends Person {
+
+            constructor(name, age, course) {
+                super(name, age);
+                this.course = course;
+            }
+
+            displayStudent() {
+                return `
+                    ${this.displayPerson()}
+                    Course: ${this.course}
+                `;
+            }
+        }
+
+        // Creating object of child class
+        let student = new Student(
+            "Prathyusha",
+            20,
+            "B.Tech"
+        );
+
+        document.getElementById("output").innerHTML =
+            student.displayStudent();
+    </script>
+
+</body>
+
+</html>

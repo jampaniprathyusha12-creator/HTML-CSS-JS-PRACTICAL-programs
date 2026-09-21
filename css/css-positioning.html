@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Positioning</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background-color: #2563eb;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+
+        /* Static Position */
+
+        .static-box {
+            position: static;
+            background-color: #dbeafe;
+            border: 3px solid #2563eb;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        /* Relative Position */
+
+        .relative-box {
+            position: relative;
+            left: 30px;
+            background-color: #dcfce7;
+            border: 3px solid #16a34a;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        /* Absolute Position */
+
+        .absolute-container {
+            position: relative;
+            height: 180px;
+            background-color: #fef3c7;
+            border: 3px solid #d97706;
+            border-radius: 8px;
+        }
+
+        .absolute-box {
+            position: absolute;
+            top: 50px;
+            right: 30px;
+            background-color: #f97316;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        /* Sticky Position */
+
+        .sticky-box {
+            position: sticky;
+            top: 0;
+            background-color: #7c3aed;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            z-index: 10;
+        }
+
+        /* Fixed Position */
+
+        .fixed-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #dc2626;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            z-index: 20;
+        }
+
+        .space {
+            height: 500px;
+            padding: 30px;
+            background-color: #e5e7eb;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .navigation {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .navigation a {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+        }
+
+        .navigation a:hover {
+            background-color: #1e40af;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>
+            CSS Positioning
+        </h1>
+
+        <p>
+            Static, Relative, Absolute, Fixed and Sticky
+        </p>
+
+    </header>
+
+
+    <main>
+
+        <!-- Static -->
+
+        <section class="card">
+
+            <h2>
+                1. Static Position
+            </h2>
+
+            <div class="static-box">
+
+                This element uses
+                <strong>position: static</strong>.
+
+            </div>
+
+        </section>
+
+
+        <!-- Relative -->
+
+        <section class="card">
+
+            <h2>
+                2. Relative Position
+            </h2>
+
+            <div class="relative-box">
+
+                This element uses
+                <strong>position: relative</strong>.
+
+            </div>
+
+        </section>
+
+
+        <!-- Absolute -->
+
+        <section class="card">
+
+            <h2>
+                3. Absolute Position
+            </h2>
+
+            <div class="absolute-container">
+
+                Parent container
+
+                <div class="absolute-box">
+
+                    Absolute Element
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Sticky -->
+
+        <section class="card">
+
+            <h2>
+                4. Sticky Position
+            </h2>
+
+            <div class="sticky-box">
+
+                Sticky Element — Scroll the page
+
+            </div>
+
+            <div class="space">
+
+                <h3>
+                    Sticky Position Demonstration
+                </h3>
+
+                <p>
+                    Scroll the webpage to observe the
+                    sticky element.
+                </p>
+
+                <p>
+                    The element remains near the top of
+                    the screen while scrolling through
+                    its section.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Fixed -->
+
+        <section class="card">
+
+            <h2>
+                5. Fixed Position
+            </h2>
+
+            <p>
+                The red box at the bottom-right corner
+                demonstrates fixed positioning.
+            </p>
+
+        </section>
+
+
+        <!-- Fixed Element -->
+
+        <div class="fixed-box">
+
+            Fixed Position
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <div class="navigation">
+
+            <a href="index.html">
+                ← Back to CSS Programs
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            HTML, CSS & JavaScript Practical Programs
+        </p>
+
+        <p>
+            CSS Program 7
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+</body>
+
+</html>

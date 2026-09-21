@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dynamic Tooltip</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 60px;
+        }
+
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        button {
+            padding: 12px 25px;
+            cursor: pointer;
+        }
+
+        .tooltip {
+            visibility: hidden;
+            position: absolute;
+            bottom: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+
+        .tooltip-container:hover .tooltip {
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Dynamic Tooltip</h1>
+
+    <div class="tooltip-container">
+
+        <button id="myButton">
+            Hover Over Me
+        </button>
+
+    </div>
+
+    <br><br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+
+        const button =
+            document.getElementById("myButton");
+
+        const tooltip =
+            document.createElement("span");
+
+        tooltip.className = "tooltip";
+
+        tooltip.textContent =
+            "This is a dynamic tooltip!";
+
+        button.parentElement.appendChild(tooltip);
+
+    </script>
+
+</body>
+
+</html>

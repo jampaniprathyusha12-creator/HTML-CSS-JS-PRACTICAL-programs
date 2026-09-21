@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Frames and Iframes</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        /* Header */
+
+        header {
+            background: linear-gradient(135deg, #0f172a, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+        }
+
+        /* Main */
+
+        main {
+            width: 92%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .program-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .program-card h2 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            color: #4b5563;
+            margin-bottom: 30px;
+        }
+
+        /* Iframe Section */
+
+        .iframe-section {
+            background: #eff6ff;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .iframe-section h3 {
+            color: #1e40af;
+            margin-bottom: 10px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 350px;
+            border: 3px solid #2563eb;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        /* Navigation */
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .navigation a {
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .navigation a:hover {
+            background: #1e40af;
+        }
+
+        /* Footer */
+
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 27px;
+            }
+
+            main {
+                width: 94%;
+            }
+
+            .program-card {
+                padding: 20px;
+            }
+
+            iframe {
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>HTML Practical Program 7</h1>
+
+        <p>
+            Create a Webpage Using Frames / Iframes
+        </p>
+
+    </header>
+
+
+    <!-- Main Content -->
+
+    <main>
+
+        <section class="program-card">
+
+            <h2>
+                Create a Webpage Using Frames / Iframes
+            </h2>
+
+            <p class="description">
+                This webpage demonstrates the use of the HTML
+                iframe element to display another webpage inside
+                the current webpage.
+            </p>
+
+
+            <!-- Iframe Demonstration -->
+
+            <section class="iframe-section">
+
+                <h3>Iframe Demonstration</h3>
+
+                <p>
+                    The iframe element allows another webpage
+                    or web content to be embedded inside the
+                    current webpage.
+                </p>
+
+                <iframe src="https://www.example.com" title="Example Website">
+                </iframe>
+
+            </section>
+
+
+            <!-- Navigation -->
+
+            <div class="navigation">
+
+                <a href="index.html">
+                    ← Back to HTML Programs
+                </a>
+
+                <a href="../index.html">
+                    Home
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            HTML, CSS & JavaScript Practical Programs
+        </p>
+
+        <p>
+            HTML Section | Program 7 of 15
+        </p>
+
+        <p>
+            Create a Webpage Using Frames / Iframes
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

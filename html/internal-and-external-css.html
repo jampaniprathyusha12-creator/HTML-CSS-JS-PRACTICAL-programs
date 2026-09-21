@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Internal and External CSS Styling</title>
+
+    <!--
+        External CSS:
+        Normally an external CSS file is connected using:
+
+        <link rel="stylesheet" href="style.css">
+
+        For this single-file version, all styling is kept
+        inside this HTML file.
+    -->
+
+    <!-- Internal CSS -->
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg,
+                    #0f172a,
+                    #2563eb);
+
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        main {
+            width: 92%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .program-card {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .program-card h2 {
+            color: #2563eb;
+            margin-bottom: 12px;
+        }
+
+        .program-card p {
+            color: #4b5563;
+            font-size: 17px;
+        }
+
+        .external-example {
+            border-left: 5px solid #2563eb;
+            background: #eff6ff;
+        }
+
+        .internal-example {
+            border-left: 5px solid #7c3aed;
+            background: #f5f3ff;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            margin: 5px;
+            font-weight: bold;
+        }
+
+        .navigation a:hover {
+            background: #1e40af;
+        }
+
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 27px;
+            }
+
+            main {
+                width: 94%;
+            }
+
+            .program-card {
+                padding: 20px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>
+            Internal and External CSS Styling
+        </h1>
+
+        <p>
+            HTML Practical Program 11
+        </p>
+
+    </header>
+
+
+    <!-- Main Content -->
+
+    <main>
+
+        <!-- External CSS Demonstration -->
+
+        <section class="program-card external-example">
+
+            <h2>
+                External CSS
+            </h2>
+
+            <p>
+                External CSS is normally written in a
+                separate .css file and connected to an
+                HTML page using the link element.
+            </p>
+
+            <p>
+                Example:
+                &lt;link rel="stylesheet" href="style.css"&gt;
+            </p>
+
+        </section>
+
+
+        <!-- Internal CSS Demonstration -->
+
+        <section class="program-card internal-example">
+
+            <h2>
+                Internal CSS
+            </h2>
+
+            <p>
+                Internal CSS is written inside the
+                &lt;style&gt; element in the head section
+                of an HTML document.
+            </p>
+
+        </section>
+
+
+        <!-- Inline CSS Demonstration -->
+
+        <section class="program-card">
+
+            <h2>
+                Inline CSS
+            </h2>
+
+            <p style="
+                    color: #059669;
+                    font-size: 18px;
+                    font-weight: bold;
+                ">
+
+                This paragraph demonstrates inline CSS
+                using the style attribute.
+
+            </p>
+
+        </section>
+
+
+        <!-- Navigation -->
+
+        <div class="navigation">
+
+            <a href="index.html">
+                ← Back to HTML Programs
+            </a>
+
+            <a href="../index.html">
+                Home
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            HTML, CSS & JavaScript Practical Programs
+        </p>
+
+        <p>
+            HTML Section | Program 11 of 15
+        </p>
+
+        <p>
+            Create a Webpage with Internal and External CSS Styling
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

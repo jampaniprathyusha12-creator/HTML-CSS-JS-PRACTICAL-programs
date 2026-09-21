@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Border Radius Shapes</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2563eb;
+        }
+
+        .shapes {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .shape {
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Rounded rectangle */
+
+        .rectangle {
+            background-color: #2563eb;
+            border-radius: 20px;
+        }
+
+        /* Circle */
+
+        .circle {
+            background-color: #7c3aed;
+            border-radius: 50%;
+        }
+
+        /* Oval */
+
+        .oval {
+            width: 200px;
+            background-color: #059669;
+            border-radius: 50%;
+        }
+
+        /* Different corner radius */
+
+        .custom {
+            background-color: #ea580c;
+            border-radius: 10px 40px 70px 100px;
+        }
+
+        /* Pill shape */
+
+        .pill {
+            width: 220px;
+            height: 80px;
+            background-color: #db2777;
+            border-radius: 50px;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <h1>
+            Border Radius Shapes
+        </h1>
+
+        <p>
+            Creating different shapes using CSS
+        </p>
+
+    </header>
+
+
+    <main>
+
+        <section>
+
+            <h2>
+                Different Shapes
+            </h2>
+
+            <div class="shapes">
+
+
+                <div class="shape rectangle">
+                    Rounded Rectangle
+                </div>
+
+
+                <div class="shape circle">
+                    Circle
+                </div>
+
+
+                <div class="shape oval">
+                    Oval
+                </div>
+
+
+                <div class="shape custom">
+                    Custom Shape
+                </div>
+
+
+                <div class="shape pill">
+                    Pill Shape
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            HTML and CSS Practical Programs
+        </p>
+
+        <p>
+            CSS Program 33
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage vs SessionStorage</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .box {
+            display: inline-block;
+            vertical-align: top;
+            width: 40%;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 8px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eee;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+
+        @media (max-width: 600px) {
+            .box {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>LocalStorage vs SessionStorage</h1>
+
+        <input type="text" id="data" placeholder="Enter some data">
+
+        <br>
+
+        <button onclick="saveLocal()">
+            Save in localStorage
+        </button>
+
+        <button onclick="saveSession()">
+            Save in sessionStorage
+        </button>
+
+        <div class="box">
+            <h2>localStorage</h2>
+            <p>Data remains after closing the browser.</p>
+            <button onclick="getLocal()">
+                Retrieve Local Data
+            </button>
+        </div>
+
+        <div class="box">
+            <h2>sessionStorage</h2>
+            <p>Data remains only for the current browser tab.</p>
+            <button onclick="getSession()">
+                Retrieve Session Data
+            </button>
+        </div>
+
+        <div id="output">
+            Result will appear here.
+        </div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        function saveLocal() {
+
+            let data = document.getElementById("data").value;
+
+            localStorage.setItem("localData", data);
+
+            document.getElementById("output").innerHTML =
+                "Data saved in localStorage.";
+        }
+
+        function saveSession() {
+
+            let data = document.getElementById("data").value;
+
+            sessionStorage.setItem("sessionData", data);
+
+            document.getElementById("output").innerHTML =
+                "Data saved in sessionStorage.";
+        }
+
+        function getLocal() {
+
+            let data = localStorage.getItem("localData");
+
+            if (data === null) {
+                document.getElementById("output").innerHTML =
+                    "No data found in localStorage.";
+            } else {
+                document.getElementById("output").innerHTML =
+                    "localStorage Data: " + data;
+            }
+        }
+
+        function getSession() {
+
+            let data = sessionStorage.getItem("sessionData");
+
+            if (data === null) {
+                document.getElementById("output").innerHTML =
+                    "No data found in sessionStorage.";
+            } else {
+                document.getElementById("output").innerHTML =
+                    "sessionStorage Data: " + data;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

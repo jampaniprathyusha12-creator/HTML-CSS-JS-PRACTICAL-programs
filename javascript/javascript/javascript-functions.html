@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Functions</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #output {
+            font-size: 22px;
+            font-weight: bold;
+            line-height: 2;
+            margin: 30px;
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 15px;
+            text-decoration: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Program 15</h1>
+
+    <div id="output"></div>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        // Function to add two numbers
+        function add(a, b) {
+            return a + b;
+        }
+
+        // Function to subtract two numbers
+        function subtract(a, b) {
+            return a - b;
+        }
+
+        // Function to multiply two numbers
+        function multiply(a, b) {
+            return a * b;
+        }
+
+        let num1 = 20;
+        let num2 = 10;
+
+        let result1 = add(num1, num2);
+        let result2 = subtract(num1, num2);
+        let result3 = multiply(num1, num2);
+
+        document.getElementById("output").innerHTML =
+            "First Number: " + num1 + "<br>" +
+            "Second Number: " + num2 + "<br><br>" +
+            "Addition: " + result1 + "<br>" +
+            "Subtraction: " + result2 + "<br>" +
+            "Multiplication: " + result3;
+    </script>
+
+</body>
+
+</html>

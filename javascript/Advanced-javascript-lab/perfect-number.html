@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Perfect Number</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Perfect Number Checker</h2>
+
+    <input type="number" id="num" placeholder="Enter a number">
+    <br>
+
+    <button onclick="checkPerfect()">Check Perfect Number</button>
+
+    <div id="output"></div>
+
+    <br>
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        function checkPerfect() {
+            let num = Number(document.getElementById("num").value);
+            let sum = 0;
+
+            for (let i = 1; i < num; i++) {
+                if (num % i === 0) {
+                    sum += i;
+                }
+            }
+
+            if (sum === num && num > 0) {
+                document.getElementById("output").innerHTML =
+                    num + " is a Perfect Number.";
+            } else {
+                document.getElementById("output").innerHTML =
+                    num + " is not a Perfect Number.";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

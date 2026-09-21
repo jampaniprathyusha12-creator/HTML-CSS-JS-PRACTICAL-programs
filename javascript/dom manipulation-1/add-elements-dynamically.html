@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Elements Dynamically</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        #container {
+            margin-top: 20px;
+        }
+
+        .item {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #333;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Add New Elements Dynamically</h2>
+
+    <button onclick="addElement()">Add New Element</button>
+
+    <div id="container"></div>
+
+    <br>
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        let count = 1;
+
+        function addElement() {
+            let newElement = document.createElement("p");
+
+            newElement.className = "item";
+            newElement.textContent = "New Element " + count;
+
+            document.getElementById("container").appendChild(newElement);
+
+            count++;
+        }
+    </script>
+
+</body>
+
+</html>

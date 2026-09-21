@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Form Validation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        form {
+            width: 300px;
+            margin: auto;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 25px;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        a {
+            display: inline-block;
+            margin: 20px 10px;
+            padding: 10px 15px;
+            text-decoration: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>DOM & Event-Based Experiment 9</h1>
+
+    <h2>Form Validation</h2>
+
+    <form onsubmit="return validateForm()">
+
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <input type="email" id="email" placeholder="Enter your email">
+
+        <input type="password" id="password" placeholder="Enter your password">
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <div id="message"></div>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        function validateForm() {
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value;
+            let message = document.getElementById("message");
+
+            if (name === "") {
+                message.innerHTML = "Please enter your name.";
+                return false;
+            }
+
+            if (email === "") {
+                message.innerHTML = "Please enter your email.";
+                return false;
+            }
+
+            if (password.length < 6) {
+                message.innerHTML = "Password must contain at least 6 characters.";
+                return false;
+            }
+
+            message.innerHTML = "Form submitted successfully!";
+            return false;
+        }
+    </script>
+
+</body>
+
+</html>

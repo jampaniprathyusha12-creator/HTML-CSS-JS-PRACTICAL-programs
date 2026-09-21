@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Arrow Functions</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #output {
+            font-size: 22px;
+            font-weight: bold;
+            line-height: 2;
+            margin: 30px;
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 15px;
+            text-decoration: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Program 16</h1>
+
+    <div id="output"></div>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        // Arrow function for addition
+        const add = (a, b) => a + b;
+
+        // Arrow function for subtraction
+        const subtract = (a, b) => a - b;
+
+        // Arrow function for multiplication
+        const multiply = (a, b) => a * b;
+
+        let num1 = 20;
+        let num2 = 10;
+
+        document.getElementById("output").innerHTML =
+            "First Number: " + num1 + "<br>" +
+            "Second Number: " + num2 + "<br><br>" +
+            "Addition: " + add(num1, num2) + "<br>" +
+            "Subtraction: " + subtract(num1, num2) + "<br>" +
+            "Multiplication: " + multiply(num1, num2);
+    </script>
+
+</body>
+
+</html>

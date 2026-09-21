@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Box Shadow and Text Shadow</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            text-shadow: 3px 3px 5px #1e293b;
+        }
+
+        main {
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        section {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+        }
+
+        h2 {
+            color: #2563eb;
+        }
+
+        /* Box Shadow */
+
+        .box-shadow {
+            padding: 35px;
+            background-color: white;
+            border-radius: 12px;
+
+            box-shadow:
+                8px 8px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Text Shadow */
+
+        .text-shadow {
+            padding: 35px;
+            background-color: #eff6ff;
+            border-radius: 12px;
+        }
+
+        .text-shadow h3 {
+            font-size: 30px;
+            color: #2563eb;
+
+            text-shadow:
+                3px 3px 4px #94a3b8;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <h1>
+            CSS Shadows
+        </h1>
+
+        <p>
+            Demonstration of Box Shadow and Text Shadow
+        </p>
+
+    </header>
+
+
+    <main>
+
+
+        <section>
+
+            <h2>
+                Box Shadow
+            </h2>
+
+            <div class="box-shadow">
+
+                <h3>
+                    Box Shadow Example
+                </h3>
+
+                <p>
+                    This box uses the CSS box-shadow
+                    property to create a shadow around it.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section>
+
+            <h2>
+                Text Shadow
+            </h2>
+
+            <div class="text-shadow">
+
+                <h3>
+                    Text Shadow Example
+                </h3>
+
+                <p>
+                    This heading uses the CSS text-shadow
+                    property.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            HTML and CSS Practical Programs
+        </p>
+
+        <p>
+            CSS Program 32
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+
+</body>
+
+</html>

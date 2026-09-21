@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Width, Height and Sizing Properties</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background-color: #2563eb;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+
+        /* Fixed Width and Height */
+
+        .fixed-size {
+            width: 300px;
+            height: 120px;
+            background-color: #dbeafe;
+            border: 3px solid #2563eb;
+            padding: 20px;
+            margin: 15px auto;
+            text-align: center;
+        }
+
+        /* Percentage Width */
+
+        .percentage-width {
+            width: 70%;
+            background-color: #dcfce7;
+            border: 3px solid #16a34a;
+            padding: 20px;
+            margin: 15px auto;
+            text-align: center;
+        }
+
+        /* Maximum Width */
+
+        .max-width {
+            width: 100%;
+            max-width: 600px;
+            background-color: #fef3c7;
+            border: 3px solid #d97706;
+            padding: 20px;
+            margin: 15px auto;
+            text-align: center;
+        }
+
+        /* Minimum Width */
+
+        .min-width {
+            min-width: 250px;
+            background-color: #fee2e2;
+            border: 3px solid #dc2626;
+            padding: 20px;
+            margin: 15px auto;
+            text-align: center;
+        }
+
+        /* Viewport Height */
+
+        .viewport-height {
+            height: 20vh;
+            background-color: #ede9fe;
+            border: 3px solid #7c3aed;
+            padding: 20px;
+            margin: 15px auto;
+            text-align: center;
+        }
+
+        .navigation {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .navigation a {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+        }
+
+        .navigation a:hover {
+            background-color: #1e40af;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+
+            main {
+                width: 94%;
+            }
+
+            .fixed-size {
+                width: 90%;
+            }
+
+            .percentage-width {
+                width: 100%;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>
+            Width, Height and Sizing Properties
+        </h1>
+
+        <p>
+            Demonstration of CSS sizing properties
+        </p>
+
+    </header>
+
+
+    <main>
+
+        <!-- Fixed Width and Height -->
+
+        <section class="card">
+
+            <h2>
+                1. Fixed Width and Height
+            </h2>
+
+            <div class="fixed-size">
+
+                Width: 300px<br>
+                Height: 120px
+
+            </div>
+
+        </section>
+
+
+        <!-- Percentage Width -->
+
+        <section class="card">
+
+            <h2>
+                2. Percentage Width
+            </h2>
+
+            <div class="percentage-width">
+
+                Width: 70% of the parent element
+
+            </div>
+
+        </section>
+
+
+        <!-- Maximum Width -->
+
+        <section class="card">
+
+            <h2>
+                3. Maximum Width
+            </h2>
+
+            <div class="max-width">
+
+                Maximum width: 600px
+
+            </div>
+
+        </section>
+
+
+        <!-- Minimum Width -->
+
+        <section class="card">
+
+            <h2>
+                4. Minimum Width
+            </h2>
+
+            <div class="min-width">
+
+                Minimum width: 250px
+
+            </div>
+
+        </section>
+
+
+        <!-- Viewport Height -->
+
+        <section class="card">
+
+            <h2>
+                5. Viewport Height
+            </h2>
+
+            <div class="viewport-height">
+
+                Height: 20vh
+
+            </div>
+
+        </section>
+
+
+        <!-- Explanation -->
+
+        <section class="card">
+
+            <h2>
+                Sizing Properties Used
+            </h2>
+
+            <p>
+                <strong>width:</strong>
+                Defines the width of an element.
+            </p>
+
+            <p>
+                <strong>height:</strong>
+                Defines the height of an element.
+            </p>
+
+            <p>
+                <strong>max-width:</strong>
+                Sets the maximum width of an element.
+            </p>
+
+            <p>
+                <strong>min-width:</strong>
+                Sets the minimum width of an element.
+            </p>
+
+            <p>
+                <strong>vh:</strong>
+                Represents a percentage of the viewport height.
+            </p>
+
+        </section>
+
+
+        <!-- Navigation -->
+
+        <div class="navigation">
+
+            <a href="index.html">
+                ← Back to CSS Programs
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            HTML, CSS & JavaScript Practical Programs
+        </p>
+
+        <p>
+            CSS Program 6
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Strings and String Methods</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #output {
+            font-size: 20px;
+            line-height: 2;
+            margin: 30px;
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 15px;
+            text-decoration: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Program 17</h1>
+
+    <div id="output"></div>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        let text = "JavaScript Programming";
+
+        let length = text.length;
+        let upperCase = text.toUpperCase();
+        let lowerCase = text.toLowerCase();
+        let slice = text.slice(0, 10);
+        let replaced = text.replace("JavaScript", "Web");
+        let includes = text.includes("Programming");
+
+        document.getElementById("output").innerHTML =
+            "Original String: " + text + "<br>" +
+            "Length: " + length + "<br>" +
+            "Uppercase: " + upperCase + "<br>" +
+            "Lowercase: " + lowerCase + "<br>" +
+            "Slice: " + slice + "<br>" +
+            "Replace: " + replaced + "<br>" +
+            "Includes 'Programming': " + includes;
+    </script>
+
+</body>
+
+</html>

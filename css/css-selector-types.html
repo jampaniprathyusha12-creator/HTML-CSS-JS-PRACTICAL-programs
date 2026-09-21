@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Selectors</title>
+
+    <style>
+        /* Universal Selector */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Element Selector */
+        p {
+            font-size: 18px;
+            color: #334155;
+        }
+
+        /* Class Selector */
+        .highlight {
+            background-color: #dbeafe;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        /* ID Selector */
+        #main-heading {
+            color: #2563eb;
+            text-align: center;
+        }
+
+        /* Attribute Selector */
+        input[type="email"] {
+            border: 2px solid #2563eb;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        /* Grouping Selector */
+        h2,
+        h3 {
+            color: #7c3aed;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            color: white;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        section {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .example {
+            padding: 20px;
+            background-color: #eff6ff;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        input {
+            margin-top: 10px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <h1>
+            CSS Selectors
+        </h1>
+
+        <p style="color: white;">
+            Demonstration of Different CSS Selectors
+        </p>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- Universal Selector -->
+
+        <section>
+
+            <h2>
+                Universal Selector
+            </h2>
+
+            <div class="example">
+
+                <p>
+                    The universal selector (*) applies
+                    styles to all elements.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Element Selector -->
+
+        <section>
+
+            <h2>
+                Element Selector
+            </h2>
+
+            <div class="example">
+
+                <p>
+                    This paragraph is styled using
+                    the element selector.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Class Selector -->
+
+        <section>
+
+            <h2>
+                Class Selector
+            </h2>
+
+            <div class="example">
+
+                <p class="highlight">
+                    This paragraph uses the class selector.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ID Selector -->
+
+        <section>
+
+            <h2>
+                ID Selector
+            </h2>
+
+            <div class="example">
+
+                <h3 id="main-heading">
+                    This heading uses an ID selector.
+                </h3>
+
+            </div>
+
+        </section>
+
+
+        <!-- Attribute Selector -->
+
+        <section>
+
+            <h2>
+                Attribute Selector
+            </h2>
+
+            <div class="example">
+
+                <label for="email">
+                    Email:
+                </label>
+
+                <br>
+
+                <input type="email" id="email" placeholder="Enter your email">
+
+            </div>
+
+        </section>
+
+
+        <!-- Grouping Selector -->
+
+        <section>
+
+            <h2>
+                Grouping Selector
+            </h2>
+
+            <div class="example">
+
+                <h3>
+                    Heading 3
+                </h3>
+
+                <p>
+                    Multiple selectors can be grouped
+                    together using a comma.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p style="color: white;">
+            HTML, CSS & JavaScript Practical Programs
+        </p>
+
+        <p style="color: white;">
+            CSS Program 27
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+
+</body>
+
+</html>

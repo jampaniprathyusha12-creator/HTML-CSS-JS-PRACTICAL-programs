@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Object</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 550px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eeeeee;
+            line-height: 1.8;
+            word-break: break-all;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Location Object Demo</h1>
+
+        <button onclick="showLocation()">Show Location Information</button>
+
+        <div id="output">
+            Click the button to display the current webpage location.
+        </div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        function showLocation() {
+
+            let output = document.getElementById("output");
+
+            output.innerHTML =
+                "<strong>Full URL:</strong> " + location.href + "<br>" +
+                "<strong>Protocol:</strong> " + location.protocol + "<br>" +
+                "<strong>Host:</strong> " + location.host + "<br>" +
+                "<strong>Hostname:</strong> " + location.hostname + "<br>" +
+                "<strong>Path:</strong> " + location.pathname;
+        }
+
+    </script>
+
+</body>
+
+</html>

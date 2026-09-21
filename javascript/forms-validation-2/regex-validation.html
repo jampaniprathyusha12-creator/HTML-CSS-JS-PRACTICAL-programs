@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation Using Regular Expressions</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        .success {
+            color: green;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Registration Form</h1>
+
+        <form id="registrationForm">
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+            <span class="error" id="nameError"></span>
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile" placeholder="Enter 10-digit mobile number">
+            <span class="error" id="mobileError"></span>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" placeholder="Enter your email">
+            <span class="error" id="emailError"></span>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+        <p class="success" id="successMessage"></p>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let mobile = document.getElementById("mobile").value.trim();
+            let email = document.getElementById("email").value.trim();
+
+            let valid = true;
+
+            document.getElementById("nameError").textContent = "";
+            document.getElementById("mobileError").textContent = "";
+            document.getElementById("emailError").textContent = "";
+            document.getElementById("successMessage").textContent = "";
+
+            // Regular expression for name
+            let namePattern = /^[A-Za-z ]+$/;
+
+            // Regular expression for Indian mobile number
+            let mobilePattern = /^[6-9][0-9]{9}$/;
+
+            // Regular expression for email
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (name === "") {
+                document.getElementById("nameError").textContent =
+                    "Name is required.";
+                valid = false;
+            }
+            else if (!namePattern.test(name)) {
+                document.getElementById("nameError").textContent =
+                    "Name must contain only alphabets.";
+                valid = false;
+            }
+
+            if (mobile === "") {
+                document.getElementById("mobileError").textContent =
+                    "Mobile number is required.";
+                valid = false;
+            }
+            else if (!mobilePattern.test(mobile)) {
+                document.getElementById("mobileError").textContent =
+                    "Enter a valid 10-digit mobile number.";
+                valid = false;
+            }
+
+            if (email === "") {
+                document.getElementById("emailError").textContent =
+                    "Email is required.";
+                valid = false;
+            }
+            else if (!emailPattern.test(email)) {
+                document.getElementById("emailError").textContent =
+                    "Enter a valid email address.";
+                valid = false;
+            }
+
+            if (valid) {
+                document.getElementById("successMessage").textContent =
+                    "Form submitted successfully!";
+            }
+        });
+    </script>
+
+</body>
+
+</html>

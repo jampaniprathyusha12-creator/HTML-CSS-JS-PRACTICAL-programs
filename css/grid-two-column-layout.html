@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Two Column Grid Layout</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        /* Two-column layout */
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+        }
+
+        .content,
+        .sidebar {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #2563eb;
+        }
+
+        .content p {
+            line-height: 1.7;
+        }
+
+        .sidebar ul {
+            padding-left: 20px;
+            line-height: 2;
+        }
+
+        .sidebar li::marker {
+            color: #2563eb;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 700px) {
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <h1>
+            Two-Column Webpage
+        </h1>
+
+        <p>
+            Created using CSS Grid
+        </p>
+
+    </header>
+
+
+    <main class="container">
+
+
+        <section class="content">
+
+            <h2>
+                Main Content
+            </h2>
+
+            <p>
+                CSS Grid is a powerful layout system that
+                allows us to create rows and columns easily.
+            </p>
+
+            <p>
+                In this example, the webpage is divided into
+                two columns. The first column contains the
+                main content and the second column contains
+                a sidebar.
+            </p>
+
+            <p>
+                The layout automatically changes to a single
+                column on smaller screens using a media query.
+            </p>
+
+        </section>
+
+
+        <aside class="sidebar">
+
+            <h2>
+                Sidebar
+            </h2>
+
+            <ul>
+
+                <li>Home</li>
+
+                <li>About</li>
+
+                <li>Services</li>
+
+                <li>Projects</li>
+
+                <li>Contact</li>
+
+            </ul>
+
+        </aside>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            HTML and CSS Practical Programs
+        </p>
+
+        <p>
+            CSS Program 48
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search and Filter Table</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        input {
+            padding: 10px;
+            width: 300px;
+            margin: 15px;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 60%;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        th {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Search and Filter Table Records</h2>
+
+    <input type="text" id="search" placeholder="Search by name or course" onkeyup="filterTable()">
+
+    <table id="studentTable">
+        <tr>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Marks</th>
+        </tr>
+
+        <tr>
+            <td>Prathyusha</td>
+            <td>B.Tech</td>
+            <td>90</td>
+        </tr>
+
+        <tr>
+            <td>shanmukha priya</td>
+            <td>BCA</td>
+            <td>85</td>
+        </tr>
+
+        <tr>
+            <td>sri Mahi</td>
+            <td>B.Tech</td>
+            <td>92</td>
+        </tr>
+
+        <tr>
+            <td>manvitha</td>
+            <td>B.Sc</td>
+            <td>78</td>
+        </tr>
+    </table>
+
+    <br>
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        function filterTable() {
+            let input = document.getElementById("search");
+            let filter = input.value.toLowerCase();
+
+            let table = document.getElementById("studentTable");
+            let rows = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < rows.length; i++) {
+                let rowText = rows[i].textContent.toLowerCase();
+
+                if (rowText.includes(filter)) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

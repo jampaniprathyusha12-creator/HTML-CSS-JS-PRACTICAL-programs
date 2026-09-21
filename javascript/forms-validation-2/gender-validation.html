@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gender Selection Validation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .container {
+            width: 400px;
+            max-width: 90%;
+            margin: auto;
+        }
+
+        .gender-options {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .gender-options label {
+            margin-right: 20px;
+        }
+
+        button {
+            padding: 10px 25px;
+            margin-top: 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Gender Selection</h1>
+
+        <form id="genderForm">
+
+            <p><strong>Select Gender:</strong></p>
+
+            <div class="gender-options">
+
+                <label>
+                    <input type="radio" name="gender" value="Male">
+                    Male
+                </label>
+
+                <label>
+                    <input type="radio" name="gender" value="Female">
+                    Female
+                </label>
+
+                <label>
+                    <input type="radio" name="gender" value="Other">
+                    Other
+                </label>
+
+            </div>
+
+            <button type="submit">Validate</button>
+
+        </form>
+
+        <p id="message"></p>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        document.getElementById("genderForm").addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            let selectedGender =
+                document.querySelector('input[name="gender"]:checked');
+
+            let message = document.getElementById("message");
+
+            if (selectedGender === null) {
+                message.textContent = "Please select a gender.";
+                message.style.color = "red";
+            }
+            else {
+                message.textContent =
+                    "Selected gender: " + selectedGender.value;
+                message.style.color = "green";
+            }
+        });
+    </script>
+
+</body>
+
+</html>

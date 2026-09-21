@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Arrays and Array Methods</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #output {
+            font-size: 20px;
+            line-height: 2;
+            margin: 30px;
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 15px;
+            text-decoration: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Program 18</h1>
+
+    <div id="output"></div>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        let fruits = ["Apple", "Banana", "Mango"];
+
+        let original = fruits.join(", ");
+
+        fruits.push("Orange");
+        let afterPush = fruits.join(", ");
+
+        fruits.pop();
+        let afterPop = fruits.join(", ");
+
+        fruits.unshift("Grapes");
+        let afterUnshift = fruits.join(", ");
+
+        fruits.shift();
+        let afterShift = fruits.join(", ");
+
+        let reversed = [...fruits].reverse().join(", ");
+
+        document.getElementById("output").innerHTML =
+            "Original Array: " + original + "<br>" +
+            "After push(): " + afterPush + "<br>" +
+            "After pop(): " + afterPop + "<br>" +
+            "After unshift(): " + afterUnshift + "<br>" +
+            "After shift(): " + afterShift + "<br>" +
+            "After reverse(): " + reversed;
+    </script>
+
+</body>
+
+</html>

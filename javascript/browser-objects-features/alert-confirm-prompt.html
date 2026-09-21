@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert Confirm Prompt</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eeeeee;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>JavaScript Dialog Boxes</h1>
+
+        <button onclick="showAlert()">Alert</button>
+        <button onclick="showConfirm()">Confirm</button>
+        <button onclick="showPrompt()">Prompt</button>
+
+        <div id="output">
+            Click a button to see the result.
+        </div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        function showAlert() {
+
+            window.alert("Welcome to JavaScript!");
+
+            document.getElementById("output").textContent =
+                "Alert message was displayed.";
+        }
+
+
+        function showConfirm() {
+
+            let result = window.confirm("Do you want to continue?");
+
+            if (result) {
+                document.getElementById("output").textContent =
+                    "You clicked OK.";
+            } else {
+                document.getElementById("output").textContent =
+                    "You clicked Cancel.";
+            }
+        }
+
+
+        function showPrompt() {
+
+            let name = window.prompt("Enter your name:");
+
+            if (name === null) {
+
+                document.getElementById("output").textContent =
+                    "You cancelled the prompt.";
+
+            } else if (name.trim() === "") {
+
+                document.getElementById("output").textContent =
+                    "You did not enter a name.";
+
+            } else {
+
+                document.getElementById("output").textContent =
+                    "Hello, " + name + "!";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

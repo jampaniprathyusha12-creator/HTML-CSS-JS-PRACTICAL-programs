@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Click Counter</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #count {
+            font-size: 30px;
+            margin: 25px;
+            color: blue;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Double-Click Counter</h1>
+
+    <p id="count">Double Clicks: 0</p>
+
+    <button ondblclick="countDoubleClicks()">Double Click Me</button>
+
+    <br><br><br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        let doubleClicks = 0;
+
+        function countDoubleClicks() {
+            doubleClicks++;
+            document.getElementById("count").textContent =
+                "Double Clicks: " + doubleClicks;
+        }
+    </script>
+
+</body>
+
+</html>

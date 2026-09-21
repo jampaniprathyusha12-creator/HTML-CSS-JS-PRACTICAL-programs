@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restore Form Data</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input,
+        textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #output {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #eeeeee;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Restore Form Data</h1>
+
+        <form id="myForm">
+
+            <input type="text" id="name" placeholder="Enter your name">
+
+            <input type="email" id="email" placeholder="Enter your email">
+
+            <textarea id="message" placeholder="Enter your message"></textarea>
+
+            <br>
+
+            <button type="button" onclick="saveData()">
+                Save Data
+            </button>
+
+            <button type="button" onclick="clearData()">
+                Clear Data
+            </button>
+
+        </form>
+
+        <div id="output">
+            Enter your details and save them.
+        </div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        function saveData() {
+
+            let name =
+                document.getElementById("name").value;
+
+            let email =
+                document.getElementById("email").value;
+
+            let message =
+                document.getElementById("message").value;
+
+            localStorage.setItem("restoreName", name);
+            localStorage.setItem("restoreEmail", email);
+            localStorage.setItem("restoreMessage", message);
+
+            document.getElementById("output").innerHTML =
+                "Form data saved successfully.";
+        }
+
+        window.onload = function () {
+
+            let savedName =
+                localStorage.getItem("restoreName");
+
+            let savedEmail =
+                localStorage.getItem("restoreEmail");
+
+            let savedMessage =
+                localStorage.getItem("restoreMessage");
+
+            if (
+                savedName !== null ||
+                savedEmail !== null ||
+                savedMessage !== null
+            ) {
+
+                document.getElementById("name").value =
+                    savedName || "";
+
+                document.getElementById("email").value =
+                    savedEmail || "";
+
+                document.getElementById("message").value =
+                    savedMessage || "";
+
+                document.getElementById("output").innerHTML =
+                    "Previously entered data restored.";
+            }
+        };
+
+        function clearData() {
+
+            localStorage.removeItem("restoreName");
+            localStorage.removeItem("restoreEmail");
+            localStorage.removeItem("restoreMessage");
+
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+
+            document.getElementById("output").innerHTML =
+                "Saved form data cleared.";
+        }
+
+    </script>
+
+</body>
+
+</html>

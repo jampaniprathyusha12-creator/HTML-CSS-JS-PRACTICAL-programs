@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Application using localStorage</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 6px;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #eeeeee;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>CRUD Application</h1>
+
+        <input type="text" id="name" placeholder="Enter Name">
+
+        <input type="text" id="course" placeholder="Enter Course">
+
+        <br>
+
+        <button id="saveButton" onclick="saveRecord()">
+            Add Record
+        </button>
+
+        <button onclick="clearAll()">
+            Clear All
+        </button>
+
+        <div id="output"></div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        let records =
+            JSON.parse(localStorage.getItem("crudRecords")) || [];
+
+        let editIndex = -1;
+
+        // CREATE
+        function saveRecord() {
+
+            let name =
+                document.getElementById("name").value.trim();
+
+            let course =
+                document.getElementById("course").value.trim();
+
+            if (name === "" || course === "") {
+                alert("Please enter both name and course.");
+                return;
+            }
+
+            let record = {
+                name: name,
+                course: course
+            };
+
+            if (editIndex === -1) {
+
+                // Create new record
+                records.push(record);
+
+            } else {
+
+                // Update existing record
+                records[editIndex] = record;
+
+                editIndex = -1;
+
+                document.getElementById("saveButton").innerHTML =
+                    "Add Record";
+            }
+
+            localStorage.setItem(
+                "crudRecords",
+                JSON.stringify(records)
+            );
+
+            clearInputs();
+            displayRecords();
+        }
+
+        // READ
+        function displayRecords() {
+
+            let output = `
+                <h2>Student Records</h2>
+
+                <table>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Name</th>
+                        <th>Course</th>
+                        <th>Actions</th>
+                    </tr>
+            `;
+
+            if (records.length === 0) {
+
+                output += `
+                    <tr>
+                        <td colspan="4">
+                            No records available.
+                        </td>
+                    </tr>
+                `;
+
+            } else {
+
+                records.forEach(function (record, index) {
+
+                    output += `
+                        <tr>
+                            <td>${index + 1}</td>
+                            <td>${record.name}</td>
+                            <td>${record.course}</td>
+                            <td>
+                                <button onclick="editRecord(${index})">
+                                    Edit
+                                </button>
+
+                                <button onclick="deleteRecord(${index})">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                    `;
+                });
+            }
+
+            output += "</table>";
+
+            document.getElementById("output").innerHTML =
+                output;
+        }
+
+        // UPDATE
+        function editRecord(index) {
+
+            document.getElementById("name").value =
+                records[index].name;
+
+            document.getElementById("course").value =
+                records[index].course;
+
+            editIndex = index;
+
+            document.getElementById("saveButton").innerHTML =
+                "Update Record";
+        }
+
+        // DELETE
+        function deleteRecord(index) {
+
+            records.splice(index, 1);
+
+            localStorage.setItem(
+                "crudRecords",
+                JSON.stringify(records)
+            );
+
+            displayRecords();
+        }
+
+        function clearInputs() {
+
+            document.getElementById("name").value = "";
+            document.getElementById("course").value = "";
+        }
+
+        function clearAll() {
+
+            records = [];
+
+            localStorage.removeItem("crudRecords");
+
+            editIndex = -1;
+
+            document.getElementById("saveButton").innerHTML =
+                "Add Record";
+
+            clearInputs();
+            displayRecords();
+        }
+
+        // Display records when page loads
+        window.onload = function () {
+            displayRecords();
+        };
+
+    </script>
+
+</body>
+
+</html>

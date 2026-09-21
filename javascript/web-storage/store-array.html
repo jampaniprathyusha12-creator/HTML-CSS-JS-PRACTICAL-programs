@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Array Using JSON</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            max-width: 550px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eeeeee;
+            line-height: 1.8;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Store Array Using JSON</h1>
+
+        <button onclick="storeArray()">Store Array</button>
+
+        <button onclick="displayArray()">Display Array</button>
+
+        <div id="output"></div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        function storeArray() {
+
+            let subjects = ["Python", "JavaScript", "Mathematics", "Data Structures"];
+
+            localStorage.setItem(
+                "subjects",
+                JSON.stringify(subjects)
+            );
+
+            document.getElementById("output").innerHTML =
+                "Array stored successfully in localStorage!";
+        }
+
+        function displayArray() {
+
+            let storedData = localStorage.getItem("subjects");
+
+            if (storedData === null) {
+                document.getElementById("output").innerHTML =
+                    "No array found in localStorage.";
+                return;
+            }
+
+            let subjects = JSON.parse(storedData);
+
+            document.getElementById("output").innerHTML =
+                "<strong>Stored Subjects:</strong><br>" +
+                subjects.join("<br>");
+        }
+
+    </script>
+
+</body>
+
+</html>

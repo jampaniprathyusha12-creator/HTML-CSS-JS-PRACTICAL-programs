@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Change HTML Content using innerHTML</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            background-color: white;
+            width: 500px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>innerHTML Example</h2>
+
+        <div id="content">
+            <p>Original HTML content.</p>
+        </div>
+
+        <button onclick="changeHTML()">
+            Change HTML Content
+        </button>
+
+        <br><br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        function changeHTML() {
+
+            document.getElementById("content").innerHTML =
+                "<h3>New HTML Content</h3>" +
+                "<p>This content was added using <b>innerHTML</b>.</p>" +
+                "<ul>" +
+                "<li>HTML</li>" +
+                "<li>CSS</li>" +
+                "<li>JavaScript</li>" +
+                "</ul>";
+        }
+
+    </script>
+
+</body>
+
+</html>

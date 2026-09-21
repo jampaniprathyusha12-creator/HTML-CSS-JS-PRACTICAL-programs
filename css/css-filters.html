@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Filters</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #2563eb;
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .filter-box {
+            text-align: center;
+        }
+
+        .filter-box img {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        /* Blur filter */
+
+        .blur img {
+            filter: blur(4px);
+        }
+
+        /* Grayscale filter */
+
+        .grayscale img {
+            filter: grayscale(100%);
+        }
+
+        /* Brightness filter */
+
+        .brightness img {
+            filter: brightness(150%);
+        }
+
+        /* Contrast filter */
+
+        .contrast img {
+            filter: contrast(180%);
+        }
+
+        .filter-box h3 {
+            color: #374151;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 600px) {
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <h1>
+            CSS Filters
+        </h1>
+
+        <p>
+            Blur, Grayscale, Brightness and Contrast
+        </p>
+
+    </header>
+
+
+    <main>
+
+        <section>
+
+            <h2>
+                CSS Filter Examples
+            </h2>
+
+            <div class="gallery">
+
+
+                <div class="filter-box blur">
+
+                    <h3>
+                        Blur
+                    </h3>
+
+                    <img src="../assets/images/brightsun.jpg" alt="Blur Effect">
+
+                </div>
+
+
+                <div class="filter-box grayscale">
+
+                    <h3>
+                        Grayscale
+                    </h3>
+
+                    <img src="../assets/images/brightsun.jpg" alt="Grayscale Effect">
+
+                </div>
+
+
+                <div class="filter-box brightness">
+
+                    <h3>
+                        Brightness
+                    </h3>
+
+                    <img src="../assets/images/brightsun.jpg" alt="Brightness Effect">
+
+                </div>
+
+
+                <div class="filter-box contrast">
+
+                    <h3>
+                        Contrast
+                    </h3>
+
+                    <img src="../assets/images/brightsun.jpg" alt="Contrast Effect">
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            HTML and CSS Practical Programs
+        </p>
+
+        <p>
+            CSS Program 43
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+
+</body>
+
+</html>

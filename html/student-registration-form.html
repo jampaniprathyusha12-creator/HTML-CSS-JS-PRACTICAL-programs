@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Registration Form</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        /* Header */
+
+        header {
+            background: linear-gradient(135deg, #0f172a, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+        }
+
+        /* Main */
+
+        main {
+            width: 92%;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .program-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .program-card h2 {
+            color: #2563eb;
+            margin-bottom: 12px;
+        }
+
+        .description {
+            color: #4b5563;
+            margin-bottom: 25px;
+        }
+
+        /* Form */
+
+        form {
+            display: grid;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            font-size: 15px;
+            font-family: inherit;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        /* Radio and Checkbox */
+
+        .options {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .option input {
+            width: auto;
+        }
+
+        /* Buttons */
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            background: #2563eb;
+            color: white;
+        }
+
+        .reset-btn {
+            background: #e2e8f0;
+            color: #1f2937;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .navigation a {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .navigation a:hover {
+            background: #1e40af;
+        }
+
+        /* Footer */
+
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            main {
+                width: 94%;
+            }
+
+            .program-card {
+                padding: 20px;
+            }
+
+            .options {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>HTML Practical Program 5</h1>
+
+        <p>
+            Create a Student Registration Form Using HTML Form Elements
+        </p>
+
+    </header>
+
+
+    <!-- Main Content -->
+
+    <main>
+
+        <section class="program-card">
+
+            <!-- Exact Experiment Heading -->
+
+            <h2>
+                Create a Student Registration Form Using HTML Form Elements
+            </h2>
+
+            <p class="description">
+                This webpage demonstrates the use of HTML form
+                elements to collect student registration details.
+            </p>
+
+
+            <!-- Registration Form -->
+
+            <form>
+
+                <!-- Name -->
+
+                <div class="form-group">
+
+                    <label for="student-name">
+                        Student Name
+                    </label>
+
+                    <input type="text" id="student-name" name="student-name" placeholder="Enter your full name"
+                        required>
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                </div>
+
+
+                <!-- Phone -->
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+
+                </div>
+
+
+                <!-- Date of Birth -->
+
+                <div class="form-group">
+
+                    <label for="dob">
+                        Date of Birth
+                    </label>
+
+                    <input type="date" id="dob" name="dob">
+
+                </div>
+
+
+                <!-- Gender -->
+
+                <div class="form-group">
+
+                    <label>
+                        Gender
+                    </label>
+
+                    <div class="options">
+
+                        <label class="option">
+
+                            <input type="radio" name="gender" value="male">
+
+                            Male
+
+                        </label>
+
+
+                        <label class="option">
+
+                            <input type="radio" name="gender" value="female">
+
+                            Female
+
+                        </label>
+
+
+                        <label class="option">
+
+                            <input type="radio" name="gender" value="other">
+
+                            Other
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Course -->
+
+                <div class="form-group">
+
+                    <label for="course">
+                        Select Course
+                    </label>
+
+                    <select id="course" name="course">
+
+                        <option value="">
+                            -- Select Course --
+                        </option>
+
+                        <option value="btech">
+                            B.Tech
+                        </option>
+
+                        <option value="bca">
+                            BCA
+                        </option>
+
+                        <option value="bsc">
+                            B.Sc
+                        </option>
+
+                        <option value="bba">
+                            BBA
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Address -->
+
+                <div class="form-group">
+
+                    <label for="address">
+                        Address
+                    </label>
+
+                    <textarea id="address" name="address" placeholder="Enter your address"></textarea>
+
+                </div>
+
+
+                <!-- Terms -->
+
+                <div class="form-group">
+
+                    <label class="option">
+
+                        <input type="checkbox" name="terms" required>
+
+                        I agree to the terms and conditions.
+
+                    </label>
+
+                </div>
+
+
+                <!-- Buttons -->
+
+                <div class="buttons">
+
+                    <button type="submit" class="submit-btn">
+                        Register
+                    </button>
+
+                    <button type="reset" class="reset-btn">
+                        Reset
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <!-- Navigation -->
+
+            <div class="navigation">
+
+                <a href="index.html">
+                    ← Back to HTML Programs
+                </a>
+
+                <a href="../index.html">
+                    Home
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            HTML, CSS & JavaScript Practical Programs
+        </p>
+
+        <p>
+            HTML Section | Program 5 of 15
+        </p>
+
+        <p>
+            Create a Student Registration Form Using HTML Form Elements
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

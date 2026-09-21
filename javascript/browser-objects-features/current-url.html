@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Webpage URL</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #url {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eeeeee;
+            word-break: break-all;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Current Webpage URL</h1>
+
+        <p>Click the button to display the current webpage URL.</p>
+
+        <button onclick="displayURL()">Show Current URL</button>
+
+        <div id="url"></div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        function displayURL() {
+            let currentURL = window.location.href;
+
+            document.getElementById("url").innerHTML =
+                "<strong>Current URL:</strong><br>" + currentURL;
+        }
+
+    </script>
+
+</body>
+
+</html>

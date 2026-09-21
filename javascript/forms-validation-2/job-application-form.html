@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 550px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 90px;
+            resize: vertical;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        .success {
+            color: green;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Job Application Form</h1>
+
+        <form id="jobForm">
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+            <span class="error" id="nameError"></span>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" placeholder="Enter your email">
+            <span class="error" id="emailError"></span>
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile" placeholder="Enter 10-digit mobile number">
+            <span class="error" id="mobileError"></span>
+
+            <label for="position">Position:</label>
+            <select id="position">
+                <option value="">Select Position</option>
+                <option value="Web Developer">Web Developer</option>
+                <option value="Data Analyst">Data Analyst</option>
+                <option value="Software Developer">Software Developer</option>
+                <option value="AI/ML Engineer">AI/ML Engineer</option>
+            </select>
+            <span class="error" id="positionError"></span>
+
+            <label for="experience">Experience:</label>
+            <input type="number" id="experience" placeholder="Years of experience">
+            <span class="error" id="experienceError"></span>
+
+            <label for="skills">Skills:</label>
+            <textarea id="skills" placeholder="Enter your skills"></textarea>
+            <span class="error" id="skillsError"></span>
+
+            <button type="submit">Apply for Job</button>
+
+        </form>
+
+        <p class="success" id="successMessage"></p>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        document.getElementById("jobForm").addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let mobile = document.getElementById("mobile").value.trim();
+            let position = document.getElementById("position").value;
+            let experience = document.getElementById("experience").value;
+            let skills = document.getElementById("skills").value.trim();
+
+            let valid = true;
+
+            // Clear previous messages
+            document.querySelectorAll(".error").forEach(function (error) {
+                error.textContent = "";
+            });
+
+            document.getElementById("successMessage").textContent = "";
+
+            // Name validation
+            if (name === "") {
+                document.getElementById("nameError").textContent =
+                    "Name is required.";
+                valid = false;
+            }
+            else if (!/^[A-Za-z ]+$/.test(name)) {
+                document.getElementById("nameError").textContent =
+                    "Name must contain only alphabets.";
+                valid = false;
+            }
+
+            // Email validation
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (email === "") {
+                document.getElementById("emailError").textContent =
+                    "Email is required.";
+                valid = false;
+            }
+            else if (!emailPattern.test(email)) {
+                document.getElementById("emailError").textContent =
+                    "Enter a valid email address.";
+                valid = false;
+            }
+
+            // Mobile validation
+            let mobilePattern = /^[6-9][0-9]{9}$/;
+
+            if (mobile === "") {
+                document.getElementById("mobileError").textContent =
+                    "Mobile number is required.";
+                valid = false;
+            }
+            else if (!mobilePattern.test(mobile)) {
+                document.getElementById("mobileError").textContent =
+                    "Enter a valid 10-digit mobile number.";
+                valid = false;
+            }
+
+            // Position validation
+            if (position === "") {
+                document.getElementById("positionError").textContent =
+                    "Please select a position.";
+                valid = false;
+            }
+
+            // Experience validation
+            if (experience === "") {
+                document.getElementById("experienceError").textContent =
+                    "Experience is required.";
+                valid = false;
+            }
+            else if (experience < 0) {
+                document.getElementById("experienceError").textContent =
+                    "Experience cannot be negative.";
+                valid = false;
+            }
+
+            // Skills validation
+            if (skills === "") {
+                document.getElementById("skillsError").textContent =
+                    "Please enter your skills.";
+                valid = false;
+            }
+
+            // Successful submission
+            if (valid) {
+                document.getElementById("successMessage").textContent =
+                    "Job application submitted successfully!";
+            }
+        });
+    </script>
+
+</body>
+
+</html>

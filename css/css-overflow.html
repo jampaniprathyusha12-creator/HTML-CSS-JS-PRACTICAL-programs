@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Overflow Properties</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        section {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #2563eb;
+        }
+
+        .box {
+            width: 100%;
+            height: 120px;
+            padding: 15px;
+            margin-top: 15px;
+            border: 3px solid #2563eb;
+            border-radius: 10px;
+            background-color: #eff6ff;
+        }
+
+        /* Overflow visible */
+
+        .visible {
+            overflow: visible;
+        }
+
+        /* Overflow hidden */
+
+        .hidden {
+            overflow: hidden;
+        }
+
+        /* Overflow scroll */
+
+        .scroll {
+            overflow: scroll;
+        }
+
+        /* Overflow auto */
+
+        .auto {
+            overflow: auto;
+        }
+
+        .long-text {
+            width: 900px;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <h1>
+            CSS Overflow Properties
+        </h1>
+
+        <p>
+            Demonstration of visible, hidden, scroll and auto
+        </p>
+
+    </header>
+
+
+    <main>
+
+
+        <section>
+
+            <h2>
+                1. Overflow: Visible
+            </h2>
+
+            <div class="box visible">
+
+                This content demonstrates the
+                <strong>visible</strong> overflow property.
+                Extra content can extend outside the box.
+
+            </div>
+
+        </section>
+
+
+        <section>
+
+            <h2>
+                2. Overflow: Hidden
+            </h2>
+
+            <div class="box hidden">
+
+                This is a long content example.
+                The overflow property is set to hidden,
+                so content outside the box is clipped
+                and cannot be seen.
+
+            </div>
+
+        </section>
+
+
+        <section>
+
+            <h2>
+                3. Overflow: Scroll
+            </h2>
+
+            <div class="box scroll">
+
+                <div class="long-text">
+
+                    This is a long content example used to
+                    demonstrate the scroll property.
+                    When the content is larger than the box,
+                    scrollbars are provided to view the
+                    remaining content.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section>
+
+            <h2>
+                4. Overflow: Auto
+            </h2>
+
+            <div class="box auto">
+
+                <div class="long-text">
+
+                    This is a long content example used to
+                    demonstrate the auto property.
+                    Scrollbars appear automatically when
+                    the content exceeds the size of the box.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            HTML and CSS Practical Programs
+        </p>
+
+        <p>
+            CSS Program 35
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+
+</body>
+
+</html>

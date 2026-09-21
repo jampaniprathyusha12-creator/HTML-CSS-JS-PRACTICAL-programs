@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Common Elements in Two Arrays</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input {
+            padding: 10px;
+            width: 300px;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Common Elements in Two Arrays</h2>
+
+    <input type="text" id="array1" placeholder="Enter first array">
+    <br>
+
+    <input type="text" id="array2" placeholder="Enter second array">
+    <br>
+
+    <button onclick="findCommonElements()">Find Common Elements</button>
+
+    <div id="output"></div>
+
+    <br>
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        function findCommonElements() {
+            let arr1 = document.getElementById("array1").value
+                .split(",").map(item => item.trim());
+
+            let arr2 = document.getElementById("array2").value
+                .split(",").map(item => item.trim());
+
+            let common = arr1.filter(element => arr2.includes(element));
+
+            common = [...new Set(common)];
+
+            if (common.length > 0) {
+                document.getElementById("output").innerHTML =
+                    "Common Elements = " + common.join(", ");
+            } else {
+                document.getElementById("output").innerHTML =
+                    "No common elements found.";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

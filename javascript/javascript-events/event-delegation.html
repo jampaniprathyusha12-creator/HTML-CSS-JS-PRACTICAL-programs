@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Event Delegation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+
+        #itemList {
+            width: 300px;
+            margin: 20px auto;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+            padding: 15px;
+            margin: 8px;
+            background-color: lightblue;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        #message {
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Event Delegation Demonstration</h1>
+
+    <p>Click any item:</p>
+
+    <ul id="itemList">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+    </ul>
+
+    <p id="message">No item selected.</p>
+
+    <br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+
+        const list = document.getElementById("itemList");
+
+        // One event listener handles all list items
+        list.addEventListener("click", function (event) {
+
+            if (event.target.tagName === "LI") {
+
+                document.getElementById("message").textContent =
+                    "You selected: " + event.target.textContent;
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

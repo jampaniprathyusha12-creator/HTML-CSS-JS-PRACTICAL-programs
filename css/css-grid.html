@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Grid Layout</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        /* CSS Grid */
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            background-color: #dbeafe;
+            border-radius: 10px;
+        }
+
+        .grid-item {
+            background-color: #2563eb;
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        /* Grid with Different Sizes */
+
+        .layout-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+
+        .content-box {
+            background-color: #eff6ff;
+            border: 2px solid #2563eb;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .content-box h3 {
+            color: #2563eb;
+            margin-top: 0;
+        }
+
+        /* Navigation */
+
+        .navigation {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .navigation a {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .navigation a:hover {
+            background-color: #1e40af;
+        }
+
+        /* Footer */
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+
+        /* Responsive Grid */
+
+        @media (max-width: 700px) {
+
+            main {
+                width: 94%;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            .layout-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>
+            CSS Grid Layout
+        </h1>
+
+        <p>
+            Demonstration of CSS Grid Properties
+        </p>
+
+    </header>
+
+
+    <!-- Main Content -->
+
+    <main>
+
+
+        <!-- Introduction -->
+
+        <section class="card">
+
+            <h2>
+                Introduction to CSS Grid
+            </h2>
+
+            <p>
+                CSS Grid is a two-dimensional layout system
+                used to arrange elements into rows and columns.
+                It helps create structured and responsive
+                webpage layouts.
+            </p>
+
+        </section>
+
+
+        <!-- Basic Grid -->
+
+        <section class="card">
+
+            <h2>
+                Basic Grid Layout
+            </h2>
+
+            <div class="grid-container">
+
+                <div class="grid-item">
+                    Item 1
+                </div>
+
+                <div class="grid-item">
+                    Item 2
+                </div>
+
+                <div class="grid-item">
+                    Item 3
+                </div>
+
+                <div class="grid-item">
+                    Item 4
+                </div>
+
+                <div class="grid-item">
+                    Item 5
+                </div>
+
+                <div class="grid-item">
+                    Item 6
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Grid Columns -->
+
+        <section class="card">
+
+            <h2>
+                Grid Column Layout
+            </h2>
+
+            <div class="layout-grid">
+
+                <div class="content-box">
+
+                    <h3>
+                        Main Content
+                    </h3>
+
+                    <p>
+                        This section occupies two parts
+                        of the available grid space.
+                    </p>
+
+                </div>
+
+
+                <div class="content-box">
+
+                    <h3>
+                        Sidebar
+                    </h3>
+
+                    <p>
+                        This section occupies one part
+                        of the available grid space.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Properties -->
+
+        <section class="card">
+
+            <h2>
+                CSS Grid Properties Used
+            </h2>
+
+            <p>
+                <strong>display: grid;</strong>
+                creates a grid container.
+            </p>
+
+            <p>
+                <strong>grid-template-columns:</strong>
+                defines the number and size of columns.
+            </p>
+
+            <p>
+                <strong>gap:</strong>
+                creates space between grid items.
+            </p>
+
+            <p>
+                <strong>repeat():</strong>
+                repeats grid columns efficiently.
+            </p>
+
+        </section>
+
+
+        <!-- Navigation -->
+
+        <div class="navigation">
+
+            <a href="index.html">
+                ← Back to CSS Programs
+            </a>
+
+        </div>
+
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            HTML, CSS & JavaScript Practical Programs
+        </p>
+
+        <p>
+            CSS Program 15
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+
+</body>
+
+</html>

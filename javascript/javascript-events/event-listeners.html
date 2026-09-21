@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>addEventListener Demonstration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>addEventListener() Demonstration</h1>
+
+    <button id="myButton">Click Me</button>
+
+    <p id="message">Click the button.</p>
+
+    <br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+
+        const button = document.getElementById("myButton");
+
+        button.addEventListener("click", showMessage);
+
+        function showMessage() {
+
+            document.getElementById("message").textContent =
+                "Event listener executed successfully!";
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ES6 Features</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .output {
+            width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: left;
+            line-height: 1.8;
+        }
+
+        a {
+            display: inline-block;
+            margin: 20px 10px;
+            padding: 10px 15px;
+            text-decoration: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Advanced JavaScript Lab - Experiment 36</h1>
+
+    <h2>ES6 Features</h2>
+
+    <div class="output" id="output"></div>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        // let
+        let name = "Prathyusha";
+
+        // const
+        const age = 20;
+
+        // Template literal
+        let message = `My name is ${name} and my age is ${age}.`;
+
+        // Array destructuring
+        let numbers = [10, 20, 30];
+        let [first, second, third] = numbers;
+
+        // Object destructuring
+        let student = {
+            course: "B.Tech",
+            department: "Computer Science"
+        };
+
+        let { course, department } = student;
+
+        document.getElementById("output").innerHTML = `
+            <strong>let:</strong> ${name}<br>
+            <strong>const:</strong> ${age}<br>
+            <strong>Template Literal:</strong> ${message}<br>
+            <strong>Array Destructuring:</strong>
+            ${first}, ${second}, ${third}<br>
+            <strong>Object Destructuring:</strong>
+            ${course}, ${department}
+        `;
+    </script>
+
+</body>
+
+</html>

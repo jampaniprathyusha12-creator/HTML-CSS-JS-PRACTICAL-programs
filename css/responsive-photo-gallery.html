@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Responsive Photo Gallery</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .photo {
+            background-color: white;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .photo img:hover {
+            transform: scale(1.05);
+        }
+
+        .photo p {
+            text-align: center;
+            font-weight: bold;
+            margin: 15px 5px 8px;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 800px) {
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            main {
+                width: 94%;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .photo img {
+                height: 250px;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <h1>
+            Responsive Photo Gallery
+        </h1>
+
+        <p>
+            Created using CSS Grid
+        </p>
+
+    </header>
+
+
+    <main>
+
+        <div class="gallery">
+
+
+            <div class="photo">
+
+                <img src="../assets/images/flowers.jpg" alt="Nature">
+
+                <p>
+                    Nature
+                </p>
+
+            </div>
+
+
+            <div class="photo">
+
+                <img src="../assets/images/mountain.jpg" alt="Mountain">
+
+                <p>
+                    Mountain
+                </p>
+
+            </div>
+
+
+            <div class="photo">
+
+                <img src="../assets/images/forest.jpg" alt="Forest">
+
+                <p>
+                    Forest
+                </p>
+
+            </div>
+
+
+            <div class="photo">
+
+                <img src="../assets/images/house.jpg" alt="Lake">
+
+                <p>
+                    Lake
+                </p>
+
+            </div>
+
+
+            <div class="photo">
+
+                <img src="../assets/images/hilss.jpg" alt="Hills">
+
+                <p>
+                    Hills
+                </p>
+
+            </div>
+
+
+            <div class="photo">
+
+                <img src="../assets/images/brightsun.jpg" alt="Trees">
+
+                <p>
+                    Trees
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            HTML, CSS & JavaScript Practical Programs
+        </p>
+
+        <p>
+            CSS Program 24
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+
+</body>
+
+</html>

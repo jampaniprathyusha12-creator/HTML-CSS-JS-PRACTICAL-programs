@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Multiple Event Listeners</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 10px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Multiple Event Listeners</h1>
+
+    <button id="myButton">Click or Move Mouse</button>
+
+    <p id="message">Perform an action on the button.</p>
+
+    <br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+
+        const button = document.getElementById("myButton");
+        const message = document.getElementById("message");
+
+        // First event listener
+        button.addEventListener("click", function () {
+            message.textContent = "Button was clicked!";
+        });
+
+        // Second event listener
+        button.addEventListener("mouseover", function () {
+            message.textContent = "Mouse is over the button!";
+        });
+
+        // Third event listener
+        button.addEventListener("mouseout", function () {
+            message.textContent = "Mouse moved out of the button!";
+        });
+
+    </script>
+
+</body>
+
+</html>

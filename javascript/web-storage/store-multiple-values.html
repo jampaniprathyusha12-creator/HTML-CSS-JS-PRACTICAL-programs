@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Multiple Values</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 550px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input {
+            display: block;
+            width: 85%;
+            padding: 10px;
+            margin: 10px auto;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eeeeee;
+            line-height: 1.8;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Store Multiple Values</h1>
+
+        <input type="text" id="name" placeholder="Enter name">
+
+        <input type="text" id="course" placeholder="Enter course">
+
+        <input type="text" id="college" placeholder="Enter college">
+
+        <button onclick="storeData()">Store Data</button>
+
+        <button onclick="displayData()">Display Data</button>
+
+        <div id="output"></div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        function storeData() {
+
+            let name = document.getElementById("name").value;
+            let course = document.getElementById("course").value;
+            let college = document.getElementById("college").value;
+
+            if (
+                name.trim() === "" ||
+                course.trim() === "" ||
+                college.trim() === ""
+            ) {
+                document.getElementById("output").innerHTML =
+                    "Please fill in all fields.";
+                return;
+            }
+
+            localStorage.setItem("studentName", name);
+            localStorage.setItem("course", course);
+            localStorage.setItem("college", college);
+
+            document.getElementById("output").innerHTML =
+                "Multiple values stored successfully!";
+        }
+
+        function displayData() {
+
+            let name = localStorage.getItem("studentName");
+            let course = localStorage.getItem("course");
+            let college = localStorage.getItem("college");
+
+            if (name === null) {
+                document.getElementById("output").innerHTML =
+                    "No data found in localStorage.";
+                return;
+            }
+
+            document.getElementById("output").innerHTML =
+                "<strong>Name:</strong> " + name + "<br>" +
+                "<strong>Course:</strong> " + course + "<br>" +
+                "<strong>College:</strong> " + college;
+        }
+
+    </script>
+
+</body>
+
+</html>

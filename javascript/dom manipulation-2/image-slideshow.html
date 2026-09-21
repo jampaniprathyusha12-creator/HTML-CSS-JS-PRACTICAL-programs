@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Slideshow</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+
+        #slideshow {
+            margin: 20px auto;
+        }
+
+        #slideImage {
+            width: 500px;
+            height: 300px;
+            object-fit: cover;
+            border: 3px solid #333;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        #caption {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Image Slideshow</h1>
+
+    <div id="slideshow"></div>
+
+    <p id="caption"></p>
+
+    <button onclick="previousImage()">Previous</button>
+    <button onclick="nextImage()">Next</button>
+
+    <br><br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+
+        const images = [
+            {
+                title: "Mountain",
+                src: "../../assets/images/mountain.jpg"
+            },
+            {
+                title: "Forest",
+                src: "../../assets/images/forest.jpg"
+            },
+            {
+                title: "Sunset",
+                src: "../../assets/images/sunset.jpg"
+            },
+            {
+                title: "Ocean",
+                src: "../../assets/images/ocean.jpg"
+            }
+        ];
+
+        let currentIndex = 0;
+
+        function displayImage() {
+
+            const slideshow =
+                document.getElementById("slideshow");
+
+            slideshow.innerHTML = "";
+
+            const image =
+                document.createElement("img");
+
+            image.id = "slideImage";
+
+            image.src = images[currentIndex].src;
+
+            image.alt = images[currentIndex].title;
+
+            slideshow.appendChild(image);
+
+            document.getElementById("caption").textContent =
+                images[currentIndex].title;
+        }
+
+        function nextImage() {
+
+            currentIndex++;
+
+            if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+
+            displayImage();
+        }
+
+        function previousImage() {
+
+            currentIndex--;
+
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            }
+
+            displayImage();
+        }
+
+        displayImage();
+
+    </script>
+
+</body>
+
+</html>

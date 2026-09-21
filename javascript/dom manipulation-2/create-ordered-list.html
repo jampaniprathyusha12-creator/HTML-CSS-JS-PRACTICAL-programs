@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dynamic Ordered List</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+
+        input {
+            padding: 10px;
+            width: 250px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        ol {
+            display: inline-block;
+            text-align: left;
+        }
+
+        li {
+            margin: 8px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Dynamic Ordered List</h1>
+
+    <input type="text" id="itemInput" placeholder="Enter an item">
+
+    <button onclick="addItem()">Add Item</button>
+
+    <ol id="itemList"></ol>
+
+    <br><br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        function addItem() {
+
+            const input = document.getElementById("itemInput");
+            const value = input.value.trim();
+
+            if (value === "") {
+                alert("Please enter an item.");
+                return;
+            }
+
+            const li = document.createElement("li");
+
+            li.textContent = value;
+
+            document.getElementById("itemList").appendChild(li);
+
+            input.value = "";
+            input.focus();
+        }
+    </script>
+
+</body>
+
+</html>

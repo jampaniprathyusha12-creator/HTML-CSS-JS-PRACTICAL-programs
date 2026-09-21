@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks Database</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 6px;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #eeeeee;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Student Marks Database</h1>
+
+        <input type="text" id="name" placeholder="Student Name">
+        <input type="text" id="rollNo" placeholder="Roll Number">
+
+        <br>
+
+        <input type="number" id="maths" placeholder="Maths Marks">
+        <input type="number" id="python" placeholder="Python Marks">
+        <input type="number" id="javascript" placeholder="JavaScript Marks">
+
+        <br>
+
+        <button onclick="addStudent()">
+            Add Student
+        </button>
+
+        <button onclick="clearDatabase()">
+            Clear Database
+        </button>
+
+        <div id="output"></div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        let students =
+            JSON.parse(localStorage.getItem("marksDatabase")) || [];
+
+        function addStudent() {
+
+            let name =
+                document.getElementById("name").value.trim();
+
+            let rollNo =
+                document.getElementById("rollNo").value.trim();
+
+            let maths =
+                Number(document.getElementById("maths").value);
+
+            let python =
+                Number(document.getElementById("python").value);
+
+            let javascript =
+                Number(document.getElementById("javascript").value);
+
+            if (
+                name === "" ||
+                rollNo === "" ||
+                maths < 0 ||
+                maths > 100 ||
+                python < 0 ||
+                python > 100 ||
+                javascript < 0 ||
+                javascript > 100
+            ) {
+                alert("Please enter valid student details and marks between 0 and 100.");
+                return;
+            }
+
+            let total = maths + python + javascript;
+            let average = total / 3;
+
+            let grade;
+
+            if (average >= 90) {
+                grade = "A";
+            } else if (average >= 75) {
+                grade = "B";
+            } else if (average >= 60) {
+                grade = "C";
+            } else if (average >= 50) {
+                grade = "D";
+            } else {
+                grade = "F";
+            }
+
+            students.push({
+                name: name,
+                rollNo: rollNo,
+                maths: maths,
+                python: python,
+                javascript: javascript,
+                total: total,
+                average: average.toFixed(2),
+                grade: grade
+            });
+
+            localStorage.setItem(
+                "marksDatabase",
+                JSON.stringify(students)
+            );
+
+            displayStudents();
+
+            document.getElementById("name").value = "";
+            document.getElementById("rollNo").value = "";
+            document.getElementById("maths").value = "";
+            document.getElementById("python").value = "";
+            document.getElementById("javascript").value = "";
+        }
+
+        function displayStudents() {
+
+            let output = `
+                <h2>Student Marks Records</h2>
+
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll No</th>
+                        <th>Maths</th>
+                        <th>Python</th>
+                        <th>JavaScript</th>
+                        <th>Total</th>
+                        <th>Average</th>
+                        <th>Grade</th>
+                    </tr>
+            `;
+
+            students.forEach(function (student) {
+
+                output += `
+                    <tr>
+                        <td>${student.name}</td>
+                        <td>${student.rollNo}</td>
+                        <td>${student.maths}</td>
+                        <td>${student.python}</td>
+                        <td>${student.javascript}</td>
+                        <td>${student.total}</td>
+                        <td>${student.average}</td>
+                        <td>${student.grade}</td>
+                    </tr>
+                `;
+            });
+
+            output += "</table>";
+
+            if (students.length === 0) {
+                output = "<p>No student records available.</p>";
+            }
+
+            document.getElementById("output").innerHTML =
+                output;
+        }
+
+        function clearDatabase() {
+
+            students = [];
+
+            localStorage.removeItem("marksDatabase");
+
+            displayStudents();
+        }
+
+        window.onload = function () {
+            displayStudents();
+        };
+
+    </script>
+
+</body>
+
+</html>

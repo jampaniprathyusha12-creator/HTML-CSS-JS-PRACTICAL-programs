@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mobile First Webpage</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        /* Mobile-first styles */
+
+        header {
+            background-color: #2563eb;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 8px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #dbeafe;
+        }
+
+        .hero h2 {
+            color: #1d4ed8;
+            font-size: 30px;
+        }
+
+        .container {
+            width: 90%;
+            margin: 30px auto;
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: #2563eb;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        /* Tablet */
+
+        @media (min-width: 600px) {
+
+            nav a {
+                display: inline-block;
+                margin: 0 10px;
+            }
+
+            .cards {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .card {
+                flex: 1 1 45%;
+            }
+
+        }
+
+        /* Desktop */
+
+        @media (min-width: 900px) {
+
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px 8%;
+            }
+
+            nav {
+                margin-top: 0;
+            }
+
+            .hero {
+                padding: 80px 20px;
+            }
+
+            .hero h2 {
+                font-size: 42px;
+            }
+
+            .cards {
+                flex-wrap: nowrap;
+            }
+
+            .card {
+                flex: 1;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <h1>My Website</h1>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <section class="hero">
+
+        <h2>Mobile First Design</h2>
+
+        <p>
+            This webpage is designed for mobile devices
+            first and then adapted for larger screens.
+        </p>
+
+    </section>
+
+
+    <main class="container">
+
+        <h2>Our Services</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Web Development</h3>
+
+                <p>
+                    Creating responsive and modern websites
+                    using HTML and CSS.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Data Science</h3>
+
+                <p>
+                    Working with data analysis,
+                    visualization and machine learning.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>AI & ML</h3>
+
+                <p>
+                    Exploring artificial intelligence
+                    and machine learning technologies.
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>© 2026 My Website</p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+</body>
+
+</html>

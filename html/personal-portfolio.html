@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Personal Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+
+        nav {
+            background-color: #0f172a;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav h2 {
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #93c5fd;
+        }
+
+        /* Hero */
+
+        .hero {
+            min-height: 500px;
+            background: linear-gradient(135deg,
+                    #0f172a,
+                    #2563eb);
+
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: white;
+            color: #2563eb;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #dbeafe;
+        }
+
+        /* Sections */
+
+        section {
+            width: 90%;
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #2563eb;
+            margin-bottom: 25px;
+            font-size: 30px;
+        }
+
+        .about-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Skills */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill {
+            background-color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            border: 2px solid #dbeafe;
+            font-weight: bold;
+        }
+
+        /* Projects */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .project h3 {
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+
+        /* Contact */
+
+        .contact {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Navigation buttons */
+
+        .navigation {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .navigation a {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            margin: 5px;
+            font-weight: bold;
+        }
+
+        .navigation a:hover {
+            background-color: #1e40af;
+        }
+
+        /* Footer */
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Responsive Design */
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                width: 94%;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <h2>
+            My Portfolio
+        </h2>
+
+        <ul>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- Hero Section -->
+
+    <header class="hero">
+
+        <div>
+
+            <h1>
+                Jampani Prathyusha
+            </h1>
+
+            <p>
+                B.Tech Student | AI & ML Enthusiast
+            </p>
+
+            <a href="#about" class="button">
+                Explore My Portfolio
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- About Section -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            About Me
+        </h2>
+
+        <div class="about-box">
+
+            <p>
+                I am a B.Tech student interested in
+                Artificial Intelligence, Machine Learning,
+                web development and data science.
+            </p>
+
+            <p>
+                I enjoy learning new technologies and
+                developing practical projects using
+                HTML, CSS, JavaScript and other
+                modern technologies.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills Section -->
+
+    <section id="skills">
+
+        <h2 class="section-title">
+            Skills
+        </h2>
+
+        <div class="skills">
+
+            <div class="skill">
+                HTML
+            </div>
+
+            <div class="skill">
+                CSS
+            </div>
+
+            <div class="skill">
+                JavaScript
+            </div>
+
+            <div class="skill">
+                Python
+            </div>
+
+            <div class="skill">
+                AI & ML
+            </div>
+
+            <div class="skill">
+                Data Science
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects Section -->
+
+    <section id="projects">
+
+        <h2 class="section-title">
+            Projects
+        </h2>
+
+        <div class="projects">
+
+            <div class="project">
+
+                <h3>
+                    Royal Palace Hotel
+                </h3>
+
+                <p>
+                    A responsive hotel website created
+                    using HTML, CSS and JavaScript.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>
+                    Hotel Booking Analysis
+                </h3>
+
+                <p>
+                    A data analytics project focused on
+                    hotel booking and cancellation analysis.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact Section -->
+
+    <section id="contact">
+
+        <h2 class="section-title">
+            Contact
+        </h2>
+
+        <div class="contact">
+
+            <p>
+                Email:
+                <a href="jampaniprathyusha12@gmail.com">
+                    jampaniprathyusha12@gmail.com
+                </a>
+            </p>
+
+            <p>
+                GitHub:
+                <a href="https://github.com/" target="_blank">
+                    Visit GitHub
+                </a>
+            </p>
+
+            <p>
+                LinkedIn:
+                <a href="https://www.linkedin.com/" target="_blank">
+                    Visit LinkedIn
+                </a>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Navigation -->
+
+    <div class="navigation">
+
+        <a href="index.html">
+            ← Back to HTML Programs
+        </a>
+
+        <a href="../index.html">
+            Home
+        </a>
+
+    </div>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            HTML, CSS & JavaScript Practical Programs
+        </p>
+
+        <p>
+            HTML Section | Program 15 of 15
+        </p>
+
+        <p>
+            Create a Simple Personal Portfolio Webpage Using HTML and CSS
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Largest and Smallest Element</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #output {
+            font-size: 22px;
+            font-weight: bold;
+            line-height: 2;
+            margin: 30px;
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 15px;
+            text-decoration: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Program 12</h1>
+
+    <div id="output"></div>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        let numbers = [25, 10, 45, 8, 32, 60, 15];
+
+        let largest = numbers[0];
+        let smallest = numbers[0];
+
+        for (let i = 1; i < numbers.length; i++) {
+            if (numbers[i] > largest) {
+                largest = numbers[i];
+            }
+
+            if (numbers[i] < smallest) {
+                smallest = numbers[i];
+            }
+        }
+
+        document.getElementById("output").innerHTML =
+            "Array: " + numbers.join(", ") + "<br><br>" +
+            "Largest Element: " + largest + "<br>" +
+            "Smallest Element: " + smallest;
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dynamic Table</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 60%;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        th {
+            background-color: lightblue;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Dynamic Table Using JavaScript</h2>
+
+    <button onclick="createTable()">Create Table</button>
+
+    <div id="tableContainer"></div>
+
+    <br>
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        function createTable() {
+
+            let students = [
+                ["Prathyusha", "B.Tech", "AI & ML"],
+                ["yeshwanth", "B.Tech", "Data Science"],
+                ["chandra mouli", "B.Tech", "Computer Science"]
+            ];
+
+            let table = document.createElement("table");
+
+            // Create table header
+            let headerRow = document.createElement("tr");
+
+            let headers = ["Name", "Course", "Specialization"];
+
+            for (let header of headers) {
+                let th = document.createElement("th");
+                th.textContent = header;
+                headerRow.appendChild(th);
+            }
+
+            table.appendChild(headerRow);
+
+            // Create table rows
+            for (let student of students) {
+
+                let row = document.createElement("tr");
+
+                for (let data of student) {
+                    let cell = document.createElement("td");
+                    cell.textContent = data;
+                    row.appendChild(cell);
+                }
+
+                table.appendChild(row);
+            }
+
+            document.getElementById("tableContainer").appendChild(table);
+        }
+    </script>
+
+</body>
+
+</html>

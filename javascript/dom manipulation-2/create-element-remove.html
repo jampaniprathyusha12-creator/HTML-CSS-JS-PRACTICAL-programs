@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM Methods Demonstration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+
+        .box {
+            border: 2px solid black;
+            padding: 20px;
+            margin: 20px auto;
+            width: 400px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>DOM Methods Demonstration</h1>
+
+    <div class="box" id="container">
+        <p id="oldElement">This is the original paragraph.</p>
+    </div>
+
+    <button onclick="createElementDemo()">createElement()</button>
+    <button onclick="appendChildDemo()">appendChild()</button>
+    <button onclick="removeDemo()">remove()</button>
+    <button onclick="replaceChildDemo()">replaceChild()</button>
+
+    <br><br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+
+        // createElement()
+        function createElementDemo() {
+
+            const newElement = document.createElement("h3");
+
+            newElement.textContent = "New Element Created!";
+
+            newElement.id = "newElement";
+
+            document.getElementById("container").appendChild(newElement);
+        }
+
+
+        // appendChild()
+        function appendChildDemo() {
+
+            const newParagraph = document.createElement("p");
+
+            newParagraph.textContent =
+                "This paragraph was added using appendChild().";
+
+            document.getElementById("container").appendChild(newParagraph);
+        }
+
+
+        // remove()
+        function removeDemo() {
+
+            const element = document.getElementById("oldElement");
+
+            if (element) {
+                element.remove();
+            }
+        }
+
+
+        // replaceChild()
+        function replaceChildDemo() {
+
+            const oldElement = document.getElementById("oldElement");
+
+            if (oldElement) {
+
+                const newElement = document.createElement("p");
+
+                newElement.textContent =
+                    "The original paragraph was replaced!";
+
+                oldElement.parentNode.replaceChild(
+                    newElement,
+                    oldElement
+                );
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

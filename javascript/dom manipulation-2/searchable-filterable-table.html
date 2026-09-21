@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Searchable Filterable Table</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+
+        input {
+            padding: 10px;
+            width: 300px;
+            margin: 15px;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 75%;
+        }
+
+        th,
+        td {
+            border: 1px solid #333;
+            padding: 12px;
+        }
+
+        th {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Searchable Student Table</h1>
+
+    <input type="text" id="searchInput" placeholder="Search student..." onkeyup="searchTable()">
+
+    <table id="studentTable">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Course</th>
+        </tr>
+
+        <tr>
+            <td>Prathyusha</td>
+            <td>19</td>
+            <td>B.Tech</td>
+        </tr>
+
+        <tr>
+            <td>manvi</td>
+            <td>20</td>
+            <td>B.Tech</td>
+        </tr>
+
+        <tr>
+            <td>mahi</td>
+            <td>19</td>
+            <td>B.Sc</td>
+        </tr>
+
+        <tr>
+            <td>surya</td>
+            <td>21</td>
+            <td>BCA</td>
+        </tr>
+
+        <tr>
+            <td>Priya</td>
+            <td>20</td>
+            <td>B.Tech</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        function searchTable() {
+
+            const input = document.getElementById("searchInput");
+            const filter = input.value.toLowerCase();
+
+            const table = document.getElementById("studentTable");
+            const rows = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < rows.length; i++) {
+
+                const text = rows[i].textContent.toLowerCase();
+
+                if (text.includes(filter)) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Change Text Content</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            background-color: white;
+            width: 450px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2 id="heading">Original Text</h2>
+
+        <p id="message">
+            This is the original paragraph.
+        </p>
+
+        <button onclick="changeText()">
+            Change Text
+        </button>
+
+        <br><br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        function changeText() {
+
+            document.getElementById("heading").textContent =
+                "Text Changed Successfully!";
+
+            document.getElementById("message").textContent =
+                "The paragraph text has been changed using JavaScript.";
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Show Hide Content</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+
+        #content {
+            width: 60%;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Show / Hide Content</h1>
+
+    <button onclick="toggleContent()">Hide Content</button>
+
+    <div id="content">
+        <h2>JavaScript DOM Manipulation</h2>
+        <p>
+            DOM manipulation allows JavaScript to dynamically
+            change HTML elements, content, styles, and attributes.
+        </p>
+    </div>
+
+    <br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+
+        function toggleContent() {
+
+            const content =
+                document.getElementById("content");
+
+            const button =
+                document.querySelector("button");
+
+            if (content.style.display === "none") {
+
+                content.style.display = "block";
+
+                button.textContent = "Hide Content";
+
+            } else {
+
+                content.style.display = "none";
+
+                button.textContent = "Show Content";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

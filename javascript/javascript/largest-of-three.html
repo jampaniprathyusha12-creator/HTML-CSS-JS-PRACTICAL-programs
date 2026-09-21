@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Largest of Three Numbers</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #output {
+            font-size: 22px;
+            font-weight: bold;
+            margin: 30px;
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 15px;
+            text-decoration: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Program 3</h1>
+
+    <div id="output"></div>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        let num1 = 25;
+        let num2 = 48;
+        let num3 = 35;
+
+        let largest;
+
+        if (num1 >= num2 && num1 >= num3) {
+            largest = num1;
+        } else if (num2 >= num1 && num2 >= num3) {
+            largest = num2;
+        } else {
+            largest = num3;
+        }
+
+        document.getElementById("output").innerHTML =
+            "First Number: " + num1 + "<br>" +
+            "Second Number: " + num2 + "<br>" +
+            "Third Number: " + num3 + "<br><br>" +
+            "Largest Number: " + largest;
+    </script>
+
+</body>
+
+</html>

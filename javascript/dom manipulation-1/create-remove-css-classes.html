@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Create and Remove CSS Classes</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #box {
+            width: 250px;
+            padding: 30px;
+            margin: 30px auto;
+            border: 2px solid black;
+        }
+
+        .highlight {
+            background-color: lightblue;
+            color: darkblue;
+            border: 3px solid blue;
+            border-radius: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Create and Remove CSS Classes Dynamically</h2>
+
+    <div id="box">
+        This is a sample box.
+    </div>
+
+    <button onclick="addClass()">Add CSS Class</button>
+    <button onclick="removeClass()">Remove CSS Class</button>
+
+    <br><br>
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        function addClass() {
+            let box = document.getElementById("box");
+
+            box.classList.add("highlight");
+        }
+
+        function removeClass() {
+            let box = document.getElementById("box");
+
+            box.classList.remove("highlight");
+        }
+    </script>
+
+</body>
+
+</html>

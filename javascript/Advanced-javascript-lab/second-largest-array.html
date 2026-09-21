@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Second Largest Element</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input {
+            padding: 10px;
+            width: 300px;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Second Largest Element in an Array</h2>
+
+    <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas">
+    <br>
+
+    <button onclick="findSecondLargest()">Find Second Largest</button>
+
+    <div id="output"></div>
+
+    <br>
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        function findSecondLargest() {
+            let input = document.getElementById("arrayInput").value;
+
+            let arr = input.split(",").map(Number);
+
+            let uniqueArray = [...new Set(arr)];
+
+            if (uniqueArray.length < 2) {
+                document.getElementById("output").innerHTML =
+                    "Please enter at least two different numbers.";
+                return;
+            }
+
+            uniqueArray.sort((a, b) => b - a);
+
+            let secondLargest = uniqueArray[1];
+
+            document.getElementById("output").innerHTML =
+                "Second Largest Element = " + secondLargest;
+        }
+    </script>
+
+</body>
+
+</html>

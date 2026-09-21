@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Animations</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            color: #2563eb;
+            margin-top: 0;
+        }
+
+        /* Moving Animation */
+
+        .moving-box {
+            width: 100px;
+            height: 100px;
+            background-color: #2563eb;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+
+            animation: moveBox 4s infinite alternate;
+        }
+
+        @keyframes moveBox {
+
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(700px);
+            }
+
+        }
+
+        /* Rotating Animation */
+
+        .rotating-box {
+            width: 100px;
+            height: 100px;
+            margin: 30px auto;
+            background-color: #7c3aed;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+
+            animation: rotateBox 3s linear infinite;
+        }
+
+        @keyframes rotateBox {
+
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+        /* Fading Animation */
+
+        .fade-text {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+
+            animation: fadeEffect 2s infinite alternate;
+        }
+
+        @keyframes fadeEffect {
+
+            from {
+                opacity: 0.2;
+            }
+
+            to {
+                opacity: 1;
+            }
+
+        }
+
+        .navigation {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .navigation a {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .navigation a:hover {
+            background-color: #1e40af;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+
+            main {
+                width: 94%;
+            }
+
+            .moving-box {
+                animation-name: moveBoxMobile;
+            }
+
+            @keyframes moveBoxMobile {
+
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(200px);
+                }
+
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>
+            CSS Animations
+        </h1>
+
+        <p>
+            Demonstration of CSS Animation Properties
+        </p>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- Introduction -->
+
+        <section class="card">
+
+            <h2>
+                Introduction
+            </h2>
+
+            <p>
+                CSS animations allow HTML elements to
+                change from one style to another over
+                a specified period of time.
+            </p>
+
+        </section>
+
+
+        <!-- Moving Animation -->
+
+        <section class="card">
+
+            <h2>
+                Moving Animation
+            </h2>
+
+            <div class="moving-box">
+                Move
+            </div>
+
+        </section>
+
+
+        <!-- Rotating Animation -->
+
+        <section class="card">
+
+            <h2>
+                Rotating Animation
+            </h2>
+
+            <div class="rotating-box">
+                Rotate
+            </div>
+
+        </section>
+
+
+        <!-- Fading Animation -->
+
+        <section class="card">
+
+            <h2>
+                Fading Animation
+            </h2>
+
+            <p class="fade-text">
+                CSS Animation
+            </p>
+
+        </section>
+
+
+        <!-- Properties -->
+
+        <section class="card">
+
+            <h2>
+                CSS Animation Properties Used
+            </h2>
+
+            <p>
+                <strong>@keyframes:</strong>
+                Defines the stages of an animation.
+            </p>
+
+            <p>
+                <strong>animation-duration:</strong>
+                Specifies how long the animation runs.
+            </p>
+
+            <p>
+                <strong>animation-iteration-count:</strong>
+                Specifies how many times the animation runs.
+            </p>
+
+            <p>
+                <strong>animation-timing-function:</strong>
+                Controls the speed of the animation.
+            </p>
+
+        </section>
+
+
+        <!-- Navigation -->
+
+        <div class="navigation">
+
+            <a href="index.html">
+                ← Back to CSS Programs
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            HTML, CSS & JavaScript Practical Programs
+        </p>
+
+        <p>
+            CSS Program 18
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+
+</body>
+
+</html>

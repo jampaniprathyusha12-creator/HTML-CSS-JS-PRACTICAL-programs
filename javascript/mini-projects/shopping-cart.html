@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Shopping Cart</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            padding: 15px;
+            width: 150px;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        #total {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Simple Shopping Cart</h2>
+
+        <div class="products">
+
+            <div class="product">
+                <h3>Mobile Phone</h3>
+                <p>₹15,000</p>
+                <button onclick="addToCart('Mobile Phone', 15000)">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product">
+                <h3>Headphones</h3>
+                <p>₹2,000</p>
+                <button onclick="addToCart('Headphones', 2000)">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product">
+                <h3>Keyboard</h3>
+                <p>₹1,200</p>
+                <button onclick="addToCart('Keyboard', 1200)">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product">
+                <h3>Mouse</h3>
+                <p>₹800</p>
+                <button onclick="addToCart('Mouse', 800)">
+                    Add to Cart
+                </button>
+            </div>
+
+        </div>
+
+        <h3>Shopping Cart</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="cartList"></tbody>
+        </table>
+
+        <div id="total">Total: ₹0</div>
+
+        <button onclick="clearCart()">Clear Cart</button>
+
+        <br><br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        let cart = [];
+
+        function addToCart(productName, price) {
+
+            cart.push({
+                name: productName,
+                price: price
+            });
+
+            displayCart();
+        }
+
+        function displayCart() {
+
+            let cartList = document.getElementById("cartList");
+
+            cartList.innerHTML = "";
+
+            let total = 0;
+
+            cart.forEach(function (item, index) {
+
+                total += item.price;
+
+                let row = document.createElement("tr");
+
+                row.innerHTML = `
+                <td>${item.name}</td>
+                <td>₹${item.price}</td>
+                <td>
+                    <button onclick="removeFromCart(${index})">
+                        Remove
+                    </button>
+                </td>
+            `;
+
+                cartList.appendChild(row);
+            });
+
+            document.getElementById("total").textContent =
+                "Total: ₹" + total;
+        }
+
+        function removeFromCart(index) {
+
+            cart.splice(index, 1);
+
+            displayCart();
+        }
+
+        function clearCart() {
+
+            cart = [];
+
+            displayCart();
+        }
+
+    </script>
+
+</body>
+
+</html>

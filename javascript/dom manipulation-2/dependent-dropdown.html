@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dependent Dropdown</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+
+        select {
+            padding: 10px;
+            width: 250px;
+            margin: 10px;
+            font-size: 16px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Country → State → City</h1>
+
+    <select id="country" onchange="loadStates()">
+        <option value="">Select Country</option>
+        <option value="India">India</option>
+        <option value="USA">USA</option>
+    </select>
+
+    <br>
+
+    <select id="state" onchange="loadCities()">
+        <option value="">Select State</option>
+    </select>
+
+    <br>
+
+    <select id="city" onchange="showResult()">
+        <option value="">Select City</option>
+    </select>
+
+    <p id="result"></p>
+
+    <br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        const data = {
+            India: {
+                "Tamil Nadu": ["Chennai", "Coimbatore", "Madurai"],
+                "Karnataka": ["Bengaluru", "Mysuru", "Mangaluru"]
+            },
+
+            USA: {
+                "California": ["Los Angeles", "San Francisco", "San Diego"],
+                "Texas": ["Houston", "Dallas", "Austin"]
+            }
+        };
+
+        function loadStates() {
+
+            const country =
+                document.getElementById("country").value;
+
+            const stateDropdown =
+                document.getElementById("state");
+
+            const cityDropdown =
+                document.getElementById("city");
+
+            stateDropdown.innerHTML =
+                '<option value="">Select State</option>';
+
+            cityDropdown.innerHTML =
+                '<option value="">Select City</option>';
+
+            if (country !== "") {
+
+                const states = data[country];
+
+                for (let state in states) {
+
+                    const option =
+                        document.createElement("option");
+
+                    option.value = state;
+                    option.textContent = state;
+
+                    stateDropdown.appendChild(option);
+                }
+            }
+
+            document.getElementById("result").textContent = "";
+        }
+
+        function loadCities() {
+
+            const country =
+                document.getElementById("country").value;
+
+            const state =
+                document.getElementById("state").value;
+
+            const cityDropdown =
+                document.getElementById("city");
+
+            cityDropdown.innerHTML =
+                '<option value="">Select City</option>';
+
+            if (state !== "") {
+
+                const cities = data[country][state];
+
+                cities.forEach(function (city) {
+
+                    const option =
+                        document.createElement("option");
+
+                    option.value = city;
+                    option.textContent = city;
+
+                    cityDropdown.appendChild(option);
+                });
+            }
+
+            document.getElementById("result").textContent = "";
+        }
+
+        function showResult() {
+
+            const country =
+                document.getElementById("country").value;
+
+            const state =
+                document.getElementById("state").value;
+
+            const city =
+                document.getElementById("city").value;
+
+            if (city !== "") {
+
+                document.getElementById("result").textContent =
+                    "Selected: " + country + " → " + state + " → " + city;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

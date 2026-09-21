@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Spread and Rest Operators</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .output {
+            width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: left;
+            line-height: 1.8;
+        }
+
+        a {
+            display: inline-block;
+            margin: 20px 10px;
+            padding: 10px 15px;
+            text-decoration: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Advanced JavaScript Lab - Experiment 37</h1>
+
+    <h2>Spread and Rest Operators</h2>
+
+    <div class="output" id="output"></div>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        // Spread Operator
+        let numbers1 = [10, 20, 30];
+        let numbers2 = [40, 50, 60];
+
+        let combinedNumbers = [...numbers1, ...numbers2];
+
+        // Rest Operator
+        function calculateSum(...numbers) {
+            let sum = 0;
+
+            for (let number of numbers) {
+                sum += number;
+            }
+
+            return sum;
+        }
+
+        let sum = calculateSum(10, 20, 30, 40);
+
+        document.getElementById("output").innerHTML = `
+            <strong>First Array:</strong> ${numbers1.join(", ")}<br>
+            <strong>Second Array:</strong> ${numbers2.join(", ")}<br>
+            <strong>Using Spread Operator:</strong>
+            ${combinedNumbers.join(", ")}<br>
+            <strong>Using Rest Operator:</strong>
+            Sum = ${sum}
+        `;
+    </script>
+
+</body>
+
+</html>

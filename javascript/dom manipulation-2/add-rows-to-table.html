@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Table Rows Dynamically</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px;
+            width: 180px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 15px;
+            cursor: pointer;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 70%;
+        }
+
+        th,
+        td {
+            border: 1px solid #333;
+            padding: 12px;
+        }
+
+        th {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Add New Rows Dynamically</h1>
+
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="number" id="age" placeholder="Enter Age">
+    <input type="text" id="course" placeholder="Enter Course">
+
+    <br>
+
+    <button onclick="addRow()">Add Row</button>
+
+    <table id="studentTable">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Course</th>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        function addRow() {
+
+            const name = document.getElementById("name").value;
+            const age = document.getElementById("age").value;
+            const course = document.getElementById("course").value;
+
+            if (name === "" || age === "" || course === "") {
+                alert("Please fill all fields.");
+                return;
+            }
+
+            const table = document.getElementById("studentTable");
+
+            const row = document.createElement("tr");
+
+            const nameCell = document.createElement("td");
+            nameCell.textContent = name;
+
+            const ageCell = document.createElement("td");
+            ageCell.textContent = age;
+
+            const courseCell = document.createElement("td");
+            courseCell.textContent = course;
+
+            row.appendChild(nameCell);
+            row.appendChild(ageCell);
+            row.appendChild(courseCell);
+
+            table.appendChild(row);
+
+            document.getElementById("name").value = "";
+            document.getElementById("age").value = "";
+            document.getElementById("course").value = "";
+        }
+    </script>
+
+</body>
+
+</html>

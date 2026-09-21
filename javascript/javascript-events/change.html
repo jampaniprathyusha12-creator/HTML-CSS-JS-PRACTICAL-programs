@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Change Event</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Change Event Demonstration</h1>
+
+    <p>Select a course:</p>
+
+    <select onchange="showSelection()">
+        <option value="">-- Select Course --</option>
+        <option value="HTML">HTML</option>
+        <option value="CSS">CSS</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="Python">Python</option>
+    </select>
+
+    <p id="message">No course selected.</p>
+
+    <br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+
+        function showSelection() {
+
+            const selected =
+                document.querySelector("select").value;
+
+            if (selected === "") {
+                document.getElementById("message").textContent =
+                    "No course selected.";
+            } else {
+                document.getElementById("message").textContent =
+                    "You selected: " + selected;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

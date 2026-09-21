@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Keyframe Animation</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2563eb;
+            margin: 35px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+
+            margin: 60px auto;
+
+            background-color: #2563eb;
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 15px;
+
+            animation: moveBox 4s infinite;
+        }
+
+        /* Keyframe animation */
+
+        @keyframes moveBox {
+
+            0% {
+                transform: translateX(0) rotate(0deg);
+            }
+
+            25% {
+                transform: translateX(150px) rotate(90deg);
+            }
+
+            50% {
+                transform: translateX(0) rotate(180deg);
+            }
+
+            75% {
+                transform: translateX(-150px) rotate(270deg);
+            }
+
+            100% {
+                transform: translateX(0) rotate(360deg);
+            }
+
+        }
+
+        .info {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .info h2 {
+            color: #2563eb;
+        }
+
+        .info p {
+            line-height: 1.7;
+        }
+
+        @media (max-width: 600px) {
+
+            .box {
+                animation: mobileMove 4s infinite;
+            }
+
+            @keyframes mobileMove {
+
+                0% {
+                    transform: translateX(0) rotate(0deg);
+                }
+
+                50% {
+                    transform: translateX(80px) rotate(180deg);
+                }
+
+                100% {
+                    transform: translateX(0) rotate(360deg);
+                }
+
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>
+        CSS Keyframe Animation
+    </h1>
+
+    <div class="container">
+
+        <div class="box">
+            Animate
+        </div>
+
+
+        <div class="info">
+
+            <h2>
+                About Keyframes
+            </h2>
+
+            <p>
+                The @keyframes rule defines the different
+                stages of a CSS animation.
+            </p>
+
+            <p>
+                The animation moves and rotates the box
+                continuously using different keyframe
+                percentages.
+            </p>
+
+        </div>
+
+    </div>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+</body>
+
+</html>

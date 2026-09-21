@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sort Table Records</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 70%;
+        }
+
+        th,
+        td {
+            border: 1px solid #333;
+            padding: 12px;
+        }
+
+        th {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Sort Student Records</h1>
+
+    <button onclick="sortByName()">Sort by Name</button>
+    <button onclick="sortByAge()">Sort by Age</button>
+
+    <table id="studentTable">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Course</th>
+        </tr>
+
+        <tr>
+            <td>Prathyusha</td>
+            <td>19</td>
+            <td>B.Tech</td>
+        </tr>
+
+        <tr>
+            <td>priya</td>
+            <td>21</td>
+            <td>BCA</td>
+        </tr>
+
+        <tr>
+            <td>manvi</td>
+            <td>19</td>
+            <td>B.Sc</td>
+        </tr>
+
+        <tr>
+            <td>surya</td>
+            <td>22</td>
+            <td>BBA</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        function sortByName() {
+
+            const table = document.getElementById("studentTable");
+
+            const rows = Array.from(table.rows).slice(1);
+
+            rows.sort(function (a, b) {
+                const nameA = a.cells[0].textContent;
+                const nameB = b.cells[0].textContent;
+
+                return nameA.localeCompare(nameB);
+            });
+
+            rows.forEach(function (row) {
+                table.appendChild(row);
+            });
+        }
+
+        function sortByAge() {
+
+            const table = document.getElementById("studentTable");
+
+            const rows = Array.from(table.rows).slice(1);
+
+            rows.sort(function (a, b) {
+                const ageA = Number(a.cells[1].textContent);
+                const ageB = Number(b.cells[1].textContent);
+
+                return ageA - ageB;
+            });
+
+            rows.forEach(function (row) {
+                table.appendChild(row);
+            });
+        }
+    </script>
+
+</body>
+
+</html>

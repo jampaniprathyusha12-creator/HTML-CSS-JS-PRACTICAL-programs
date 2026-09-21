@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Headings, Paragraphs and Line Breaks</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 16px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1000px;
+            margin: 35px auto;
+        }
+
+        .program-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .program-card h2 {
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+
+        .program-card h1,
+        .program-card h2,
+        .program-card h3,
+        .program-card h4,
+        .program-card h5,
+        .program-card h6 {
+            margin-top: 12px;
+            margin-bottom: 8px;
+        }
+
+        .program-card p {
+            margin-bottom: 18px;
+        }
+
+        .line-break-demo {
+            background: #eff6ff;
+            border-left: 5px solid #2563eb;
+            padding: 18px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .navigation a {
+            text-decoration: none;
+            background: #2563eb;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .navigation a:hover {
+            background: #1e40af;
+        }
+
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            main {
+                width: 94%;
+            }
+
+            .program-card {
+                padding: 20px;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- Header -->
+    <header>
+
+        <h1>HTML Practical Program 1</h1>
+
+        <p>Headings, Paragraphs and Line Breaks</p>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+
+        <section class="program-card">
+
+            <h2>Experiment: Headings, Paragraphs and Line Breaks</h2>
+
+
+            <!-- HTML Headings -->
+            <h3>1. HTML Headings</h3>
+
+            <h1>Heading 1</h1>
+
+            <h2>Heading 2</h2>
+
+            <h3>Heading 3</h3>
+
+            <h4>Heading 4</h4>
+
+            <h5>Heading 5</h5>
+
+            <h6>Heading 6</h6>
+
+
+            <!-- Paragraphs -->
+            <h3>2. HTML Paragraphs</h3>
+
+            <p>
+                HTML stands for HyperText Markup Language.
+                It is used to create and structure webpages.
+            </p>
+
+            <p>
+                HTML provides different elements such as
+                headings, paragraphs, links, images, tables
+                and forms.
+            </p>
+
+
+            <!-- Line Breaks -->
+            <h3>3. HTML Line Breaks</h3>
+
+            <div class="line-break-demo">
+
+                <p>
+                    My name is Prathyusha.<br>
+                    I am a B.Tech student.<br>
+                    I am learning HTML, CSS and JavaScript.<br>
+                    This webpage demonstrates HTML basics.
+                </p>
+
+            </div>
+
+
+            <!-- Navigation -->
+            <div class="navigation">
+
+                <a href="index.html">
+                    ← Back to HTML Programs
+                </a>
+
+                <a href="../index.html">
+                    Home
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>HTML, CSS & JavaScript Practical Programs</p>
+
+        <p>HTML Section | Program 1 of 15</p>
+
+        <p>Headings, Paragraphs and Line Breaks</p>
+
+    </footer>
+
+</body>
+
+</html>

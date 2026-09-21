@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Images and Hyperlinks</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        /* Header */
+
+        header {
+            background: linear-gradient(135deg, #0f172a, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+        }
+
+        /* Main */
+
+        main {
+            width: 92%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        .program-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .program-card h2 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            color: #4b5563;
+            margin-bottom: 30px;
+        }
+
+        /* Image Section */
+
+        .image-section {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .image-section h3,
+        .link-section h3 {
+            color: #1e40af;
+            margin-bottom: 15px;
+        }
+
+        .demo-image {
+            width: 100%;
+            max-width: 700px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 4px solid #2563eb;
+            display: block;
+            margin: 0 auto 15px;
+        }
+
+        .image-caption {
+            color: #64748b;
+        }
+
+        /* Hyperlinks */
+
+        .link-section {
+            background: #eff6ff;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .links a:hover {
+            background: #1e40af;
+        }
+
+        /* Navigation */
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .navigation a {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .navigation a:hover {
+            background: #1e40af;
+        }
+
+        /* Footer */
+
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Responsive Design */
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            main {
+                width: 94%;
+            }
+
+            .program-card {
+                padding: 20px;
+            }
+
+            .demo-image {
+                height: 220px;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>HTML Practical Program 4</h1>
+
+        <p>
+            Create an HTML Page Containing Images and Hyperlinks
+        </p>
+
+    </header>
+
+
+    <!-- Main Content -->
+
+    <main>
+
+        <section class="program-card">
+
+            <!-- Exact Experiment Heading -->
+
+            <h2>
+                Create an HTML Page Containing Images and Hyperlinks
+            </h2>
+
+            <p class="description">
+                This webpage demonstrates how to add images to an
+                HTML page and how to create hyperlinks to other
+                webpages and websites.
+            </p>
+
+
+            <!-- Image Demonstration -->
+
+            <section class="image-section">
+
+                <h3>1. Image Demonstration</h3>
+
+                <img src="../assets/images/college.jpg" alt="College Campus" width="600">
+
+
+                <p class="image-caption">
+                    Example of an image displayed using the HTML
+                    &lt;img&gt; element.
+                </p>
+
+            </section>
+
+
+            <!-- Hyperlink Demonstration -->
+
+            <section class="link-section">
+
+                <h3>2. Hyperlink Demonstration</h3>
+
+                <p>
+                    Click the links below to demonstrate different
+                    types of hyperlinks.
+                </p>
+
+                <br>
+
+                <div class="links">
+
+                    <!-- External Hyperlink -->
+
+                    <a href="https://www.google.com" target="_blank">
+                        Visit Google
+                    </a>
+
+
+                    <!-- External Hyperlink -->
+
+                    <a href="https://www.github.com" target="_blank">
+                        Visit GitHub
+                    </a>
+
+
+                    <!-- Email Hyperlink -->
+
+                    <a href="https://mail.google.com" target="_blank">
+                        Send Email
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- Navigation -->
+
+            <div class="navigation">
+
+                <a href="index.html">
+                    ← Back to HTML Programs
+                </a>
+
+                <a href="../index.html">
+                    Home
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            HTML, CSS & JavaScript Practical Programs
+        </p>
+
+        <p>
+            HTML Section | Program 4 of 15
+        </p>
+
+        <p>
+            Create an HTML Page Containing Images and Hyperlinks
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

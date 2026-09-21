@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Live Character Counter</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        textarea {
+            width: 400px;
+            height: 150px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #counter {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Live Character Counter</h2>
+
+    <textarea id="message" placeholder="Type your message..." oninput="countCharacters()"></textarea>
+
+    <div id="counter">Characters: 0</div>
+
+    <br>
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        function countCharacters() {
+            let text = document.getElementById("message").value;
+
+            let count = text.length;
+
+            document.getElementById("counter").textContent =
+                "Characters: " + count;
+        }
+    </script>
+
+</body>
+
+</html>

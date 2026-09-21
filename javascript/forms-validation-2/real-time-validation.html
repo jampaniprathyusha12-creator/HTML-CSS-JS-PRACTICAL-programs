@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Form Validation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input.valid {
+            border-color: green;
+        }
+
+        input.invalid {
+            border-color: red;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        .success {
+            color: green;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Real-Time Form Validation</h1>
+
+        <form id="registrationForm">
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+            <span class="error" id="nameError"></span>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" placeholder="Enter your email">
+            <span class="error" id="emailError"></span>
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile" placeholder="Enter 10-digit number">
+            <span class="error" id="mobileError"></span>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+        <p class="success" id="successMessage"></p>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        let nameInput = document.getElementById("name");
+        let emailInput = document.getElementById("email");
+        let mobileInput = document.getElementById("mobile");
+
+        function validateName() {
+
+            let name = nameInput.value.trim();
+            let error = document.getElementById("nameError");
+
+            if (name === "") {
+                error.textContent = "Name is required.";
+                nameInput.className = "invalid";
+                return false;
+            }
+            else if (!/^[A-Za-z ]+$/.test(name)) {
+                error.textContent = "Name must contain only alphabets.";
+                nameInput.className = "invalid";
+                return false;
+            }
+
+            error.textContent = "";
+            nameInput.className = "valid";
+            return true;
+        }
+
+        function validateEmail() {
+
+            let email = emailInput.value.trim();
+            let error = document.getElementById("emailError");
+
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (email === "") {
+                error.textContent = "Email is required.";
+                emailInput.className = "invalid";
+                return false;
+            }
+            else if (!emailPattern.test(email)) {
+                error.textContent = "Enter a valid email.";
+                emailInput.className = "invalid";
+                return false;
+            }
+
+            error.textContent = "";
+            emailInput.className = "valid";
+            return true;
+        }
+
+        function validateMobile() {
+
+            let mobile = mobileInput.value.trim();
+            let error = document.getElementById("mobileError");
+
+            let mobilePattern = /^[6-9][0-9]{9}$/;
+
+            if (mobile === "") {
+                error.textContent = "Mobile number is required.";
+                mobileInput.className = "invalid";
+                return false;
+            }
+            else if (!mobilePattern.test(mobile)) {
+                error.textContent = "Enter a valid 10-digit number.";
+                mobileInput.className = "invalid";
+                return false;
+            }
+
+            error.textContent = "";
+            mobileInput.className = "valid";
+            return true;
+        }
+
+        // Real-time validation while typing
+        nameInput.addEventListener("input", validateName);
+        emailInput.addEventListener("input", validateEmail);
+        mobileInput.addEventListener("input", validateMobile);
+
+        document.getElementById("registrationForm").addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            let nameValid = validateName();
+            let emailValid = validateEmail();
+            let mobileValid = validateMobile();
+
+            let successMessage = document.getElementById("successMessage");
+
+            if (nameValid && emailValid && mobileValid) {
+                successMessage.textContent =
+                    "Form submitted successfully!";
+            }
+            else {
+                successMessage.textContent = "";
+            }
+        });
+    </script>
+
+</body>
+
+</html>

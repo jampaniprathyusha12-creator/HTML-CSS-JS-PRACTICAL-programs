@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quiz Application</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 40px;
+        }
+
+        .container {
+            width: 550px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .question {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        button {
+            padding: 12px 25px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>JavaScript Quiz</h2>
+
+        <form id="quizForm">
+
+            <div class="question">
+                <p><b>1. Which keyword is used to declare a variable in JavaScript?</b></p>
+
+                <label>
+                    <input type="radio" name="q1" value="var">
+                    var
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="int">
+                    int
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="string">
+                    string
+                </label>
+            </div>
+
+            <div class="question">
+                <p><b>2. Which method is used to display a message in the browser?</b></p>
+
+                <label>
+                    <input type="radio" name="q2" value="alert">
+                    alert()
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="print">
+                    print()
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="message">
+                    message()
+                </label>
+            </div>
+
+            <div class="question">
+                <p><b>3. Which symbol is used for strict equality?</b></p>
+
+                <label>
+                    <input type="radio" name="q3" value="=">
+                    =
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="==">
+                    ==
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="===">
+                    ===
+                </label>
+            </div>
+
+            <div class="question">
+                <p><b>4. Which object is used to work with dates?</b></p>
+
+                <label>
+                    <input type="radio" name="q4" value="Date">
+                    Date
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="Time">
+                    Time
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="Calendar">
+                    Calendar
+                </label>
+            </div>
+
+            <div class="question">
+                <p><b>5. Which method adds an element to the end of an array?</b></p>
+
+                <label>
+                    <input type="radio" name="q5" value="push">
+                    push()
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="pop">
+                    pop()
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="shift">
+                    shift()
+                </label>
+            </div>
+
+            <button type="button" onclick="checkQuiz()">
+                Submit Quiz
+            </button>
+
+        </form>
+
+        <div id="result"></div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        function checkQuiz() {
+
+            let score = 0;
+
+            let answers = {
+                q1: "var",
+                q2: "alert",
+                q3: "===",
+                q4: "Date",
+                q5: "push"
+            };
+
+            for (let question in answers) {
+
+                let selected = document.querySelector(
+                    'input[name="' + question + '"]:checked'
+                );
+
+                if (selected && selected.value === answers[question]) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result").textContent =
+                "Your Score: " + score + " / 5";
+        }
+    </script>
+
+</body>
+
+</html>

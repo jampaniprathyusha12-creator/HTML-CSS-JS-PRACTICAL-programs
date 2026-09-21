@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Page Form using SessionStorage</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input,
+        select {
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eeeeee;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Multi-Page Form</h1>
+
+        <h2>Page 1 - Personal Details</h2>
+
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <input type="email" id="email" placeholder="Enter your email">
+
+        <br>
+
+        <button onclick="saveAndNext()">
+            Next
+        </button>
+
+        <div id="output"></div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        window.onload = function () {
+
+            document.getElementById("name").value =
+                sessionStorage.getItem("formName") || "";
+
+            document.getElementById("email").value =
+                sessionStorage.getItem("formEmail") || "";
+        };
+
+        function saveAndNext() {
+
+            let name =
+                document.getElementById("name").value.trim();
+
+            let email =
+                document.getElementById("email").value.trim();
+
+            if (name === "" || email === "") {
+
+                document.getElementById("output").innerHTML =
+                    "Please enter both name and email.";
+
+                return;
+            }
+
+            sessionStorage.setItem("formName", name);
+            sessionStorage.setItem("formEmail", email);
+
+            // Create the second page
+            document.querySelector(".container").innerHTML = `
+                <h1>Multi-Page Form</h1>
+
+                <h2>Page 2 - Course Details</h2>
+
+                <select id="course">
+                    <option value="">Select Course</option>
+                    <option value="B.Tech">B.Tech</option>
+                    <option value="B.Sc">B.Sc</option>
+                    <option value="BCA">BCA</option>
+                    <option value="MCA">MCA</option>
+                </select>
+
+                <br>
+
+                <button onclick="submitForm()">
+                    Submit
+                </button>
+
+                <button onclick="goBack()">
+                    Back
+                </button>
+
+                <div id="output"></div>
+            `;
+
+            let savedCourse =
+                sessionStorage.getItem("formCourse");
+
+            if (savedCourse) {
+                document.getElementById("course").value =
+                    savedCourse;
+            }
+        }
+
+        function submitForm() {
+
+            let course =
+                document.getElementById("course").value;
+
+            if (course === "") {
+
+                document.getElementById("output").innerHTML =
+                    "Please select a course.";
+
+                return;
+            }
+
+            sessionStorage.setItem("formCourse", course);
+
+            let name =
+                sessionStorage.getItem("formName");
+
+            let email =
+                sessionStorage.getItem("formEmail");
+
+            document.getElementById("output").innerHTML = `
+                <h3>Form Submitted Successfully!</h3>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Course:</strong> ${course}</p>
+            `;
+        }
+
+        function goBack() {
+
+            location.reload();
+        }
+
+    </script>
+
+</body>
+
+</html>

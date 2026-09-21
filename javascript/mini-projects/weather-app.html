@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Weather Application</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .container {
+            width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        input {
+            padding: 12px;
+            width: 60%;
+            margin: 10px;
+        }
+
+        button {
+            padding: 12px 20px;
+            cursor: pointer;
+        }
+
+        #weather {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #eee;
+            border-radius: 10px;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Weather Application</h2>
+
+        <input type="text" id="city" placeholder="Enter city name">
+
+        <button onclick="getWeather()">Get Weather</button>
+
+        <div id="weather">
+            Enter a city to see the weather.
+        </div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        async function getWeather() {
+
+            let city = document.getElementById("city").value.trim();
+            let weather = document.getElementById("weather");
+
+            if (city === "") {
+                weather.innerHTML =
+                    "<p class='error'>Please enter a city name.</p>";
+                return;
+            }
+
+            weather.innerHTML = "Loading...";
+
+            try {
+
+                // Find the city coordinates
+                let locationResponse = await fetch(
+                    "https://geocoding-api.open-meteo.com/v1/search?name=" +
+                    encodeURIComponent(city) +
+                    "&count=1&language=en&format=json"
+                );
+
+                let locationData = await locationResponse.json();
+
+                if (!locationData.results) {
+                    weather.innerHTML =
+                        "<p class='error'>City not found.</p>";
+                    return;
+                }
+
+                let latitude = locationData.results[0].latitude;
+                let longitude = locationData.results[0].longitude;
+                let cityName = locationData.results[0].name;
+                let country = locationData.results[0].country;
+
+                // Get weather information
+                let weatherResponse = await fetch(
+                    "https://api.open-meteo.com/v1/forecast?latitude=" +
+                    latitude +
+                    "&longitude=" +
+                    longitude +
+                    "&current=temperature_2m,relative_humidity_2m,wind_speed_10m"
+                );
+
+                let weatherData = await weatherResponse.json();
+
+                let current = weatherData.current;
+
+                weather.innerHTML =
+                    "<h3>" + cityName + ", " + country + "</h3>" +
+                    "<p><b>Temperature:</b> " +
+                    current.temperature_2m + " °C</p>" +
+                    "<p><b>Humidity:</b> " +
+                    current.relative_humidity_2m + " %</p>" +
+                    "<p><b>Wind Speed:</b> " +
+                    current.wind_speed_10m + " km/h</p>";
+
+            }
+            catch (error) {
+
+                weather.innerHTML =
+                    "<p class='error'>Unable to fetch weather data.</p>";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

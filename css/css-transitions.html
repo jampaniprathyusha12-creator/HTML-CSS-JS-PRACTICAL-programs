@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Transitions</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2563eb;
+            margin: 40px 0 15px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+
+            margin: 30px auto;
+
+            background-color: #2563eb;
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 10px;
+
+            /* Transition */
+
+            transition:
+                width 1s,
+                height 1s,
+                background-color 1s,
+                border-radius 1s,
+                transform 1s;
+        }
+
+        .box:hover {
+            width: 300px;
+            height: 250px;
+
+            background-color: #7c3aed;
+
+            border-radius: 50%;
+
+            transform: rotate(10deg);
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 15px 30px;
+
+            background-color: #2563eb;
+            color: white;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            transition:
+                background-color 0.5s,
+                transform 0.5s;
+        }
+
+        .button:hover {
+            background-color: #7c3aed;
+            transform: scale(1.1);
+        }
+
+        .info {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .info p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Transitions</h1>
+
+    <p>
+        Move the mouse over the box and button
+        to see the transition effects.
+    </p>
+
+
+    <div class="container">
+
+        <div class="box">
+            Hover Me
+        </div>
+
+
+        <div class="button">
+            Hover Button
+        </div>
+
+
+        <div class="info">
+
+            <h2>
+                About CSS Transition
+            </h2>
+
+            <p>
+                The CSS transition property allows
+                changes in CSS properties to occur
+                smoothly over a specified duration.
+            </p>
+
+            <p>
+                In this example, the width, height,
+                color, border-radius and transform
+                properties change smoothly.
+            </p>
+
+        </div>
+
+    </div>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+</body>
+
+</html>

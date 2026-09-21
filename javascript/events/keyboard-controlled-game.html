@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Keyboard Controlled Game</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        #gameArea {
+            width: 500px;
+            height: 300px;
+            border: 3px solid black;
+            margin: 30px auto;
+            position: relative;
+            background-color: lightblue;
+            overflow: hidden;
+        }
+
+        #player {
+            width: 40px;
+            height: 40px;
+            background-color: red;
+            position: absolute;
+            left: 230px;
+            top: 130px;
+        }
+
+        #output {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Keyboard Controlled Game</h2>
+
+    <p>Use the Arrow Keys to move the red box.</p>
+
+    <div id="gameArea">
+        <div id="player"></div>
+    </div>
+
+    <p id="output">Use ← ↑ ↓ → keys</p>
+
+    <script>
+        let player = document.getElementById("player");
+        let output = document.getElementById("output");
+
+        let x = 230;
+        let y = 130;
+        let speed = 10;
+
+        document.addEventListener("keydown", function (event) {
+
+            if (event.key === "ArrowLeft") {
+                x -= speed;
+            }
+
+            if (event.key === "ArrowRight") {
+                x += speed;
+            }
+
+            if (event.key === "ArrowUp") {
+                y -= speed;
+            }
+
+            if (event.key === "ArrowDown") {
+                y += speed;
+            }
+
+            // Keep the player inside the game area
+            x = Math.max(0, Math.min(460, x));
+            y = Math.max(0, Math.min(260, y));
+
+            player.style.left = x + "px";
+            player.style.top = y + "px";
+
+            output.innerHTML =
+                "Player Position: X = " + x + ", Y = " + y;
+        });
+    </script>
+
+    <br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+</body>
+
+</html>

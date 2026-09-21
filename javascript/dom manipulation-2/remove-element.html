@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Remove HTML Element Dynamically</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            background-color: white;
+            width: 500px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        #message {
+            background-color: lightblue;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Remove Element Dynamically</h2>
+
+        <p id="message">
+            This element will be removed when you click the button.
+        </p>
+
+        <button onclick="removeElement()">
+            Remove Element
+        </button>
+
+        <br><br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        function removeElement() {
+
+            let element = document.getElementById("message");
+
+            element.remove();
+        }
+
+    </script>
+
+</body>
+
+</html>

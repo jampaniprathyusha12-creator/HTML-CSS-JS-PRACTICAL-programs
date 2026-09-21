@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Semantic Elements</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        /* Header */
+
+        header {
+            background: linear-gradient(135deg, #0f172a, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+        }
+
+        /* Navigation */
+
+        nav {
+            background: #1e3a8a;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main */
+
+        main {
+            width: 92%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        section h2 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        article {
+            background: #eff6ff;
+            padding: 25px;
+            border-left: 5px solid #2563eb;
+            border-radius: 8px;
+        }
+
+        article h3 {
+            color: #1e40af;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Navigation Buttons */
+
+        .navigation {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .navigation a {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            margin: 5px;
+            font-weight: bold;
+        }
+
+        .navigation a:hover {
+            background: #1e40af;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 27px;
+            }
+
+            main {
+                width: 94%;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            nav a {
+                display: block;
+                margin: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Semantic Element -->
+
+    <header>
+
+        <h1>Semantic HTML Elements</h1>
+
+        <p>
+            Demonstration of Header, Navigation, Section,
+            Article and Footer
+        </p>
+
+    </header>
+
+
+    <!-- Navigation Semantic Element -->
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#article">Article</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+
+    <!-- Main Content -->
+
+    <main>
+
+        <!-- Section Semantic Element -->
+
+        <section id="home">
+
+            <h2>Welcome</h2>
+
+            <p>
+                This section demonstrates the use of the
+                HTML5 semantic section element.
+            </p>
+
+        </section>
+
+
+        <!-- Another Section -->
+
+        <section id="about">
+
+            <h2>About Semantic HTML</h2>
+
+            <p>
+                Semantic elements clearly describe the meaning
+                and structure of the content on a webpage.
+            </p>
+
+        </section>
+
+
+        <!-- Article Semantic Element -->
+
+        <section id="article">
+
+            <h2>Article Section</h2>
+
+            <article>
+
+                <h3>Importance of Semantic Elements</h3>
+
+                <p>
+                    Semantic HTML improves the structure,
+                    readability and accessibility of webpages.
+                    Common semantic elements include header,
+                    nav, section, article and footer.
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <!-- Contact Section -->
+
+        <section id="contact">
+
+            <h2>Contact</h2>
+
+            <p>
+                Email:jampaniprathyusha12@gmail.com
+            </p>
+
+            <p>
+                This section demonstrates another use of
+                the section element.
+            </p>
+
+        </section>
+
+
+        <!-- Navigation -->
+
+        <div class="navigation">
+
+            <a href="index.html">
+                ← Back to HTML Programs
+            </a>
+
+            <a href="../index.html">
+                Home
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer Semantic Element -->
+
+    <footer>
+
+        <p>
+            HTML, CSS & JavaScript Practical Programs
+        </p>
+
+        <p>
+            HTML Section | Program 8 of 15
+        </p>
+
+        <p>
+            Create an HTML Page Demonstrating Semantic Elements
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Light Theme Switcher</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: white;
+            color: black;
+            transition: 0.3s;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .dark {
+            background-color: #222;
+            color: white;
+        }
+
+        a {
+            color: blue;
+        }
+
+        .dark a {
+            color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Theme Switcher</h1>
+
+        <p id="message">
+            Select a theme for this webpage.
+        </p>
+
+        <button onclick="setLightTheme()">
+            Light Theme
+        </button>
+
+        <button onclick="setDarkTheme()">
+            Dark Theme
+        </button>
+
+        <br><br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        function setDarkTheme() {
+
+            document.body.classList.add("dark");
+
+            localStorage.setItem("theme", "dark");
+
+            document.getElementById("message").innerHTML =
+                "Dark theme selected and saved.";
+        }
+
+        function setLightTheme() {
+
+            document.body.classList.remove("dark");
+
+            localStorage.setItem("theme", "light");
+
+            document.getElementById("message").innerHTML =
+                "Light theme selected and saved.";
+        }
+
+        window.onload = function () {
+
+            let savedTheme = localStorage.getItem("theme");
+
+            if (savedTheme === "dark") {
+                document.body.classList.add("dark");
+
+                document.getElementById("message").innerHTML =
+                    "Dark theme restored from localStorage.";
+            }
+        };
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dynamic Image Gallery</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+
+        #gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .image-card {
+            border: 1px solid #333;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .image-card img {
+            width: 220px;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .image-card p {
+            margin-bottom: 0;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Dynamic Image Gallery</h1>
+
+    <button onclick="createGallery()">Create Gallery</button>
+
+    <div id="gallery"></div>
+
+    <br><br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+
+        const images = [
+            {
+                title: "Mountain",
+                src: "../../assets/images/mountain.jpg"
+            },
+            {
+                title: "Forest",
+                src: "../../assets/images/forest.jpg"
+            },
+            {
+                title: "Sunset",
+                src: "../../assets/images/sunset.jpg"
+            },
+            {
+                title: "Ocean",
+                src: "../../assets/images/ocean.jpg"
+            }
+        ];
+
+        function createGallery() {
+
+            const gallery = document.getElementById("gallery");
+
+            gallery.innerHTML = "";
+
+            images.forEach(function (imageData) {
+
+                const card = document.createElement("div");
+
+                card.className = "image-card";
+
+                const image = document.createElement("img");
+
+                image.src = imageData.src;
+                image.alt = imageData.title;
+
+                const title = document.createElement("p");
+
+                title.textContent = imageData.title;
+
+                card.appendChild(image);
+                card.appendChild(title);
+
+                gallery.appendChild(card);
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form Validation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 50px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        #success {
+            color: green;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Login Form</h1>
+
+        <form id="loginForm">
+
+            <label>Username:</label>
+            <input type="text" id="username">
+            <span class="error" id="usernameError"></span>
+
+            <label>Password:</label>
+            <input type="password" id="password">
+            <span class="error" id="passwordError"></span>
+
+            <button type="submit">Login</button>
+
+            <p id="success"></p>
+
+        </form>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            let valid = true;
+
+            let username = document.getElementById("username").value.trim();
+            let password = document.getElementById("password").value;
+
+            document.getElementById("usernameError").textContent = "";
+            document.getElementById("passwordError").textContent = "";
+            document.getElementById("success").textContent = "";
+
+            // Username validation
+            if (username === "") {
+                document.getElementById("usernameError").textContent =
+                    "Username is required.";
+                valid = false;
+            } else if (username.length < 3) {
+                document.getElementById("usernameError").textContent =
+                    "Username must contain at least 3 characters.";
+                valid = false;
+            }
+
+            // Password validation
+            if (password === "") {
+                document.getElementById("passwordError").textContent =
+                    "Password is required.";
+                valid = false;
+            } else if (password.length < 6) {
+                document.getElementById("passwordError").textContent =
+                    "Password must contain at least 6 characters.";
+                valid = false;
+            }
+
+            // Successful login validation
+            if (valid) {
+                document.getElementById("success").textContent =
+                    "Login validation successful!";
+            }
+        });
+    </script>
+
+</body>
+
+</html>

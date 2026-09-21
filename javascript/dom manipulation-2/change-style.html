@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Change Style Dynamically</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            background-color: white;
+            width: 500px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        #text {
+            font-size: 22px;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Dynamic Style Change</h2>
+
+        <p id="text">
+            This paragraph will change its style.
+        </p>
+
+        <button onclick="changeStyle()">
+            Change Style
+        </button>
+
+        <br><br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        function changeStyle() {
+
+            let element = document.getElementById("text");
+
+            element.style.color = "blue";
+            element.style.backgroundColor = "lightyellow";
+            element.style.fontSize = "28px";
+            element.style.fontWeight = "bold";
+            element.style.border = "2px solid blue";
+            element.style.borderRadius = "10px";
+        }
+
+    </script>
+
+</body>
+
+</html>

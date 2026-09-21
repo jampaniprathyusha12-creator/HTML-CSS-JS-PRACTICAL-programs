@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Navigator Object</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            padding: 40px;
+        }
+
+        .container {
+            width: 550px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eee;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>JavaScript Navigator Object</h2>
+
+        <button onclick="showNavigatorInfo()">
+            Show Navigator Information
+        </button>
+
+        <div id="output"></div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        function showNavigatorInfo() {
+
+            let information =
+                "<b>Browser:</b> " + navigator.appName + "<br>" +
+                "<b>Platform:</b> " + navigator.platform + "<br>" +
+                "<b>Language:</b> " + navigator.language + "<br>" +
+                "<b>Online:</b> " + navigator.onLine + "<br>" +
+                "<b>Cookies Enabled:</b> " + navigator.cookieEnabled + "<br>" +
+                "<b>User Agent:</b> " + navigator.userAgent;
+
+            document.getElementById("output").innerHTML = information;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Marks and Grade Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .container {
+            width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        input {
+            display: block;
+            width: 80%;
+            padding: 10px;
+            margin: 10px auto;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Student Marks & Grade Calculator</h2>
+
+        <input type="number" id="mark1" placeholder="Subject 1 Marks" min="0" max="100">
+
+        <input type="number" id="mark2" placeholder="Subject 2 Marks" min="0" max="100">
+
+        <input type="number" id="mark3" placeholder="Subject 3 Marks" min="0" max="100">
+
+        <input type="number" id="mark4" placeholder="Subject 4 Marks" min="0" max="100">
+
+        <input type="number" id="mark5" placeholder="Subject 5 Marks" min="0" max="100">
+
+        <button onclick="calculateResult()">Calculate</button>
+        <button onclick="resetForm()">Reset</button>
+
+        <div id="result"></div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        function calculateResult() {
+
+            let mark1 = Number(document.getElementById("mark1").value);
+            let mark2 = Number(document.getElementById("mark2").value);
+            let mark3 = Number(document.getElementById("mark3").value);
+            let mark4 = Number(document.getElementById("mark4").value);
+            let mark5 = Number(document.getElementById("mark5").value);
+
+            let marks = [mark1, mark2, mark3, mark4, mark5];
+
+            for (let mark of marks) {
+                if (mark < 0 || mark > 100 || isNaN(mark)) {
+                    document.getElementById("result").textContent =
+                        "Please enter valid marks between 0 and 100.";
+                    return;
+                }
+            }
+
+            let total = mark1 + mark2 + mark3 + mark4 + mark5;
+            let percentage = total / 5;
+            let grade;
+
+            if (percentage >= 90) {
+                grade = "A+";
+            } else if (percentage >= 80) {
+                grade = "A";
+            } else if (percentage >= 70) {
+                grade = "B";
+            } else if (percentage >= 60) {
+                grade = "C";
+            } else if (percentage >= 50) {
+                grade = "D";
+            } else {
+                grade = "F";
+            }
+
+            document.getElementById("result").innerHTML =
+                "Total Marks: " + total + " / 500<br>" +
+                "Percentage: " + percentage.toFixed(2) + "%<br>" +
+                "Grade: " + grade;
+        }
+
+        function resetForm() {
+
+            document.getElementById("mark1").value = "";
+            document.getElementById("mark2").value = "";
+            document.getElementById("mark3").value = "";
+            document.getElementById("mark4").value = "";
+            document.getElementById("mark5").value = "";
+
+            document.getElementById("result").textContent = "";
+        }
+
+    </script>
+
+</body>
+
+</html>

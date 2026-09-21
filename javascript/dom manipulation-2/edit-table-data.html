@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit Table Data Dynamically</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 75%;
+        }
+
+        th,
+        td {
+            border: 1px solid #333;
+            padding: 12px;
+        }
+
+        th {
+            background-color: #ddd;
+        }
+
+        button {
+            padding: 7px 15px;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 7px;
+            width: 90%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Edit Table Data Dynamically</h1>
+
+    <table id="studentTable">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Course</th>
+            <th>Action</th>
+        </tr>
+
+        <tr>
+            <td>Prathyusha</td>
+            <td>19</td>
+            <td>B.Tech</td>
+            <td>
+                <button onclick="editRow(this)">Edit</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>priya</td>
+            <td>20</td>
+            <td>B.Tech</td>
+            <td>
+                <button onclick="editRow(this)">Edit</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>manvi</td>
+            <td>19</td>
+            <td>B.Sc</td>
+            <td>
+                <button onclick="editRow(this)">Edit</button>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        function editRow(button) {
+
+            const row = button.parentNode.parentNode;
+
+            if (button.textContent === "Edit") {
+
+                for (let i = 0; i < 3; i++) {
+                    const cell = row.cells[i];
+                    const value = cell.textContent;
+
+                    cell.innerHTML =
+                        '<input type="text" value="' + value + '">';
+                }
+
+                button.textContent = "Save";
+
+            } else {
+
+                for (let i = 0; i < 3; i++) {
+                    const cell = row.cells[i];
+                    const input = cell.querySelector("input");
+
+                    cell.textContent = input.value;
+                }
+
+                button.textContent = "Edit";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

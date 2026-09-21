@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Countdown Timer</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 18px;
+            width: 200px;
+        }
+
+        #display {
+            font-size: 50px;
+            margin: 30px;
+        }
+
+        button {
+            padding: 12px 25px;
+            margin: 10px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        a {
+            display: inline-block;
+            margin: 20px 10px;
+            padding: 10px 15px;
+            text-decoration: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>DOM & Event-Based Experiment 15</h1>
+
+    <h2>Countdown Timer</h2>
+
+    <input type="number" id="time" placeholder="Enter seconds" min="1">
+
+    <br>
+
+    <button onclick="startTimer()">Start</button>
+    <button onclick="resetTimer()">Reset</button>
+
+    <div id="display">00</div>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        let timeLeft = 0;
+        let timer = null;
+
+        function startTimer() {
+
+            if (timer !== null) {
+                return;
+            }
+
+            if (timeLeft === 0) {
+                timeLeft = Number(document.getElementById("time").value);
+            }
+
+            if (timeLeft <= 0) {
+                alert("Please enter a valid number of seconds.");
+                return;
+            }
+
+            document.getElementById("display").innerHTML = timeLeft;
+
+            timer = setInterval(function () {
+
+                timeLeft--;
+
+                document.getElementById("display").innerHTML = timeLeft;
+
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    timer = null;
+                    alert("Time's up!");
+                }
+
+            }, 1000);
+        }
+
+        function resetTimer() {
+
+            clearInterval(timer);
+            timer = null;
+
+            timeLeft = 0;
+
+            document.getElementById("time").value = "";
+            document.getElementById("display").innerHTML = "00";
+        }
+    </script>
+
+</body>
+
+</html>

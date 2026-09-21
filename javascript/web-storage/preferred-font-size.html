@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferred Font Size</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .content {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        #text {
+            font-size: 20px;
+            margin: 30px 0;
+        }
+
+        button {
+            padding: 10px 18px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+
+        <h1>Preferred Font Size</h1>
+
+        <p id="text">
+            This is sample text. Select a font size and refresh the page
+            to see the saved preference.
+        </p>
+
+        <button onclick="changeFontSize(16)">
+            Small
+        </button>
+
+        <button onclick="changeFontSize(20)">
+            Medium
+        </button>
+
+        <button onclick="changeFontSize(26)">
+            Large
+        </button>
+
+        <p id="output"></p>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        function changeFontSize(size) {
+
+            document.getElementById("text").style.fontSize =
+                size + "px";
+
+            localStorage.setItem("fontSize", size);
+
+            document.getElementById("output").innerHTML =
+                "Font size saved: " + size + "px";
+        }
+
+        window.onload = function () {
+
+            let savedSize = localStorage.getItem("fontSize");
+
+            if (savedSize !== null) {
+
+                document.getElementById("text").style.fontSize =
+                    savedSize + "px";
+
+                document.getElementById("output").innerHTML =
+                    "Saved font size restored: " + savedSize + "px";
+            }
+        };
+
+    </script>
+
+</body>
+
+</html>

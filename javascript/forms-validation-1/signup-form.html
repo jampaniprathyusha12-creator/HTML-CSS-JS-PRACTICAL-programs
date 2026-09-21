@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Signup Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding-top: 50px;
+        }
+
+        .container {
+            width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        #success {
+            color: green;
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Signup Form</h2>
+
+        <form id="signupForm">
+
+            <label>Username:</label>
+            <input type="text" id="username">
+            <div id="usernameError" class="error"></div>
+
+            <label>Email:</label>
+            <input type="text" id="email">
+            <div id="emailError" class="error"></div>
+
+            <label>Password:</label>
+            <input type="password" id="password">
+            <div id="passwordError" class="error"></div>
+
+            <label>Confirm Password:</label>
+            <input type="password" id="confirmPassword">
+            <div id="confirmError" class="error"></div>
+
+            <button type="submit">Sign Up</button>
+
+            <div id="success"></div>
+
+        </form>
+
+    </div>
+
+    <script>
+        let form = document.getElementById("signupForm");
+
+        form.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            let username = document.getElementById("username").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value;
+            let confirmPassword =
+                document.getElementById("confirmPassword").value;
+
+            document.querySelectorAll(".error").forEach(function (error) {
+                error.innerHTML = "";
+            });
+
+            document.getElementById("success").innerHTML = "";
+
+            let valid = true;
+
+            // Username validation
+            if (username === "") {
+                document.getElementById("usernameError").innerHTML =
+                    "Username is required.";
+                valid = false;
+            }
+
+            // Email validation
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (email === "") {
+                document.getElementById("emailError").innerHTML =
+                    "Email is required.";
+                valid = false;
+            } else if (!emailPattern.test(email)) {
+                document.getElementById("emailError").innerHTML =
+                    "Enter a valid email address.";
+                valid = false;
+            }
+
+            // Password validation
+            if (password.length < 6) {
+                document.getElementById("passwordError").innerHTML =
+                    "Password must contain at least 6 characters.";
+                valid = false;
+            }
+
+            // Confirm password validation
+            if (confirmPassword === "") {
+                document.getElementById("confirmError").innerHTML =
+                    "Please confirm your password.";
+                valid = false;
+            } else if (password !== confirmPassword) {
+                document.getElementById("confirmError").innerHTML =
+                    "Passwords do not match.";
+                valid = false;
+            }
+
+            // Successful signup
+            if (valid) {
+                document.getElementById("success").innerHTML =
+                    "Signup successful!";
+                form.reset();
+            }
+        });
+    </script>
+
+    <br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add and Remove CSS Classes</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            background-color: white;
+            width: 500px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        #box {
+            padding: 25px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .highlight {
+            background-color: lightblue;
+            color: darkblue;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Add and Remove CSS Classes</h2>
+
+        <div id="box">
+            This element has no special CSS class.
+        </div>
+
+        <button onclick="addClass()">
+            Add Class
+        </button>
+
+        <button onclick="removeClass()">
+            Remove Class
+        </button>
+
+        <br><br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        function addClass() {
+
+            let element = document.getElementById("box");
+
+            element.classList.add("highlight");
+
+            element.textContent =
+                "CSS class has been added!";
+        }
+
+        function removeClass() {
+
+            let element = document.getElementById("box");
+
+            element.classList.remove("highlight");
+
+            element.textContent =
+                "CSS class has been removed!";
+        }
+
+    </script>
+
+</body>
+
+</html>

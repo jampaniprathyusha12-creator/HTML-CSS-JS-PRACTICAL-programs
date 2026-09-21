@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Pseudo-Classes</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background-color: #2563eb;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        /* :hover */
+
+        .hover-button {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        .hover-button:hover {
+            background-color: #7c3aed;
+        }
+
+        /* :active */
+
+        .active-button {
+            background-color: #16a34a;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        .active-button:active {
+            background-color: #dc2626;
+            transform: scale(0.95);
+        }
+
+        /* :focus */
+
+        .focus-input {
+            width: 100%;
+            max-width: 400px;
+            padding: 12px;
+            border: 2px solid #94a3b8;
+            border-radius: 7px;
+            outline: none;
+        }
+
+        .focus-input:focus {
+            border-color: #2563eb;
+            background-color: #eff6ff;
+        }
+
+        /* :visited */
+
+        .visited-link {
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        .visited-link:visited {
+            color: #7c3aed;
+        }
+
+        .navigation {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .navigation a {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+        }
+
+        .navigation a:hover {
+            background-color: #1e40af;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>
+            CSS Pseudo-Classes
+        </h1>
+
+        <p>
+            Hover, Active, Focus and Visited
+        </p>
+
+    </header>
+
+
+    <main>
+
+        <!-- Hover -->
+
+        <section class="card">
+
+            <h2>
+                1. :hover
+            </h2>
+
+            <p>
+                Move the mouse over the button to see
+                the hover effect.
+            </p>
+
+            <button class="hover-button">
+                Hover Over Me
+            </button>
+
+        </section>
+
+
+        <!-- Active -->
+
+        <section class="card">
+
+            <h2>
+                2. :active
+            </h2>
+
+            <p>
+                Click and hold the button to see the
+                active effect.
+            </p>
+
+            <button class="active-button">
+                Click and Hold
+            </button>
+
+        </section>
+
+
+        <!-- Focus -->
+
+        <section class="card">
+
+            <h2>
+                3. :focus
+            </h2>
+
+            <p>
+                Click inside the input box to see
+                the focus effect.
+            </p>
+
+            <input type="text" class="focus-input" placeholder="Click here to focus">
+
+        </section>
+
+
+        <!-- Visited -->
+
+        <section class="card">
+
+            <h2>
+                4. :visited
+            </h2>
+
+            <p>
+                Click the link and then return to this
+                page to see the visited link style.
+            </p>
+
+            <a href="https://www.google.com" class="visited-link" target="_blank">
+                Visit Google
+            </a>
+
+        </section>
+
+
+        <!-- Navigation -->
+
+        <div class="navigation">
+
+            <a href="index.html">
+                ← Back to CSS Programs
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            HTML, CSS & JavaScript Practical Programs
+        </p>
+
+        <p>
+            CSS Program 10
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+</body>
+
+</html>

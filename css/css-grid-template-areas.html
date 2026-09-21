@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Grid Template Areas</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+        }
+
+        .container {
+            min-height: 100vh;
+
+            display: grid;
+
+            grid-template-columns: 220px 1fr;
+
+            grid-template-rows: 80px 1fr 70px;
+
+            grid-template-areas:
+                "header header"
+                "sidebar main"
+                "footer footer";
+        }
+
+        header {
+            grid-area: header;
+
+            background-color: #2563eb;
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+
+            background-color: #0f172a;
+            color: white;
+
+            padding: 25px;
+        }
+
+        .sidebar h2 {
+            margin-top: 0;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 5px;
+        }
+
+        .sidebar a:hover {
+            background-color: #2563eb;
+        }
+
+        main {
+            grid-area: main;
+
+            padding: 35px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            color: #2563eb;
+        }
+
+        .card p {
+            line-height: 1.7;
+        }
+
+        footer {
+            grid-area: footer;
+
+            background-color: #0f172a;
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 700px) {
+
+            .container {
+                grid-template-columns: 1fr;
+
+                grid-template-rows: auto auto 1fr auto;
+
+                grid-template-areas:
+                    "header"
+                    "sidebar"
+                    "main"
+                    "footer";
+            }
+
+            .sidebar {
+                text-align: center;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+
+            <h1>
+                CSS Grid Template Areas
+            </h1>
+
+        </header>
+
+
+        <aside class="sidebar">
+
+            <h2>Menu</h2>
+
+            <a href="#">Home</a>
+
+            <a href="#">About</a>
+
+            <a href="#">Projects</a>
+
+            <a href="#">Contact</a>
+
+        </aside>
+
+
+        <main>
+
+            <div class="card">
+
+                <h2>
+                    Main Content
+                </h2>
+
+                <p>
+                    CSS Grid template areas allow us to name
+                    different sections of a webpage and arrange
+                    them easily.
+                </p>
+
+                <p>
+                    In this example, the layout contains a
+                    header, sidebar, main content and footer.
+                </p>
+
+            </div>
+
+        </main>
+
+
+        <footer>
+
+            <p>
+                © 2026 CSS Grid Template Areas
+            </p>
+
+        </footer>
+
+    </div>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+</body>
+
+</html>

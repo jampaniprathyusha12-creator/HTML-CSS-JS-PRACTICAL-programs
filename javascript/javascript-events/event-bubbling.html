@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Event Bubbling</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+
+        #outer {
+            background-color: lightblue;
+            padding: 40px;
+            width: 350px;
+            margin: 30px auto;
+        }
+
+        #middle {
+            background-color: lightgreen;
+            padding: 30px;
+        }
+
+        #inner {
+            background-color: lightyellow;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        #message {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Event Bubbling Demonstration</h1>
+
+    <div id="outer">
+        Outer Div
+
+        <div id="middle">
+            Middle Div
+
+            <div id="inner">
+                Click Me
+            </div>
+        </div>
+    </div>
+
+    <p id="message">Click the inner box.</p>
+
+    <br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+
+        document.getElementById("outer").addEventListener("click", function () {
+            document.getElementById("message").textContent +=
+                " → Outer Div";
+        });
+
+        document.getElementById("middle").addEventListener("click", function () {
+            document.getElementById("message").textContent +=
+                " → Middle Div";
+        });
+
+        document.getElementById("inner").addEventListener("click", function () {
+            document.getElementById("message").textContent =
+                "Inner Div clicked";
+        });
+
+    </script>
+
+</body>
+
+</html>

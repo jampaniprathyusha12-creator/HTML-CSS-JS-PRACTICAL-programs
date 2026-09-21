@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>History Object</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            padding: 40px;
+        }
+
+        .container {
+            width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 8px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>JavaScript History Object</h2>
+
+        <button onclick="showHistoryInfo()">
+            Show History Information
+        </button>
+
+        <button onclick="goBack()">
+            Go Back
+        </button>
+
+        <button onclick="goForward()">
+            Go Forward
+        </button>
+
+        <div id="output"></div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        function showHistoryInfo() {
+
+            let information =
+                "<b>History Length:</b> " +
+                history.length +
+                "<br><br>" +
+                "The History object is used to navigate through previously visited pages.";
+
+            document.getElementById("output").innerHTML = information;
+        }
+
+        function goBack() {
+            history.back();
+        }
+
+        function goForward() {
+            history.forward();
+        }
+    </script>
+
+</body>
+
+</html>

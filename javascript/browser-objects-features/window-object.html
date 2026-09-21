@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Object</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 8px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eeeeee;
+            line-height: 1.8;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Window Object Demo</h1>
+
+        <button onclick="showWindowInfo()">Show Window Information</button>
+        <button onclick="openWindow()">Open New Window</button>
+
+        <div id="output">
+            Click the button to display Window object information.
+        </div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        function showWindowInfo() {
+
+            let output = document.getElementById("output");
+
+            output.innerHTML =
+                "<strong>Window Width:</strong> " + window.innerWidth + " pixels<br>" +
+                "<strong>Window Height:</strong> " + window.innerHeight + " pixels<br>" +
+                "<strong>Screen Width:</strong> " + window.screen.width + " pixels<br>" +
+                "<strong>Screen Height:</strong> " + window.screen.height + " pixels<br>" +
+                "<strong>Current URL:</strong> " + window.location.href;
+        }
+
+        function openWindow() {
+
+            window.open(
+                "https://www.example.com",
+                "_blank",
+                "width=600,height=400"
+            );
+        }
+    </script>
+
+</body>
+
+</html>

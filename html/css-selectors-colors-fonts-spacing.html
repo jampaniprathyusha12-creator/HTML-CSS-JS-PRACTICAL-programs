@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Selectors and Styling</title>
+
+    <style>
+        /* Universal Selector */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Element Selector */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+            margin: 0;
+        }
+
+        /* Header */
+
+        header {
+            background: linear-gradient(135deg,
+                    #0f172a,
+                    #2563eb);
+
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+        }
+
+        /* Main */
+
+        main {
+            width: 92%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        /* Class Selector */
+
+        .card {
+            background-color: white;
+            margin-bottom: 25px;
+            padding: 30px;
+            border: 2px solid #dbeafe;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        /* ID Selector */
+
+        #special-heading {
+            color: #7c3aed;
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        /* Font Properties */
+
+        .font-example {
+            font-family: Georgia, serif;
+            font-size: 20px;
+            font-weight: bold;
+            font-style: italic;
+            color: #2563eb;
+        }
+
+        /* Margin and Padding */
+
+        .spacing-example {
+            background-color: #eff6ff;
+            margin: 20px;
+            padding: 25px;
+            border: 3px solid #2563eb;
+        }
+
+        /* Border Examples */
+
+        .border-example {
+            border: 4px solid #7c3aed;
+            padding: 20px;
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+
+        /* Navigation */
+
+        .navigation {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            margin: 5px;
+            font-weight: bold;
+        }
+
+        .navigation a:hover {
+            background-color: #1e40af;
+        }
+
+        /* Footer */
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 27px;
+            }
+
+            main {
+                width: 94%;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>
+            CSS Selectors and Styling
+        </h1>
+
+        <p>
+            HTML Practical Program 12
+        </p>
+
+    </header>
+
+
+    <!-- Main Content -->
+
+    <main>
+
+        <!-- CSS Selectors -->
+
+        <section class="card">
+
+            <h2 id="special-heading">
+                CSS Selectors
+            </h2>
+
+            <p>
+                CSS selectors are used to select HTML
+                elements and apply styles to them.
+            </p>
+
+            <p>
+                This webpage demonstrates element,
+                class, ID and universal selectors.
+            </p>
+
+        </section>
+
+
+        <!-- Colors -->
+
+        <section class="card">
+
+            <h2>
+                CSS Colors
+            </h2>
+
+            <p style="color: #2563eb;">
+                This text demonstrates a blue text color.
+            </p>
+
+            <p style="background-color: #fef3c7; padding: 15px;">
+                This paragraph demonstrates a background color.
+            </p>
+
+        </section>
+
+
+        <!-- Fonts -->
+
+        <section class="card">
+
+            <h2>
+                CSS Fonts
+            </h2>
+
+            <p class="font-example">
+                This paragraph demonstrates font family,
+                font size, font weight and font style.
+            </p>
+
+        </section>
+
+
+        <!-- Margin and Padding -->
+
+        <section class="card">
+
+            <h2>
+                Margins and Padding
+            </h2>
+
+            <div class="spacing-example">
+
+                <p>
+                    This box demonstrates margin,
+                    padding and border properties.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Borders -->
+
+        <section class="card">
+
+            <h2>
+                CSS Borders
+            </h2>
+
+            <div class="border-example">
+
+                <p>
+                    This box demonstrates border styling
+                    with thickness, color and rounded corners.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Navigation -->
+
+        <div class="navigation">
+
+            <a href="index.html">
+                ← Back to HTML Programs
+            </a>
+
+            <a href="../index.html">
+                Home
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            HTML, CSS & JavaScript Practical Programs
+        </p>
+
+        <p>
+            HTML Section | Program 12 of 15
+        </p>
+
+        <p>
+            Create a Webpage Demonstrating CSS Selectors,
+            Colors, Fonts, Margins, Padding and Borders
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

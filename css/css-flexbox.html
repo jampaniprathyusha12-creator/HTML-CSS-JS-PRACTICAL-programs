@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Flexbox</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        /* Flexbox Container */
+
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding: 25px;
+            background-color: #dbeafe;
+            border-radius: 10px;
+        }
+
+        .flex-item {
+            flex: 1;
+            background-color: #2563eb;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        /* Flex Direction */
+
+        .direction-container {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+        }
+
+        .direction-item {
+            flex: 1;
+            background-color: #7c3aed;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        /* Navigation */
+
+        .navigation {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .navigation a {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .navigation a:hover {
+            background-color: #1e40af;
+        }
+
+        /* Footer */
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+
+        /* Responsive Design */
+
+        @media (max-width: 600px) {
+
+            main {
+                width: 94%;
+            }
+
+            .flex-container {
+                flex-direction: column;
+            }
+
+            .flex-item {
+                width: 100%;
+            }
+
+            .direction-container {
+                flex-direction: column;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>
+            CSS Flexbox
+        </h1>
+
+        <p>
+            Demonstration of Flexible Box Layout
+        </p>
+
+    </header>
+
+
+    <!-- Main Content -->
+
+    <main>
+
+
+        <!-- Introduction -->
+
+        <section class="card">
+
+            <h2>
+                Introduction to Flexbox
+            </h2>
+
+            <p>
+                CSS Flexbox is a layout system used to
+                arrange elements in rows or columns.
+                It makes it easier to create flexible
+                and responsive layouts.
+            </p>
+
+        </section>
+
+
+        <!-- Flex Container -->
+
+        <section class="card">
+
+            <h2>
+                Flexbox Layout
+            </h2>
+
+            <div class="flex-container">
+
+                <div class="flex-item">
+                    Item 1
+                </div>
+
+                <div class="flex-item">
+                    Item 2
+                </div>
+
+                <div class="flex-item">
+                    Item 3
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Flex Direction -->
+
+        <section class="card">
+
+            <h2>
+                Flex Direction
+            </h2>
+
+            <div class="direction-container">
+
+                <div class="direction-item">
+                    HTML
+                </div>
+
+                <div class="direction-item">
+                    CSS
+                </div>
+
+                <div class="direction-item">
+                    JavaScript
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Properties -->
+
+        <section class="card">
+
+            <h2>
+                Flexbox Properties Used
+            </h2>
+
+            <p>
+                <strong>display: flex;</strong>
+                creates a flex container.
+            </p>
+
+            <p>
+                <strong>flex-direction:</strong>
+                defines the direction of flex items.
+            </p>
+
+            <p>
+                <strong>justify-content:</strong>
+                aligns items along the main axis.
+            </p>
+
+            <p>
+                <strong>align-items:</strong>
+                aligns items along the cross axis.
+            </p>
+
+            <p>
+                <strong>gap:</strong>
+                provides space between flex items.
+            </p>
+
+        </section>
+
+
+        <!-- Navigation -->
+
+        <div class="navigation">
+
+            <a href="index.html">
+                ← Back to CSS Programs
+            </a>
+
+        </div>
+
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            HTML, CSS & JavaScript Practical Programs
+        </p>
+
+        <p>
+            CSS Program 14
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+
+</body>
+
+</html>

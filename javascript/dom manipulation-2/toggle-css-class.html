@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Toggle CSS Class</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            background-color: white;
+            width: 500px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        #box {
+            padding: 30px;
+            margin: 20px;
+            background-color: lightgray;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .active {
+            background-color: lightblue !important;
+            color: darkblue;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Toggle CSS Class</h2>
+
+        <div id="box">
+            Click the button to toggle my style.
+        </div>
+
+        <button onclick="toggleClass()">
+            Toggle Class
+        </button>
+
+        <br><br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        function toggleClass() {
+
+            let element = document.getElementById("box");
+
+            element.classList.toggle("active");
+
+        }
+
+    </script>
+
+</body>
+
+</html>

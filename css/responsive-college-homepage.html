@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>College Homepage</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background-color: #0f172a;
+            color: white;
+            padding: 18px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+            margin: 0 0 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: white;
+            color: #2563eb;
+            text-decoration: none;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2563eb;
+        }
+
+        .courses {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: white;
+            width: 300px;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: #2563eb;
+        }
+
+        .about {
+            background-color: white;
+            margin-top: 40px;
+            padding: 35px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            nav a {
+                margin: 0 7px;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+
+            .courses {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Sai University</h1>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#courses">Courses</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <section class="hero">
+
+        <h2>Welcome to Sai University</h2>
+        <img src="../assets/images/college.jpg" alt="College" width="600" height="600">
+
+        <p>
+            Empowering students through quality education
+            and innovation.
+        </p>
+
+        <a href="#courses" class="button">
+            Explore Courses
+        </a>
+
+    </section>
+
+
+    <main>
+
+        <section id="courses">
+
+            <h2>Our Courses</h2>
+
+            <div class="courses">
+
+                <div class="card">
+
+                    <h3>Computer Science</h3>
+
+                    <p>
+                        Learn programming, software development,
+                        databases and computer technologies.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Data Science</h3>
+
+                    <p>
+                        Learn data analysis, machine learning,
+                        statistics and visualization.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Artificial Intelligence</h3>
+
+                    <p>
+                        Explore machine learning, AI concepts
+                        and intelligent applications.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="about" id="about">
+
+            <h2>About Our College</h2>
+
+            <p>
+                Sai University provides a learning environment
+                that encourages students to develop technical
+                skills, creativity and innovation.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer id="contact">
+
+        <p>Sai University</p>
+
+        <p>Email: saiuniversity@gmail.com</p>
+
+        <p>© 2026 Sai University. All Rights Reserved.</p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+</body>
+
+</html>

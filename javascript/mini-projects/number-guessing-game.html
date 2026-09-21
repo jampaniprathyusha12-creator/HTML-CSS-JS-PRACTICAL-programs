@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Number Guessing Game</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .container {
+            width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        input {
+            padding: 12px;
+            width: 180px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 10px 5px;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #attempts {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Number Guessing Game</h2>
+
+        <p>Guess a number between 1 and 100.</p>
+
+        <input type="number" id="guess" min="1" max="100" placeholder="Enter your guess">
+
+        <br>
+
+        <button onclick="checkGuess()">Check Guess</button>
+        <button onclick="newGame()">New Game</button>
+
+        <div id="message"></div>
+        <div id="attempts"></div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        let randomNumber;
+        let attemptCount;
+
+        function startGame() {
+
+            randomNumber = Math.floor(Math.random() * 100) + 1;
+            attemptCount = 0;
+
+            document.getElementById("message").textContent = "";
+            document.getElementById("attempts").textContent =
+                "Attempts: 0";
+
+            document.getElementById("guess").value = "";
+        }
+
+        function checkGuess() {
+
+            let guess = Number(document.getElementById("guess").value);
+            let message = document.getElementById("message");
+
+            if (guess < 1 || guess > 100 || isNaN(guess)) {
+                message.textContent =
+                    "Please enter a number between 1 and 100.";
+                return;
+            }
+
+            attemptCount++;
+
+            if (guess === randomNumber) {
+
+                message.textContent =
+                    "Congratulations! You guessed the correct number.";
+
+            } else if (guess < randomNumber) {
+
+                message.textContent =
+                    "Too low! Try a higher number.";
+
+            } else {
+
+                message.textContent =
+                    "Too high! Try a lower number.";
+            }
+
+            document.getElementById("attempts").textContent =
+                "Attempts: " + attemptCount;
+        }
+
+        function newGame() {
+            startGame();
+        }
+
+        startGame();
+    </script>
+
+</body>
+
+</html>

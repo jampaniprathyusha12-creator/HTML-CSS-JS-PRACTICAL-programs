@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Regular Expressions in JavaScript</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input {
+            padding: 10px;
+            width: 300px;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Regular Expressions in JavaScript</h2>
+
+    <input type="text" id="text" placeholder="Enter a string">
+    <br>
+
+    <button onclick="demonstrateRegex()">
+        Test Regular Expression
+    </button>
+
+    <div id="output"></div>
+
+    <br>
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        function demonstrateRegex() {
+            let text = document.getElementById("text").value;
+
+            // Regular expression to check for digits
+            let digitRegex = /\d+/;
+
+            // Regular expression to check for alphabets
+            let alphabetRegex = /^[A-Za-z]+$/;
+
+            let hasDigit = digitRegex.test(text);
+            let onlyAlphabets = alphabetRegex.test(text);
+
+            document.getElementById("output").innerHTML =
+                "Contains Digit: " + hasDigit + "<br>" +
+                "Contains Only Alphabets: " + onlyAlphabets;
+        }
+    </script>
+
+</body>
+
+</html>

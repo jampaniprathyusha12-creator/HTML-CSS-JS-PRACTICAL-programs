@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sticky Header</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        /* Sticky Header */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background-color: #2563eb;
+            color: white;
+
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        section {
+            background-color: white;
+            padding: 35px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.1);
+
+            min-height: 300px;
+        }
+
+        h2 {
+            color: #2563eb;
+        }
+
+        p {
+            line-height: 1.7;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <h1>
+            My Website
+        </h1>
+
+        <nav>
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#services">Services</a>
+
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <section id="home">
+
+            <h2>
+                Home
+            </h2>
+
+            <p>
+                Welcome to my website. This webpage
+                demonstrates a sticky header using CSS.
+            </p>
+
+            <p>
+                Scroll down the page. The header will
+                remain fixed at the top of the screen.
+            </p>
+
+        </section>
+
+
+        <section id="about">
+
+            <h2>
+                About
+            </h2>
+
+            <p>
+                This section contains information about
+                the website and its purpose.
+            </p>
+
+            <p>
+                The header uses the CSS property
+                <strong>position: sticky</strong>.
+            </p>
+
+        </section>
+
+
+        <section id="services">
+
+            <h2>
+                Services
+            </h2>
+
+            <p>
+                We provide web development, design and
+                programming services.
+            </p>
+
+            <p>
+                CSS can be used to create responsive and
+                user-friendly layouts.
+            </p>
+
+        </section>
+
+
+        <section id="contact">
+
+            <h2>
+                Contact
+            </h2>
+
+            <p>
+                Email: jampaniprathyusha@gmail.com
+            </p>
+
+            <p>
+                Phone: +91 98765 43210
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            HTML and CSS Practical Programs
+        </p>
+
+        <p>
+            CSS Program 50
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+
+</body>
+
+</html>

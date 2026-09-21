@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Countdown Timer</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .container {
+            width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        input {
+            padding: 12px;
+            width: 200px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 10px 5px;
+            cursor: pointer;
+        }
+
+        #display {
+            font-size: 45px;
+            font-weight: bold;
+            margin: 25px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Countdown Timer</h2>
+
+        <input type="number" id="secondsInput" placeholder="Enter seconds" min="1">
+
+        <br>
+
+        <button onclick="startTimer()">Start</button>
+        <button onclick="stopTimer()">Stop</button>
+        <button onclick="resetTimer()">Reset</button>
+
+        <div id="display">00:00</div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        let timeLeft = 0;
+        let timer = null;
+
+        function updateDisplay() {
+
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+
+            minutes = String(minutes).padStart(2, "0");
+            seconds = String(seconds).padStart(2, "0");
+
+            document.getElementById("display").textContent =
+                minutes + ":" + seconds;
+        }
+
+        function startTimer() {
+
+            if (timer !== null) {
+                return;
+            }
+
+            if (timeLeft === 0) {
+                timeLeft = Number(
+                    document.getElementById("secondsInput").value
+                );
+            }
+
+            if (timeLeft <= 0) {
+                alert("Please enter a valid number of seconds.");
+                return;
+            }
+
+            updateDisplay();
+
+            timer = setInterval(function () {
+
+                timeLeft--;
+
+                updateDisplay();
+
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    timer = null;
+                    alert("Time is up!");
+                }
+
+            }, 1000);
+        }
+
+        function stopTimer() {
+
+            clearInterval(timer);
+            timer = null;
+        }
+
+        function resetTimer() {
+
+            clearInterval(timer);
+            timer = null;
+            timeLeft = 0;
+
+            document.getElementById("secondsInput").value = "";
+
+            updateDisplay();
+        }
+
+        updateDisplay();
+    </script>
+
+</body>
+
+</html>

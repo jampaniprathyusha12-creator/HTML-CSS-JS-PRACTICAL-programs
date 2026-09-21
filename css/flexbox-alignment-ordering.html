@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flexbox Alignment and Ordering</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2563eb;
+            margin: 30px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .flex-box {
+            height: 300px;
+
+            display: flex;
+
+            /* Horizontal alignment */
+            justify-content: space-around;
+
+            /* Vertical alignment */
+            align-items: center;
+
+            gap: 20px;
+
+            background-color: #dbeafe;
+            padding: 20px;
+
+            border-radius: 15px;
+        }
+
+        .item {
+            width: 150px;
+            padding: 30px 10px;
+
+            text-align: center;
+
+            background-color: #2563eb;
+            color: white;
+
+            border-radius: 10px;
+        }
+
+        /* Ordering */
+
+        .item1 {
+            order: 3;
+        }
+
+        .item2 {
+            order: 1;
+        }
+
+        .item3 {
+            order: 2;
+        }
+
+        .description {
+            background-color: white;
+            margin-top: 30px;
+            padding: 25px;
+            border-radius: 12px;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .description h2 {
+            color: #2563eb;
+        }
+
+        .description p {
+            line-height: 1.7;
+        }
+
+        @media (max-width: 600px) {
+
+            .flex-box {
+                height: auto;
+                flex-direction: column;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>
+        Flexbox Alignment and Ordering
+    </h1>
+
+
+    <div class="container">
+
+
+        <div class="flex-box">
+
+            <div class="item item1">
+                Item 1
+            </div>
+
+            <div class="item item2">
+                Item 2
+            </div>
+
+            <div class="item item3">
+                Item 3
+            </div>
+
+        </div>
+
+
+        <div class="description">
+
+            <h2>
+                Flexbox Properties
+            </h2>
+
+            <p>
+                <strong>display: flex</strong> creates a
+                flexible container.
+            </p>
+
+            <p>
+                <strong>justify-content</strong> controls the
+                horizontal alignment of flex items.
+            </p>
+
+            <p>
+                <strong>align-items</strong> controls the
+                vertical alignment of flex items.
+            </p>
+
+            <p>
+                <strong>order</strong> changes the visual
+                order of flex items.
+            </p>
+
+        </div>
+
+
+    </div>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+</body>
+
+</html>

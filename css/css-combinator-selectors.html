@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Combinator Selectors</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        section {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: #2563eb;
+        }
+
+        .example {
+            padding: 20px;
+            background-color: #eff6ff;
+            border-radius: 10px;
+        }
+
+        /* 1. Descendant Selector */
+        .descendant p {
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        /* 2. Child Selector */
+        .child>p {
+            color: #7c3aed;
+            font-weight: bold;
+        }
+
+        /* 3. Adjacent Sibling Selector */
+        .adjacent h3+p {
+            color: #dc2626;
+            font-weight: bold;
+        }
+
+        /* 4. General Sibling Selector */
+        .general h3~p {
+            color: #059669;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <h1>
+            CSS Combinator Selectors
+        </h1>
+
+        <p>
+            Descendant, Child, Adjacent Sibling and General Sibling
+        </p>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- Descendant Selector -->
+
+        <section>
+
+            <h2>
+                1. Descendant Selector
+            </h2>
+
+            <div class="example descendant">
+
+                <p>
+                    This paragraph is inside the div.
+                </p>
+
+                <div>
+
+                    <p>
+                        This paragraph is also a descendant.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Child Selector -->
+
+        <section>
+
+            <h2>
+                2. Child Selector
+            </h2>
+
+            <div class="example child">
+
+                <p>
+                    This is a direct child paragraph.
+                </p>
+
+                <div>
+
+                    <p>
+                        This is not a direct child.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Adjacent Sibling -->
+
+        <section>
+
+            <h2>
+                3. Adjacent Sibling Selector
+            </h2>
+
+            <div class="example adjacent">
+
+                <h3>
+                    Heading
+                </h3>
+
+                <p>
+                    This paragraph comes immediately after
+                    the heading.
+                </p>
+
+                <p>
+                    This paragraph does not come immediately
+                    after the heading.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- General Sibling -->
+
+        <section>
+
+            <h2>
+                4. General Sibling Selector
+            </h2>
+
+            <div class="example general">
+
+                <h3>
+                    Heading
+                </h3>
+
+                <p>
+                    First paragraph after the heading.
+                </p>
+
+                <p>
+                    Second paragraph after the heading.
+                </p>
+
+                <p>
+                    Third paragraph after the heading.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            HTML, CSS & JavaScript Practical Programs
+        </p>
+
+        <p>
+            CSS Program 28
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Responsive Image Gallery</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2563eb;
+            margin-bottom: 30px;
+        }
+
+        /* Responsive Gallery */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Tablet */
+
+        @media (max-width: 900px) {
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        /* Mobile */
+
+        @media (max-width: 600px) {
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery img {
+                height: 250px;
+            }
+
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <h1>
+            Responsive Image Gallery
+        </h1>
+
+        <p>
+            Gallery using CSS Grid and Media Queries
+        </p>
+
+    </header>
+
+
+    <main>
+
+        <section>
+
+            <h2>
+                Photo Gallery
+            </h2>
+
+            <div class="gallery">
+
+                <img src="../assets/images/brightsun.jpg" alt="Nature">
+
+                <img src="../assets/images/mountain.jpg" alt="Mountain">
+
+                <img src="../assets/images/hilss.jpg" alt="Landscape">
+
+                <img src="../assets/images/flowers.jpg" alt="Lake">
+
+                <img src="../assets/images/forest.jpg" alt="Forest">
+
+                <img src="../assets/images/ocean.jpg" alt="Mountain Landscape">
+
+                <img src="../assets/images/sunset.jpg" alt="Beach">
+
+                <img src="../assets/images/house.jpg" alt="Forest">
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            HTML and CSS Practical Programs
+        </p>
+
+        <p>
+            CSS Program 45
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+
+</body>
+
+</html>

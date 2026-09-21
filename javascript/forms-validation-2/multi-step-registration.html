@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Step Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        .step {
+            display: none;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        .success {
+            color: green;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Registration Form</h1>
+
+        <form id="registrationForm">
+
+            <!-- Step 1 -->
+            <div class="step active" id="step1">
+
+                <h2>Step 1: Personal Details</h2>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter your name">
+                <span class="error" id="nameError"></span>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" placeholder="Enter your age">
+                <span class="error" id="ageError"></span>
+
+                <div class="buttons">
+                    <span></span>
+                    <button type="button" id="nextButton">Next</button>
+                </div>
+
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step" id="step2">
+
+                <h2>Step 2: Contact Details</h2>
+
+                <label for="email">Email:</label>
+                <input type="text" id="email" placeholder="Enter your email">
+                <span class="error" id="emailError"></span>
+
+                <label for="mobile">Mobile Number:</label>
+                <input type="text" id="mobile" placeholder="Enter 10-digit mobile number">
+                <span class="error" id="mobileError"></span>
+
+                <div class="buttons">
+                    <button type="button" id="backButton">Back</button>
+                    <button type="button" id="nextButton2">Next</button>
+                </div>
+
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step" id="step3">
+
+                <h2>Step 3: Course Details</h2>
+
+                <label for="course">Select Course:</label>
+
+                <select id="course">
+                    <option value="">Select Course</option>
+                    <option value="B.Tech">B.Tech</option>
+                    <option value="BCA">BCA</option>
+                    <option value="B.Sc">B.Sc</option>
+                </select>
+
+                <span class="error" id="courseError"></span>
+
+                <div class="buttons">
+                    <button type="button" id="backButton2">Back</button>
+                    <button type="submit">Register</button>
+                </div>
+
+            </div>
+
+        </form>
+
+        <p class="success" id="successMessage"></p>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        let step1 = document.getElementById("step1");
+        let step2 = document.getElementById("step2");
+        let step3 = document.getElementById("step3");
+
+        // Step 1 validation
+        document.getElementById("nextButton").addEventListener("click", function () {
+
+            let name = document.getElementById("name").value.trim();
+            let age = document.getElementById("age").value;
+
+            document.getElementById("nameError").textContent = "";
+            document.getElementById("ageError").textContent = "";
+
+            let valid = true;
+
+            if (name === "") {
+                document.getElementById("nameError").textContent =
+                    "Name is required.";
+                valid = false;
+            }
+
+            if (age === "") {
+                document.getElementById("ageError").textContent =
+                    "Age is required.";
+                valid = false;
+            }
+            else if (age < 1 || age > 100) {
+                document.getElementById("ageError").textContent =
+                    "Enter a valid age.";
+                valid = false;
+            }
+
+            if (valid) {
+                step1.classList.remove("active");
+                step2.classList.add("active");
+            }
+        });
+
+        // Step 2 validation
+        document.getElementById("nextButton2").addEventListener("click", function () {
+
+            let email = document.getElementById("email").value.trim();
+            let mobile = document.getElementById("mobile").value.trim();
+
+            document.getElementById("emailError").textContent = "";
+            document.getElementById("mobileError").textContent = "";
+
+            let valid = true;
+
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let mobilePattern = /^[6-9][0-9]{9}$/;
+
+            if (!emailPattern.test(email)) {
+                document.getElementById("emailError").textContent =
+                    "Enter a valid email address.";
+                valid = false;
+            }
+
+            if (!mobilePattern.test(mobile)) {
+                document.getElementById("mobileError").textContent =
+                    "Enter a valid 10-digit mobile number.";
+                valid = false;
+            }
+
+            if (valid) {
+                step2.classList.remove("active");
+                step3.classList.add("active");
+            }
+        });
+
+        // Back from Step 2
+        document.getElementById("backButton").addEventListener("click", function () {
+            step2.classList.remove("active");
+            step1.classList.add("active");
+        });
+
+        // Back from Step 3
+        document.getElementById("backButton2").addEventListener("click", function () {
+            step3.classList.remove("active");
+            step2.classList.add("active");
+        });
+
+        // Final submission
+        document.getElementById("registrationForm").addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            let course = document.getElementById("course").value;
+
+            document.getElementById("courseError").textContent = "";
+            document.getElementById("successMessage").textContent = "";
+
+            if (course === "") {
+                document.getElementById("courseError").textContent =
+                    "Please select a course.";
+            }
+            else {
+                document.getElementById("successMessage").textContent =
+                    "Registration completed successfully!";
+            }
+        });
+    </script>
+
+</body>
+
+</html>

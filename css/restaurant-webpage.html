@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Delicious Restaurant</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff8f0;
+            color: #333;
+        }
+
+        header {
+            background-color: #7c2d12;
+            color: white;
+            padding: 20px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            color: #fed7aa;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #ea580c, #9a3412);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 18px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: white;
+            color: #9a3412;
+            padding: 12px 25px;
+            margin-top: 15px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: #9a3412;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .food-card {
+            background-color: white;
+            width: 300px;
+            padding: 25px;
+            text-align: center;
+            border-radius: 12px;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+            transition: transform 0.3s;
+        }
+
+        .food-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .food-card h3 {
+            color: #ea580c;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #9a3412;
+        }
+
+        .about {
+            background-color: white;
+            margin-top: 40px;
+            padding: 35px;
+            text-align: center;
+            border-radius: 12px;
+        }
+
+        footer {
+            background-color: #431407;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+
+            .menu {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .food-card {
+                width: 100%;
+                max-width: 350px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Delicious Restaurant</h1>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <section class="hero">
+
+        <h2>Welcome to Delicious Restaurant</h2>
+        <img src="../assets/icons/restaurant.jpg" alt="Restaurant" width="600" height="400">
+
+        <p>Fresh food, great taste and wonderful moments.</p>
+
+        <a href="#menu" class="button">
+            View Menu
+        </a>
+
+    </section>
+
+
+    <main>
+
+        <section id="menu">
+
+            <h2>Our Menu</h2>
+
+            <div class="menu">
+
+                <div class="food-card">
+
+                    <h3>Veg Biryani</h3>
+                    <img src="../assets/icons/veg biryani.jpg" alt="Veg Biryani" width="100" height="100">
+
+                    <p>
+                        Fragrant rice cooked with fresh vegetables
+                        and aromatic spices.
+                    </p>
+
+                    <p class="price">₹180</p>
+
+                </div>
+
+
+                <div class="food-card">
+
+                    <h3>Chicken Biryani</h3>
+                    <img src="../assets/icons/chicken biryani.jpg" alt="Chicken Biryani" width="100" height="100">
+
+                    <p>
+                        Fragrant rice cooked with tender chicken
+                        and aromatic spices.
+                    </p>
+
+                    <p class="price">₹220</p>
+
+                </div>
+
+
+                <div class="food-card">
+
+                    <h3>Masala Dosa</h3>
+                    <img src="../assets/icons/masala dosa.jpg" alt="Masala Dosa" width="100" height="100">
+
+                    <p>
+                        Crispy dosa served with flavorful
+                        potato masala and chutney.
+                    </p>
+
+                    <p class="price">₹120</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="about" id="about">
+
+            <h2>About Us</h2>
+
+            <p>
+                We serve delicious meals prepared with fresh
+                ingredients and traditional flavors.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer id="contact">
+
+        <h3>Contact Us</h3>
+
+        <p>Email: restaurant@example.com</p>
+
+        <p>Phone: +91 98765 43210</p>
+
+        <p>© 2026 Delicious Restaurant</p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+</body>
+
+</html>

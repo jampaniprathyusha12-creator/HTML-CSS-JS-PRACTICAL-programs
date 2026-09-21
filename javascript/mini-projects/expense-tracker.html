@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Expense Tracker</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .container {
+            width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px;
+            width: 180px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        #total {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Simple Expense Tracker</h2>
+
+        <input type="text" id="expenseName" placeholder="Expense Name">
+
+        <input type="number" id="expenseAmount" placeholder="Amount">
+
+        <br>
+
+        <button onclick="addExpense()">Add Expense</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Expense</th>
+                    <th>Amount</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="expenseList"></tbody>
+        </table>
+
+        <div id="total">Total: ₹0</div>
+
+        <button onclick="clearExpenses()">Clear All</button>
+
+        <br><br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        let expenses = [];
+
+        function addExpense() {
+
+            let name = document.getElementById("expenseName").value;
+            let amount = Number(
+                document.getElementById("expenseAmount").value
+            );
+
+            if (name === "" || amount <= 0) {
+                alert("Please enter a valid expense.");
+                return;
+            }
+
+            expenses.push({
+                name: name,
+                amount: amount
+            });
+
+            document.getElementById("expenseName").value = "";
+            document.getElementById("expenseAmount").value = "";
+
+            displayExpenses();
+        }
+
+        function displayExpenses() {
+
+            let list = document.getElementById("expenseList");
+
+            list.innerHTML = "";
+
+            let total = 0;
+
+            expenses.forEach(function (expense, index) {
+
+                total += expense.amount;
+
+                let row = document.createElement("tr");
+
+                row.innerHTML = `
+                <td>${expense.name}</td>
+                <td>₹${expense.amount}</td>
+                <td>
+                    <button onclick="deleteExpense(${index})">
+                        Delete
+                    </button>
+                </td>
+            `;
+
+                list.appendChild(row);
+            });
+
+            document.getElementById("total").textContent =
+                "Total: ₹" + total;
+        }
+
+        function deleteExpense(index) {
+
+            expenses.splice(index, 1);
+
+            displayExpenses();
+        }
+
+        function clearExpenses() {
+
+            expenses = [];
+
+            displayExpenses();
+        }
+
+    </script>
+
+</body>
+
+</html>

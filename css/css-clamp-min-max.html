@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Functions</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background-color: #2563eb;
+            color: white;
+            text-align: center;
+
+            /* clamp() */
+
+            padding: clamp(20px, 5vw, 60px);
+        }
+
+        header h1 {
+
+            /*
+             clamp(minimum, preferred, maximum)
+            */
+
+            font-size: clamp(28px, 6vw, 55px);
+
+            margin: 0;
+        }
+
+        .container {
+
+            /*
+             min() returns the smaller value.
+            */
+
+            width: min(90%, 1000px);
+
+            margin: 40px auto;
+        }
+
+        .card {
+            background-color: white;
+
+            /*
+             max() ensures at least 25px padding.
+            */
+
+            padding: max(25px, 4vw);
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            color: #2563eb;
+
+            font-size: clamp(24px, 4vw, 38px);
+        }
+
+        .card p {
+            font-size: clamp(16px, 2vw, 20px);
+            line-height: 1.7;
+        }
+
+        .example {
+            background-color: #dbeafe;
+
+            /*
+             min() limits the width.
+            */
+
+            width: min(100%, 700px);
+
+            /*
+             max() provides minimum height.
+            */
+
+            min-height: max(150px, 15vw);
+
+            margin: 25px auto;
+
+            padding: 25px;
+
+            border-radius: 10px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <h1>
+            CSS Functions
+        </h1>
+
+        <p>
+            clamp(), min() and max()
+        </p>
+
+    </header>
+
+
+    <main class="container">
+
+        <div class="card">
+
+            <h2>
+                Responsive CSS Functions
+            </h2>
+
+            <p>
+                CSS provides useful functions that help
+                create flexible and responsive layouts.
+            </p>
+
+
+            <div class="example">
+
+                <p>
+                    This box uses <strong>min()</strong>,
+                    <strong>max()</strong> and
+                    <strong>clamp()</strong>.
+                </p>
+
+            </div>
+
+
+            <p>
+                <strong>clamp()</strong> sets a minimum,
+                preferred and maximum value.
+            </p>
+
+            <p>
+                <strong>min()</strong> selects the smaller
+                value from the given options.
+            </p>
+
+            <p>
+                <strong>max()</strong> selects the larger
+                value from the given options.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 CSS Functions
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Focus and Blur Events</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        input {
+            width: 300px;
+            padding: 12px;
+            font-size: 18px;
+            border: 2px solid gray;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Focus and Blur Events</h1>
+
+    <input type="text" placeholder="Click inside the input" onfocus="showFocus()" onblur="showBlur()">
+
+    <p id="message">Click the input box.</p>
+
+    <br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+
+        function showFocus() {
+
+            document.getElementById("message").textContent =
+                "Input box is focused.";
+
+            document.querySelector("input").style.border =
+                "2px solid blue";
+        }
+
+        function showBlur() {
+
+            document.getElementById("message").textContent =
+                "Input box lost focus.";
+
+            document.querySelector("input").style.border =
+                "2px solid gray";
+        }
+
+    </script>
+
+</body>
+
+</html>

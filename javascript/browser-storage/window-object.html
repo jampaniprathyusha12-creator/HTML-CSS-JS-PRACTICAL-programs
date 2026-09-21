@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Window Object</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            padding: 40px;
+        }
+
+        .container {
+            width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 8px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>JavaScript Window Object</h2>
+
+        <button onclick="showWindowInfo()">Show Window Information</button>
+        <button onclick="showAlert()">Show Alert</button>
+
+        <div id="output"></div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        function showWindowInfo() {
+
+            let information =
+                "Window Width: " + window.innerWidth + " px<br>" +
+                "Window Height: " + window.innerHeight + " px<br>" +
+                "Screen Width: " + window.screen.width + " px<br>" +
+                "Screen Height: " + window.screen.height + " px";
+
+            document.getElementById("output").innerHTML = information;
+        }
+
+        function showAlert() {
+            window.alert("This alert is created using the Window object.");
+        }
+    </script>
+
+</body>
+
+</html>

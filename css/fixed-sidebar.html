@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fixed Sidebar</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        /* Fixed Sidebar */
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 230px;
+            height: 100vh;
+
+            background-color: #0f172a;
+            color: white;
+
+            padding: 25px;
+        }
+
+        .sidebar h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+
+            padding: 14px;
+            margin: 8px 0;
+
+            border-radius: 6px;
+        }
+
+        .sidebar a:hover {
+            background-color: #2563eb;
+        }
+
+        /* Main content */
+
+        .main {
+            margin-left: 230px;
+            padding: 30px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            padding: 35px;
+            text-align: center;
+            border-radius: 15px;
+        }
+
+        section {
+            background-color: white;
+            padding: 30px;
+            margin-top: 25px;
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.1);
+
+            min-height: 250px;
+        }
+
+        h2 {
+            color: #2563eb;
+        }
+
+        p {
+            line-height: 1.7;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 700px) {
+
+            .sidebar {
+                position: static;
+                width: 100%;
+                height: auto;
+            }
+
+            .main {
+                margin-left: 0;
+                padding: 20px;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <aside class="sidebar">
+
+        <h2>
+            My Menu
+        </h2>
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="#services">
+            Services
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+    </aside>
+
+
+    <main class="main">
+
+
+        <header>
+
+            <h1>
+                Fixed Sidebar
+            </h1>
+
+            <p>
+                Sidebar created using CSS
+            </p>
+
+        </header>
+
+
+        <section id="home">
+
+            <h2>
+                Home
+            </h2>
+
+            <p>
+                This webpage demonstrates a fixed sidebar.
+                The sidebar stays in its position while the
+                main content can be scrolled.
+            </p>
+
+        </section>
+
+
+        <section id="about">
+
+            <h2>
+                About
+            </h2>
+
+            <p>
+                The sidebar uses
+                <strong>position: fixed</strong>.
+                It remains attached to the side of the screen.
+            </p>
+
+        </section>
+
+
+        <section id="services">
+
+            <h2>
+                Services
+            </h2>
+
+            <p>
+                We provide web development, programming
+                and design services.
+            </p>
+
+        </section>
+
+
+        <section id="contact">
+
+            <h2>
+                Contact
+            </h2>
+
+            <p>
+                Email: jampaniprathyusha@gmail.com
+            </p>
+
+            <p>
+                Phone: +91 98765 43210
+            </p>
+
+        </section>
+
+
+        <footer>
+
+            <p>
+                HTML and CSS Practical Programs
+            </p>
+
+            <p>
+                CSS Program 51
+            </p>
+
+        </footer>
+
+
+    </main>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+
+</body>
+
+</html>

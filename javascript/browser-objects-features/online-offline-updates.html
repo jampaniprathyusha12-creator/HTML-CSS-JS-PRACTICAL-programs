@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Offline Status</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            max-width: 550px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        #status {
+            margin: 25px 0;
+            padding: 20px;
+            font-size: 22px;
+            border-radius: 8px;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Internet Connection Monitor</h1>
+
+        <p id="message"></p>
+
+        <div id="status"></div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        function updateStatus() {
+
+            let status = document.getElementById("status");
+            let message = document.getElementById("message");
+
+            if (navigator.onLine) {
+
+                status.innerHTML = "🟢 You are Online";
+                message.innerHTML =
+                    "Your browser has an active network connection.";
+
+            } else {
+
+                status.innerHTML = "🔴 You are Offline";
+                message.innerHTML =
+                    "Your browser is currently offline.";
+            }
+        }
+
+        // Display the current status when the page loads
+        updateStatus();
+
+        // Update information when the browser goes online
+        window.addEventListener("online", updateStatus);
+
+        // Update information when the browser goes offline
+        window.addEventListener("offline", updateStatus);
+
+    </script>
+
+</body>
+
+</html>

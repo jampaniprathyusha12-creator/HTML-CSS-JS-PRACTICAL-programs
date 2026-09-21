@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Object Fit and Object Position</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        section {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #2563eb;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            border-radius: 12px;
+            border: 3px solid #2563eb;
+        }
+
+        /* Object-fit: cover */
+
+        .cover {
+            object-fit: cover;
+        }
+
+        /* Object-fit: contain */
+
+        .contain {
+            object-fit: contain;
+            background-color: #e5e7eb;
+        }
+
+        /* Object-fit: fill */
+
+        .fill {
+            object-fit: fill;
+        }
+
+        /* Object-position */
+
+        .position {
+            object-fit: cover;
+            object-position: top;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 600px) {
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <h1>
+            Object Fit and Object Position
+        </h1>
+
+        <p>
+            Demonstration of CSS image properties
+        </p>
+
+    </header>
+
+
+    <main>
+
+        <section>
+
+            <h2>
+                CSS Image Examples
+            </h2>
+
+            <div class="gallery">
+
+
+                <div class="card">
+
+                    <h3>
+                        Object-Fit: Cover
+                    </h3>
+
+                    <img class="cover" src="https://images.unsplash.com/photo-1500534623283-312aade485b7" alt="Nature">
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        Object-Fit: Contain
+                    </h3>
+
+                    <img class="contain" src="https://images.unsplash.com/photo-1500534623283-312aade485b7"
+                        alt="Nature">
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        Object-Fit: Fill
+                    </h3>
+
+                    <img class="fill" src="https://images.unsplash.com/photo-1500534623283-312aade485b7" alt="Nature">
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        Object-Position: Top
+                    </h3>
+
+                    <img class="position" src="../assets/images/brightsun.jpg" alt="Nature">
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            HTML and CSS Practical Programs
+        </p>
+
+        <p>
+            CSS Program 44
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+
+</body>
+
+</html>

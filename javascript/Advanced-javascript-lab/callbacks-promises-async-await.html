@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Callbacks, Promises and Async Await</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .output {
+            width: 550px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: left;
+            line-height: 1.8;
+        }
+
+        a {
+            display: inline-block;
+            margin: 20px 10px;
+            padding: 10px 15px;
+            text-decoration: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Advanced JavaScript Lab - Experiment 40</h1>
+
+    <h2>Callbacks, Promises and Async/Await</h2>
+
+    <div class="output" id="output">
+        Running programs...
+    </div>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        let output = document.getElementById("output");
+
+        // Callback
+        function callbackExample(callback) {
+            setTimeout(function () {
+                callback("Callback executed successfully.");
+            }, 1000);
+        }
+
+        // Promise
+        function promiseExample() {
+            return new Promise(function (resolve) {
+                setTimeout(function () {
+                    resolve("Promise resolved successfully.");
+                }, 1500);
+            });
+        }
+
+        // Async/Await
+        async function asyncAwaitExample() {
+            let result = await promiseExample();
+
+            output.innerHTML +=
+                "<br><strong>Async/Await:</strong> " + result;
+        }
+
+        // Execute Callback
+        callbackExample(function (message) {
+            output.innerHTML =
+                "<strong>Callback:</strong> " + message;
+        });
+
+        // Execute Promise
+        promiseExample().then(function (message) {
+            output.innerHTML +=
+                "<br><strong>Promise:</strong> " + message;
+        });
+
+        // Execute Async/Await
+        asyncAwaitExample();
+    </script>
+
+</body>
+
+</html>

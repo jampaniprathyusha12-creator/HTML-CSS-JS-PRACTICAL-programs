@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Local Storage</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input {
+            padding: 10px;
+            width: 250px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin: 25px auto;
+            padding: 20px;
+            width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+
+        a {
+            display: inline-block;
+            margin: 20px 10px;
+            padding: 10px 15px;
+            text-decoration: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Advanced JavaScript Lab - Experiment 43</h1>
+
+    <h2>Local Storage</h2>
+
+    <input type="text" id="name" placeholder="Enter your name">
+
+    <br>
+
+    <button onclick="saveData()">Save Data</button>
+    <button onclick="retrieveData()">Retrieve Data</button>
+    <button onclick="clearData()">Clear Data</button>
+
+    <div id="output">No data available.</div>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        function saveData() {
+
+            let name = document.getElementById("name").value;
+
+            if (name === "") {
+                alert("Please enter your name.");
+                return;
+            }
+
+            localStorage.setItem("studentName", name);
+
+            document.getElementById("output").innerHTML =
+                "Data saved successfully!";
+        }
+
+        function retrieveData() {
+
+            let name = localStorage.getItem("studentName");
+
+            if (name === null) {
+                document.getElementById("output").innerHTML =
+                    "No saved data found.";
+            } else {
+                document.getElementById("output").innerHTML =
+                    "Stored Name: " + name;
+            }
+        }
+
+        function clearData() {
+
+            localStorage.removeItem("studentName");
+
+            document.getElementById("output").innerHTML =
+                "Stored data cleared.";
+        }
+    </script>
+
+</body>
+
+</html>

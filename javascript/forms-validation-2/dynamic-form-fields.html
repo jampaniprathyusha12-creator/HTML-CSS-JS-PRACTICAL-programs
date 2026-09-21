@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form Fields</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .dynamic-fields {
+            margin-top: 15px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Dynamic Registration Form</h1>
+
+        <form id="dynamicForm">
+
+            <label for="userType">Select User Type:</label>
+
+            <select id="userType">
+                <option value="">Select Type</option>
+                <option value="student">Student</option>
+                <option value="employee">Employee</option>
+            </select>
+
+            <div class="dynamic-fields" id="dynamicFields"></div>
+
+            <p class="error" id="errorMessage"></p>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+        <p class="success" id="successMessage"></p>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        let userType = document.getElementById("userType");
+        let dynamicFields = document.getElementById("dynamicFields");
+
+        userType.addEventListener("change", function () {
+
+            dynamicFields.innerHTML = "";
+
+            if (userType.value === "student") {
+
+                dynamicFields.innerHTML = `
+                <label for="college">College Name:</label>
+                <input type="text" id="college"
+                       placeholder="Enter college name">
+
+                <label for="course">Course:</label>
+                <input type="text" id="course"
+                       placeholder="Enter course">
+            `;
+            }
+
+            else if (userType.value === "employee") {
+
+                dynamicFields.innerHTML = `
+                <label for="company">Company Name:</label>
+                <input type="text" id="company"
+                       placeholder="Enter company name">
+
+                <label for="designation">Designation:</label>
+                <input type="text" id="designation"
+                       placeholder="Enter designation">
+            `;
+            }
+        });
+
+        document.getElementById("dynamicForm").addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            let errorMessage = document.getElementById("errorMessage");
+            let successMessage = document.getElementById("successMessage");
+
+            errorMessage.textContent = "";
+            successMessage.textContent = "";
+
+            if (userType.value === "") {
+                errorMessage.textContent =
+                    "Please select a user type.";
+                return;
+            }
+
+            let valid = true;
+
+            if (userType.value === "student") {
+
+                let college = document.getElementById("college").value.trim();
+                let course = document.getElementById("course").value.trim();
+
+                if (college === "" || course === "") {
+                    valid = false;
+                }
+            }
+
+            else if (userType.value === "employee") {
+
+                let company = document.getElementById("company").value.trim();
+                let designation =
+                    document.getElementById("designation").value.trim();
+
+                if (company === "" || designation === "") {
+                    valid = false;
+                }
+            }
+
+            if (!valid) {
+                errorMessage.textContent =
+                    "Please fill in all required fields.";
+                return;
+            }
+
+            successMessage.textContent =
+                "Form submitted successfully!";
+        });
+    </script>
+
+</body>
+
+</html>

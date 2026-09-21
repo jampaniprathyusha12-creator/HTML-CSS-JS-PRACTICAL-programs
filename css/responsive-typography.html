@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Responsive Typography</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background-color: #2563eb;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        /* Responsive heading */
+
+        header h1 {
+            font-size: clamp(28px, 6vw, 55px);
+            margin: 0;
+        }
+
+        header p {
+            font-size: clamp(16px, 2.5vw, 22px);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h2 {
+            color: #2563eb;
+
+            font-size: clamp(24px, 4vw, 36px);
+        }
+
+        .content p {
+            font-size: clamp(16px, 2vw, 20px);
+            line-height: 1.7;
+        }
+
+        .content li {
+            font-size: clamp(15px, 1.8vw, 19px);
+            margin: 12px 0;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+
+            font-size: clamp(14px, 2vw, 18px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <h1>
+            Responsive Typography
+        </h1>
+
+        <p>
+            Text that adapts to different screen sizes
+        </p>
+
+    </header>
+
+
+    <main class="container">
+
+        <div class="content">
+
+            <h2>
+                What is Responsive Typography?
+            </h2>
+
+            <p>
+                Responsive typography allows text sizes
+                to automatically adjust according to the
+                screen size of the device.
+            </p>
+
+            <h2>
+                CSS Techniques
+            </h2>
+
+            <ul>
+
+                <li>
+                    Using viewport units such as vw
+                </li>
+
+                <li>
+                    Using the clamp() function
+                </li>
+
+                <li>
+                    Using media queries
+                </li>
+
+            </ul>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Responsive Typography
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+</body>
+
+</html>

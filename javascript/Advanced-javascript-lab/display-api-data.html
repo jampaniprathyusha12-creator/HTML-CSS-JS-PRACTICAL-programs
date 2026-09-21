@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Display API Data</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .output {
+            width: 550px;
+            margin: 25px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: left;
+            line-height: 1.8;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        a {
+            display: inline-block;
+            margin: 20px 10px;
+            padding: 10px 15px;
+            text-decoration: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Advanced JavaScript Lab - Experiment 42</h1>
+
+    <h2>Display API Data Dynamically</h2>
+
+    <button onclick="loadUsers()">Load Users</button>
+
+    <div class="output" id="output">
+        Click the button to display API data.
+    </div>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        function loadUsers() {
+
+            let output = document.getElementById("output");
+
+            output.innerHTML = "Loading users...";
+
+            fetch("https://jsonplaceholder.typicode.com/users")
+                .then(response => response.json())
+                .then(users => {
+
+                    output.innerHTML = "";
+
+                    users.forEach(user => {
+
+                        let userDiv = document.createElement("div");
+
+                        userDiv.innerHTML = `
+                            <strong>Name:</strong> ${user.name}<br>
+                            <strong>Email:</strong> ${user.email}<br>
+                            <strong>City:</strong> ${user.address.city}
+                            <hr>
+                        `;
+
+                        output.appendChild(userDiv);
+                    });
+                })
+                .catch(error => {
+
+                    output.innerHTML =
+                        "Error loading data: " + error;
+                });
+        }
+    </script>
+
+</body>
+
+</html>

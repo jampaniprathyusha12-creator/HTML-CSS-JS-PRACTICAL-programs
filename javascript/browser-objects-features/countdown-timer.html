@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        input {
+            padding: 10px;
+            width: 100px;
+            font-size: 18px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #timer {
+            font-size: 45px;
+            font-weight: bold;
+            margin: 25px 0;
+        }
+
+        #message {
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Countdown Timer</h1>
+
+        <label for="seconds">Enter Seconds:</label>
+        <br><br>
+
+        <input type="number" id="seconds" min="1" placeholder="Seconds">
+
+        <br>
+
+        <button onclick="startTimer()">Start</button>
+        <button onclick="stopTimer()">Stop</button>
+
+        <div id="timer">00</div>
+
+        <p id="message"></p>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        let timeLeft = 0;
+        let countdown;
+
+        function startTimer() {
+
+            // Prevent multiple timers
+            if (countdown) {
+                return;
+            }
+
+            let input = document.getElementById("seconds").value;
+            let message = document.getElementById("message");
+
+            if (input === "" || Number(input) <= 0) {
+                message.textContent = "Please enter a valid number of seconds.";
+                return;
+            }
+
+            timeLeft = Number(input);
+            message.textContent = "";
+
+            document.getElementById("timer").textContent = timeLeft;
+
+            countdown = setInterval(function () {
+
+                timeLeft--;
+
+                document.getElementById("timer").textContent = timeLeft;
+
+                if (timeLeft <= 0) {
+
+                    clearInterval(countdown);
+                    countdown = null;
+
+                    document.getElementById("timer").textContent = "00";
+                    message.textContent = "Time's up!";
+                }
+
+            }, 1000);
+        }
+
+        function stopTimer() {
+
+            clearInterval(countdown);
+            countdown = null;
+
+            document.getElementById("message").textContent =
+                "Countdown stopped.";
+        }
+
+    </script>
+
+</body>
+
+</html>

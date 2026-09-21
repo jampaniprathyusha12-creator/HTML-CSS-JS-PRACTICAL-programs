@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Number Validation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        .success {
+            color: green;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Phone Number Validation</h1>
+
+        <form id="phoneForm">
+
+            <label for="phone">Mobile Number:</label>
+
+            <input type="text" id="phone" placeholder="Enter 10-digit mobile number">
+
+            <span class="error" id="phoneError"></span>
+
+            <button type="submit">Validate Phone</button>
+
+        </form>
+
+        <p class="success" id="successMessage"></p>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        document.getElementById("phoneForm").addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            let phone = document.getElementById("phone").value.trim();
+
+            let phoneError = document.getElementById("phoneError");
+            let successMessage = document.getElementById("successMessage");
+
+            phoneError.textContent = "";
+            successMessage.textContent = "";
+
+            // Regular expression for Indian mobile number
+            let phonePattern = /^[6-9][0-9]{9}$/;
+
+            if (phone === "") {
+                phoneError.textContent = "Phone number is required.";
+            }
+            else if (!phonePattern.test(phone)) {
+                phoneError.textContent =
+                    "Enter a valid 10-digit mobile number.";
+            }
+            else {
+                successMessage.textContent =
+                    "Phone number is valid!";
+            }
+        });
+    </script>
+
+</body>
+
+</html>

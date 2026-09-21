@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Responsive Login Form</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2f2f2;
+        }
+
+        .login-box {
+            width: 90%;
+            max-width: 400px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #aaa;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        a {
+            display: inline-block;
+            margin: 15px 5px 0;
+            padding: 8px 12px;
+            text-decoration: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-box">
+
+        <h1>Login Form</h1>
+
+        <form onsubmit="return validateLogin()">
+
+            <input type="email" id="email" placeholder="Enter email">
+
+            <input type="password" id="password" placeholder="Enter password">
+
+            <button type="submit">Login</button>
+
+        </form>
+
+        <div id="message"></div>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        function validateLogin() {
+
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value;
+            let message = document.getElementById("message");
+
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (email === "") {
+                message.innerHTML = "Please enter your email.";
+                return false;
+            }
+
+            if (!emailPattern.test(email)) {
+                message.innerHTML = "Please enter a valid email.";
+                return false;
+            }
+
+            if (password === "") {
+                message.innerHTML = "Please enter your password.";
+                return false;
+            }
+
+            if (password.length < 6) {
+                message.innerHTML =
+                    "Password must contain at least 6 characters.";
+                return false;
+            }
+
+            message.innerHTML = "Login successful!";
+
+            return false;
+        }
+    </script>
+
+</body>
+
+</html>

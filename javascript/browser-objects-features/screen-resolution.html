@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Width and Height</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #eeeeee;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Screen Dimensions</h1>
+
+        <div id="output"></div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        let width = screen.width;
+        let height = screen.height;
+
+        document.getElementById("output").innerHTML =
+            "<strong>Screen Width:</strong> " + width + " pixels<br>" +
+            "<strong>Screen Height:</strong> " + height + " pixels";
+
+    </script>
+
+</body>
+
+</html>

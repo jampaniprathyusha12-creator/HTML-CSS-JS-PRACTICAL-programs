@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>getElementById and getElementsByClassName</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .box {
+            padding: 15px;
+            margin: 10px;
+            border: 1px solid black;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 id="heading">DOM Selection Methods</h2>
+
+    <p class="box">Paragraph 1</p>
+    <p class="box">Paragraph 2</p>
+    <p class="box">Paragraph 3</p>
+
+    <button onclick="demonstrateMethods()">Demonstrate</button>
+
+    <div id="output"></div>
+
+    <br>
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        function demonstrateMethods() {
+
+            // getElementById()
+            let heading = document.getElementById("heading");
+            heading.textContent = "Heading Changed Using getElementById()";
+
+            // getElementsByClassName()
+            let paragraphs = document.getElementsByClassName("box");
+
+            for (let i = 0; i < paragraphs.length; i++) {
+                paragraphs[i].style.backgroundColor = "lightblue";
+                paragraphs[i].textContent =
+                    "Paragraph " + (i + 1) +
+                    " changed using getElementsByClassName()";
+            }
+
+            document.getElementById("output").innerHTML =
+                "Both DOM methods demonstrated successfully.";
+        }
+    </script>
+
+</body>
+
+</html>

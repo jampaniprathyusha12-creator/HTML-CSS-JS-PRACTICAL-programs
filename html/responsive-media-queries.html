@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Responsive Webpage Using Media Queries</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        /* Header */
+
+        header {
+            background: linear-gradient(135deg,
+                    #0f172a,
+                    #2563eb);
+
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+        }
+
+        /* Main */
+
+        main {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        .intro {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .intro h2 {
+            color: #2563eb;
+            margin-bottom: 12px;
+        }
+
+        .intro p {
+            color: #4b5563;
+            font-size: 17px;
+        }
+
+        /* Responsive Cards */
+
+        .cards {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            flex: 1;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h3 {
+            color: #2563eb;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #4b5563;
+        }
+
+        /* Navigation */
+
+        .navigation {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            margin: 5px;
+            font-weight: bold;
+        }
+
+        .navigation a:hover {
+            background-color: #1e40af;
+        }
+
+        /* Footer */
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Media Query */
+
+        @media (max-width: 700px) {
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            main {
+                width: 94%;
+            }
+
+            .cards {
+                flex-direction: column;
+            }
+
+            .intro,
+            .card {
+                padding: 20px;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>
+            Responsive Webpage
+        </h1>
+
+        <p>
+            HTML Practical Program 13
+        </p>
+
+    </header>
+
+
+    <!-- Main Content -->
+
+    <main>
+
+        <!-- Introduction -->
+
+        <section class="intro">
+
+            <h2>
+                CSS Media Queries
+            </h2>
+
+            <p>
+                This webpage demonstrates responsive design
+                using CSS media queries. Resize the browser
+                window to see how the layout changes.
+            </p>
+
+        </section>
+
+
+        <!-- Responsive Cards -->
+
+        <section class="cards">
+
+            <div class="card">
+
+                <h3>
+                    HTML
+                </h3>
+
+                <p>
+                    HTML is used to create the structure
+                    of a webpage.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    CSS
+                </h3>
+
+                <p>
+                    CSS is used to style and design
+                    a webpage.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    JavaScript
+                </h3>
+
+                <p>
+                    JavaScript is used to add
+                    interactivity to webpages.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Navigation -->
+
+        <div class="navigation">
+
+            <a href="index.html">
+                ← Back to HTML Programs
+            </a>
+
+            <a href="../index.html">
+                Home
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            HTML, CSS & JavaScript Practical Programs
+        </p>
+
+        <p>
+            HTML Section | Program 13 of 15
+        </p>
+
+        <p>
+            Create a Responsive Webpage Using CSS Media Queries
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

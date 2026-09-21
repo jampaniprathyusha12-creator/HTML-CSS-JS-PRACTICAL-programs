@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Save Form Data</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input,
+        textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 120px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #status {
+            margin-top: 15px;
+            color: green;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Auto-Save Form</h1>
+
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <input type="email" id="email" placeholder="Enter your email">
+
+        <textarea id="message" placeholder="Enter your message"></textarea>
+
+        <p id="status">
+            Your data will be saved automatically.
+        </p>
+
+        <button onclick="clearData()">
+            Clear Saved Data
+        </button>
+
+        <br><br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        let nameInput = document.getElementById("name");
+        let emailInput = document.getElementById("email");
+        let messageInput = document.getElementById("message");
+        let status = document.getElementById("status");
+
+        function saveData() {
+
+            localStorage.setItem(
+                "autoName",
+                nameInput.value
+            );
+
+            localStorage.setItem(
+                "autoEmail",
+                emailInput.value
+            );
+
+            localStorage.setItem(
+                "autoMessage",
+                messageInput.value
+            );
+
+            status.innerHTML =
+                "Data saved automatically.";
+        }
+
+        nameInput.addEventListener("input", saveData);
+        emailInput.addEventListener("input", saveData);
+        messageInput.addEventListener("input", saveData);
+
+        window.onload = function () {
+
+            nameInput.value =
+                localStorage.getItem("autoName") || "";
+
+            emailInput.value =
+                localStorage.getItem("autoEmail") || "";
+
+            messageInput.value =
+                localStorage.getItem("autoMessage") || "";
+
+            if (
+                nameInput.value ||
+                emailInput.value ||
+                messageInput.value
+            ) {
+                status.innerHTML =
+                    "Previously saved data restored.";
+            }
+        };
+
+        function clearData() {
+
+            localStorage.removeItem("autoName");
+            localStorage.removeItem("autoEmail");
+            localStorage.removeItem("autoMessage");
+
+            nameInput.value = "";
+            emailInput.value = "";
+            messageInput.value = "";
+
+            status.innerHTML =
+                "Saved data cleared.";
+        }
+
+    </script>
+
+</body>
+
+</html>

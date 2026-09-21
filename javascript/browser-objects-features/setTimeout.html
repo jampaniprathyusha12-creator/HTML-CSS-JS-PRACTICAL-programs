@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout Demo</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eeeeee;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>setTimeout() Demo</h1>
+
+        <p>Click the button. A message will appear after 3 seconds.</p>
+
+        <button onclick="startTimer()">Start Timer</button>
+
+        <div id="output">
+            Waiting for the button to be clicked...
+        </div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        function startTimer() {
+
+            document.getElementById("output").textContent =
+                "Timer started... Please wait 3 seconds.";
+
+            setTimeout(function () {
+
+                document.getElementById("output").textContent =
+                    "3 seconds completed! Message displayed using setTimeout().";
+
+            }, 3000);
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Frequency of Array Elements</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input {
+            padding: 10px;
+            width: 300px;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Frequency of Each Element in an Array</h2>
+
+    <input type="text" id="arrayInput" placeholder="Enter elements separated by commas">
+    <br>
+
+    <button onclick="findFrequency()">Find Frequency</button>
+
+    <div id="output"></div>
+
+    <br>
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        function findFrequency() {
+            let input = document.getElementById("arrayInput").value;
+
+            let arr = input.split(",").map(item => item.trim());
+
+            let frequency = {};
+
+            for (let element of arr) {
+                if (frequency[element]) {
+                    frequency[element]++;
+                } else {
+                    frequency[element] = 1;
+                }
+            }
+
+            let result = "";
+
+            for (let element in frequency) {
+                result += element + " : " + frequency[element] + "<br>";
+            }
+
+            document.getElementById("output").innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tic-Tac-Toe Game</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .game {
+            width: 330px;
+            margin: auto;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 5px;
+            margin: 20px auto;
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            font-size: 40px;
+            cursor: pointer;
+            background-color: white;
+            border: 2px solid black;
+        }
+
+        button {
+            padding: 10px 18px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #message {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="game">
+
+        <h2>Tic-Tac-Toe Game</h2>
+
+        <p id="message">Player X's Turn</p>
+
+        <div class="board">
+            <button class="cell" onclick="makeMove(0)"></button>
+            <button class="cell" onclick="makeMove(1)"></button>
+            <button class="cell" onclick="makeMove(2)"></button>
+
+            <button class="cell" onclick="makeMove(3)"></button>
+            <button class="cell" onclick="makeMove(4)"></button>
+            <button class="cell" onclick="makeMove(5)"></button>
+
+            <button class="cell" onclick="makeMove(6)"></button>
+            <button class="cell" onclick="makeMove(7)"></button>
+            <button class="cell" onclick="makeMove(8)"></button>
+        </div>
+
+        <button onclick="resetGame()">New Game</button>
+
+        <br><br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        let board = ["", "", "", "", "", "", "", "", ""];
+        let currentPlayer = "X";
+        let gameOver = false;
+
+        const winningPatterns = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ];
+
+        function makeMove(index) {
+
+            if (board[index] !== "" || gameOver) {
+                return;
+            }
+
+            board[index] = currentPlayer;
+
+            document.getElementsByClassName("cell")[index].textContent =
+                currentPlayer;
+
+            checkWinner();
+        }
+
+        function checkWinner() {
+
+            for (let pattern of winningPatterns) {
+
+                let a = pattern[0];
+                let b = pattern[1];
+                let c = pattern[2];
+
+                if (
+                    board[a] !== "" &&
+                    board[a] === board[b] &&
+                    board[a] === board[c]
+                ) {
+                    document.getElementById("message").textContent =
+                        "Player " + currentPlayer + " Wins!";
+
+                    gameOver = true;
+                    return;
+                }
+            }
+
+            if (!board.includes("")) {
+
+                document.getElementById("message").textContent =
+                    "It's a Draw!";
+
+                gameOver = true;
+                return;
+            }
+
+            currentPlayer = currentPlayer === "X" ? "O" : "X";
+
+            document.getElementById("message").textContent =
+                "Player " + currentPlayer + "'s Turn";
+        }
+
+        function resetGame() {
+
+            board = ["", "", "", "", "", "", "", "", ""];
+            currentPlayer = "X";
+            gameOver = false;
+
+            let cells = document.getElementsByClassName("cell");
+
+            for (let cell of cells) {
+                cell.textContent = "";
+            }
+
+            document.getElementById("message").textContent =
+                "Player X's Turn";
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Count Number of Words</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input {
+            padding: 10px;
+            width: 350px;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Count Number of Words</h2>
+
+    <input type="text" id="text" placeholder="Enter a sentence">
+    <br>
+
+    <button onclick="countWords()">Count Words</button>
+
+    <div id="output"></div>
+
+    <br>
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        function countWords() {
+            let text = document.getElementById("text").value.trim();
+
+            if (text === "") {
+                document.getElementById("output").innerHTML =
+                    "Number of words = 0";
+                return;
+            }
+
+            let words = text.split(/\s+/);
+            let count = words.length;
+
+            document.getElementById("output").innerHTML =
+                "Number of words = " + count;
+        }
+    </script>
+
+</body>
+
+</html>

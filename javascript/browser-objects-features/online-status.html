@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Offline Detection</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        #status {
+            margin: 25px 0;
+            padding: 20px;
+            font-size: 22px;
+            border-radius: 8px;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Internet Connection Status</h1>
+
+        <div id="status"></div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+
+        function checkConnection() {
+
+            let status = document.getElementById("status");
+
+            if (navigator.onLine) {
+                status.innerHTML = "🟢 Browser is Online";
+            } else {
+                status.innerHTML = "🔴 Browser is Offline";
+            }
+        }
+
+        // Check status when the page loads
+        checkConnection();
+
+        // Detect when browser goes online
+        window.addEventListener("online", checkConnection);
+
+        // Detect when browser goes offline
+        window.addEventListener("offline", checkConnection);
+
+    </script>
+
+</body>
+
+</html>

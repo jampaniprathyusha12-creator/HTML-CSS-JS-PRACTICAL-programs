@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add and Delete Table Rows</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 60%;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        th {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Add and Delete Rows from a Table</h2>
+
+    <input type="text" id="name" placeholder="Enter name">
+    <input type="number" id="age" placeholder="Enter age">
+
+    <br>
+
+    <button onclick="addRow()">Add Row</button>
+
+    <table id="studentTable">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Action</th>
+        </tr>
+    </table>
+
+    <br>
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+    <script>
+        function addRow() {
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+
+            if (name === "" || age === "") {
+                alert("Please enter name and age.");
+                return;
+            }
+
+            let table = document.getElementById("studentTable");
+
+            let row = table.insertRow();
+
+            let nameCell = row.insertCell(0);
+            let ageCell = row.insertCell(1);
+            let actionCell = row.insertCell(2);
+
+            nameCell.textContent = name;
+            ageCell.textContent = age;
+
+            let deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+
+            deleteButton.onclick = function () {
+                row.remove();
+            };
+
+            actionCell.appendChild(deleteButton);
+
+            document.getElementById("name").value = "";
+            document.getElementById("age").value = "";
+        }
+    </script>
+
+</body>
+
+</html>

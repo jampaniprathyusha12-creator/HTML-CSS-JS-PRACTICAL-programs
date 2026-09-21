@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input, Change, Focus and Blur Validation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .message {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .success {
+            color: green;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Event-Based Validation</h1>
+
+        <form id="myForm">
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+            <p id="nameMessage" class="message"></p>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" placeholder="Enter your email">
+            <p id="emailMessage" class="message"></p>
+
+            <label for="course">Course:</label>
+            <select id="course">
+                <option value="">Select Course</option>
+                <option value="B.Tech">B.Tech</option>
+                <option value="BCA">BCA</option>
+                <option value="B.Sc">B.Sc</option>
+            </select>
+            <p id="courseMessage" class="message"></p>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        let name = document.getElementById("name");
+        let email = document.getElementById("email");
+        let course = document.getElementById("course");
+
+        // INPUT EVENT
+        name.addEventListener("input", function () {
+
+            if (name.value.trim() === "") {
+                document.getElementById("nameMessage").textContent =
+                    "Name cannot be empty.";
+                document.getElementById("nameMessage").className =
+                    "message error";
+            }
+            else {
+                document.getElementById("nameMessage").textContent =
+                    "Name entered.";
+                document.getElementById("nameMessage").className =
+                    "message success";
+            }
+        });
+
+        // FOCUS EVENT
+        email.addEventListener("focus", function () {
+
+            document.getElementById("emailMessage").textContent =
+                "Enter a valid email address.";
+            document.getElementById("emailMessage").className =
+                "message";
+        });
+
+        // BLUR EVENT
+        email.addEventListener("blur", function () {
+
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email.value.trim())) {
+                document.getElementById("emailMessage").textContent =
+                    "Invalid email address.";
+                document.getElementById("emailMessage").className =
+                    "message error";
+            }
+            else {
+                document.getElementById("emailMessage").textContent =
+                    "Valid email address.";
+                document.getElementById("emailMessage").className =
+                    "message success";
+            }
+        });
+
+        // CHANGE EVENT
+        course.addEventListener("change", function () {
+
+            if (course.value === "") {
+                document.getElementById("courseMessage").textContent =
+                    "Please select a course.";
+                document.getElementById("courseMessage").className =
+                    "message error";
+            }
+            else {
+                document.getElementById("courseMessage").textContent =
+                    "Course selected: " + course.value;
+                document.getElementById("courseMessage").className =
+                    "message success";
+            }
+        });
+
+        // FORM SUBMISSION
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            if (
+                name.value.trim() !== "" &&
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()) &&
+                course.value !== ""
+            ) {
+                alert("Form submitted successfully!");
+            }
+            else {
+                alert("Please correct all fields.");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

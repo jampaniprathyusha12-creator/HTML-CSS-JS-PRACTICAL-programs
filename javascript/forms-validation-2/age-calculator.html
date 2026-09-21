@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eeeeee;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Age Calculator</h1>
+
+        <form id="ageForm">
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob">
+
+            <p class="error" id="errorMessage"></p>
+
+            <button type="submit">Calculate Age</button>
+
+        </form>
+
+        <div class="result" id="result">
+            Your age will be displayed here.
+        </div>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        document.getElementById("ageForm").addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            let dobValue = document.getElementById("dob").value;
+            let errorMessage = document.getElementById("errorMessage");
+            let result = document.getElementById("result");
+
+            errorMessage.textContent = "";
+
+            if (dobValue === "") {
+                errorMessage.textContent = "Please select your date of birth.";
+                result.textContent = "Your age will be displayed here.";
+                return;
+            }
+
+            let dob = new Date(dobValue);
+            let today = new Date();
+
+            if (dob > today) {
+                errorMessage.textContent =
+                    "Date of birth cannot be in the future.";
+                result.textContent = "Invalid date of birth.";
+                return;
+            }
+
+            let age = today.getFullYear() - dob.getFullYear();
+
+            let monthDifference = today.getMonth() - dob.getMonth();
+
+            if (
+                monthDifference < 0 ||
+                (monthDifference === 0 &&
+                    today.getDate() < dob.getDate())
+            ) {
+                age--;
+            }
+
+            result.textContent = "Your age is " + age + " years.";
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date of Birth Validation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .container {
+            width: 400px;
+            max-width: 90%;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 25px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Date of Birth Validation</h1>
+
+        <form id="dobForm">
+
+            <label for="dob">Enter Date of Birth:</label>
+
+            <input type="date" id="dob">
+
+            <button type="submit">Validate Date</button>
+
+        </form>
+
+        <p id="message"></p>
+
+        <br>
+
+        <a href="../index.html">← Back to JavaScript Programs</a>
+        <br><br>
+        <a href="../../index.html">← Home</a>
+
+    </div>
+
+    <script>
+        document.getElementById("dobForm").addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            let dobValue = document.getElementById("dob").value;
+            let message = document.getElementById("message");
+
+            if (dobValue === "") {
+                message.textContent = "Date of birth is required.";
+                message.style.color = "red";
+                return;
+            }
+
+            let dob = new Date(dobValue + "T00:00:00");
+            let today = new Date();
+
+            today.setHours(0, 0, 0, 0);
+
+            if (dob > today) {
+                message.textContent =
+                    "Date of birth cannot be in the future.";
+                message.style.color = "red";
+            }
+            else {
+                message.textContent = "Valid date of birth!";
+                message.style.color = "green";
+            }
+        });
+    </script>
+
+</body>
+
+</html>

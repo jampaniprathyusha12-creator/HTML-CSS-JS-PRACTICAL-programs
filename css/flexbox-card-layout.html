@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flexbox Card Layout</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2563eb;
+            margin-bottom: 30px;
+        }
+
+        /* Flexbox container */
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .card {
+            background-color: white;
+            width: 300px;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.12);
+
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card h3 {
+            color: #2563eb;
+        }
+
+        .card p {
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .button:hover {
+            background-color: #7c3aed;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <h1>
+            Flexbox Card Layout
+        </h1>
+
+        <p>
+            Creating responsive cards using CSS Flexbox
+        </p>
+
+    </header>
+
+
+    <main>
+
+        <h2>
+            Our Courses
+        </h2>
+
+
+        <div class="card-container">
+
+
+            <div class="card">
+
+                <h3>
+                    Python
+                </h3>
+
+                <p>
+                    Learn Python programming and
+                    object-oriented programming concepts.
+                </p>
+
+                <a href="#" class="button">
+                    Learn More
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Web Development
+                </h3>
+
+                <p>
+                    Learn HTML, CSS and JavaScript
+                    to create modern websites.
+                </p>
+
+                <a href="#" class="button">
+                    Learn More
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Data Science
+                </h3>
+
+                <p>
+                    Learn data analysis, visualization
+                    and machine learning concepts.
+                </p>
+
+                <a href="#" class="button">
+                    Learn More
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            HTML and CSS Practical Programs
+        </p>
+
+        <p>
+            CSS Program 46
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+
+</body>
+
+</html>

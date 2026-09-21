@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Background Images</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background-image:
+                url(" ../assets/images/brightsun.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        header h1 {
+            font-size: 40px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        section {
+            margin-bottom: 30px;
+            padding: 60px 30px;
+            min-height: 250px;
+
+            color: white;
+            border-radius: 15px;
+
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .background-one {
+            background-image:
+                url(" ../assets/images/hilss.jpg");
+
+            background-position: center;
+        }
+
+        .background-two {
+            background-image:
+                url(" ../assets/images/flowers.jpg");
+
+            background-position: top center;
+        }
+
+        .background-three {
+            background-image:
+                url(" ../assets/images/house.jpg");
+
+            background-position: bottom right;
+        }
+
+        .content {
+            background-color: rgba(0, 0, 0, 0.55);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            section {
+                padding: 40px 20px;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <h1>
+            CSS Background Images
+        </h1>
+
+        <p>
+            Demonstration of background images and positioning
+        </p>
+
+    </header>
+
+
+    <main>
+
+
+        <section class="background-one">
+
+            <div class="content">
+
+                <h2>
+                    Background Position: Center
+                </h2>
+
+                <p>
+                    This section uses a background image
+                    positioned at the center.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="background-two">
+
+            <div class="content">
+
+                <h2>
+                    Background Position: Top Center
+                </h2>
+
+                <p>
+                    This section positions the background
+                    image at the top center.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="background-three">
+
+            <div class="content">
+
+                <h2>
+                    Background Position: Bottom Right
+                </h2>
+
+                <p>
+                    This section positions the background
+                    image at the bottom right.
+                </p>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            HTML, CSS & JavaScript Practical Programs
+        </p>
+
+        <p>
+            CSS Program 30
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+</body>
+
+</html>

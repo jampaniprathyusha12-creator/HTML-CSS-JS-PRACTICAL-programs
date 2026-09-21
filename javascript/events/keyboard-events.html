@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Keyboard Events</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        input {
+            padding: 12px;
+            width: 300px;
+            font-size: 16px;
+        }
+
+        #output {
+            margin-top: 25px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Keyboard Events Demonstration</h2>
+
+    <input type="text" id="keyboardInput" placeholder="Type something here">
+
+    <p id="output">Keyboard event will be displayed here.</p>
+
+    <script>
+        let input = document.getElementById("keyboardInput");
+        let output = document.getElementById("output");
+
+        // Key Down Event
+        input.addEventListener("keydown", function (event) {
+            output.innerHTML =
+                "Key Down: " + event.key;
+        });
+
+        // Key Up Event
+        input.addEventListener("keyup", function (event) {
+            output.innerHTML =
+                "Key Up: " + event.key;
+        });
+
+        // Key Press / Input Event
+        input.addEventListener("input", function () {
+            output.innerHTML =
+                "You typed: " + input.value;
+        });
+    </script>
+
+    <br><br>
+
+    <a href="../index.html">← Back to JavaScript Programs</a>
+    <br><br>
+    <a href="../../index.html">← Home</a>
+
+</body>
+
+</html>

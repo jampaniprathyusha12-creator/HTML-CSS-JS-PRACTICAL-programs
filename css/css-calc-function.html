@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS calc() Function</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background-color: #2563eb;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            color: #2563eb;
+        }
+
+        /*
+         * calc() example:
+         * Width = 100% - 40px
+         */
+
+        .box {
+            width: calc(100% - 40px);
+            margin: 20px auto;
+
+            padding: 25px;
+
+            background-color: #dbeafe;
+            border-radius: 10px;
+
+            text-align: center;
+        }
+
+        /*
+         * calc() can also be used
+         * with height.
+         */
+
+        .height-box {
+            height: calc(200px + 50px);
+
+            background-color: #e0e7ff;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 10px;
+        }
+
+        /*
+         * calc() with font-size
+         */
+
+        .responsive-text {
+            font-size: calc(16px + 1vw);
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <h1>CSS calc() Function</h1>
+
+        <p>
+            Creating flexible layouts using calc()
+        </p>
+
+    </header>
+
+
+    <main class="container">
+
+
+        <div class="card">
+
+            <h2>
+                Width using calc()
+            </h2>
+
+            <div class="box">
+
+                <p>
+                    This box uses:
+                </p>
+
+                <strong>
+                    width: calc(100% - 40px);
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>
+                Height using calc()
+            </h2>
+
+            <div class="height-box">
+
+                <p>
+                    Height = calc(200px + 50px)
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>
+                Font Size using calc()
+            </h2>
+
+            <p class="responsive-text">
+                This text uses a responsive font size.
+            </p>
+
+        </div>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 CSS calc() Demonstration
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+</body>
+
+</html>

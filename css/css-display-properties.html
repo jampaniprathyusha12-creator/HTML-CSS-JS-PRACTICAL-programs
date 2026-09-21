@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Display Properties</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        section {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #2563eb;
+        }
+
+        .box {
+            background-color: #dbeafe;
+            border: 2px solid #2563eb;
+            padding: 12px;
+            margin: 8px 0;
+        }
+
+        /* Block */
+
+        .block {
+            display: block;
+        }
+
+        /* Inline */
+
+        .inline {
+            display: inline;
+            background-color: #dcfce7;
+            padding: 10px;
+            border: 2px solid #16a34a;
+        }
+
+        /* Inline-block */
+
+        .inline-block {
+            display: inline-block;
+            width: 180px;
+            background-color: #fef3c7;
+            padding: 15px;
+            margin: 5px;
+            border: 2px solid #d97706;
+        }
+
+        /* None */
+
+        .none {
+            display: none;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>
+            CSS Display Properties
+        </h1>
+
+        <p>
+            Block, Inline, Inline-Block and None
+        </p>
+
+    </header>
+
+
+    <main>
+
+
+        <section>
+
+            <h2>
+                1. Display: Block
+            </h2>
+
+            <div class="box block">
+                Block Element 1
+            </div>
+
+            <div class="box block">
+                Block Element 2
+            </div>
+
+        </section>
+
+
+        <section>
+
+            <h2>
+                2. Display: Inline
+            </h2>
+
+            <span class="inline">
+                Inline Element 1
+            </span>
+
+            <span class="inline">
+                Inline Element 2
+            </span>
+
+        </section>
+
+
+        <section>
+
+            <h2>
+                3. Display: Inline-Block
+            </h2>
+
+            <div class="inline-block">
+                Inline-Block 1
+            </div>
+
+            <div class="inline-block">
+                Inline-Block 2
+            </div>
+
+            <div class="inline-block">
+                Inline-Block 3
+            </div>
+
+        </section>
+
+
+        <section>
+
+            <h2>
+                4. Display: None
+            </h2>
+
+            <p>
+                The element below has
+                <strong>display: none</strong>,
+                so it is not visible on the webpage.
+            </p>
+
+            <div class="box none">
+                This element is hidden.
+            </div>
+
+            <p>
+                The hidden element does not occupy space.
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            HTML and CSS Practical Programs
+        </p>
+
+        <p>
+            CSS Program 37
+        </p>
+
+    </footer>
+    <a href="index.html">← Back to CSS Programs</a>
+    <br><br>
+    <a href="../index.html">← Home</a>
+
+</body>
+
+</html>
